@@ -14,4 +14,3 @@ Feature: CRM app login feature
     When user enters username "helpdesk1@cybertekschool.com"
     And user enters password "UserUser"
     And user clicks to login button
-    Then user should see the "Portal"
