@@ -1,35 +1,58 @@
 package com.nextBase.step_definitions;
 
+import com.nextBase.pages.DrivePage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Drive_StepDefinitions {
 
+    DrivePage drivePage= new DrivePage();
+
+    @Given("<User> is on Drive page")
+    public void userIsOnDrivePage() {
+
+
+    }
+
     @Given("HR is on Drive page")
     public void hr_is_on_drive_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
+
+    @Given("Helpdesk is on Drive page")
+    public void helpdesk_is_on_drive_page() {
+
+    }
+
+    @Given("Marketing is on Drive page")
+    public void marketing_is_on_drive_page() {
+
+    }
+
+
     @When("user clicks My Drive")
-    public void user_clicks_my_drive() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void userClicksMyDrive() {
+        drivePage.myDrive.click();
+
     }
-    @When("user clicks All Documents")
-    public void user_clicks_all_documents() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @And("user clicks All Documents")
+    public void userClicksAllDocuments() {
+        drivePage.allDocuments.click();
     }
+
     @Then("verify that user displays My Drive")
-    public void verify_that_user_displays_my_drive() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void verifyThatUserDisplaysMyDrive() {
+
     }
+
     @Then("verify that user displays All Documents")
-    public void verify_that_user_displays_all_documents() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void verifyThatUserDisplaysAllDocuments() {
     }
+
+
+
 
 }

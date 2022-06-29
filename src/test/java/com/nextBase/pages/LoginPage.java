@@ -13,9 +13,6 @@ public class LoginPage<usernameInput> {
     @FindBy(name ="USER_LOGIN")
     public WebElement usernameInput;
 
-
-
-
     @FindBy(name ="USER_PASSWORD")
     public WebElement passwordInput;
 

@@ -6,6 +6,7 @@ Feature: CRM app Drive feature
 
   Accounts are: hr user, helpdesk user, marketing user
 
+  @wip
   Scenario Outline: Drive feature displaying 'My Drive' and 'All Documents'
     Given <User> is on Drive page
     When user clicks My Drive
