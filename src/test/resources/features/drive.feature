@@ -1,4 +1,4 @@
-Feature: CRM app Drive feature
+Feature: NextBase app Drive feature
 
   User Story:
   NEXT-786 Drive Feature
