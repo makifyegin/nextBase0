@@ -11,6 +11,9 @@ public class DrivePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    @FindBy(xpath = "(//span[@class='menu-item-link-text'])[5]")
+    public WebElement drive;
+
     @FindBy(xpath = "(//span[.='My Drive'])[1]")
     public WebElement myDrive;
 

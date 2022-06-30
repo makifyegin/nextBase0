@@ -16,22 +16,22 @@ import org.openqa.selenium.TakesScreenshot;
 public class Hooks {
 
     //import from io.cucumber.java not from junit
-    @Before (order = 1)
-    public void setupScenario(){
-        Driver.getDriver();
-        System.out.println("====Setting up browser using cucumber @Before");
-    }
+//    @Before (order = 1)
+//    public void setupScenario(){
+//        Driver.getDriver();
+//        //System.out.println("====Setting up browser using cucumber @Before");
+//    }
 
-    @Before (value = "@login", order = 2)
+    @Before
     public void setupScenarioForLogins(){
         Driver.getDriver().get("https://login.nextbasecrm.com");
-        System.out.println("====this will only apply to scenarios with @login tag");
+        //System.out.println("====this will only apply to scenarios with @login tag");
     }
 
-    //@Before (value = "@db", order = 0)
-    public void setupForDatabaseScenarios(){
-        System.out.println("====this will only apply to scenarios with @db tag");
-    }
+//    //@Before (value = "@db", order = 0)
+//    public void setupForDatabaseScenarios(){
+//        System.out.println("====this will only apply to scenarios with @db tag");
+//    }
 
 
     @After
@@ -55,7 +55,7 @@ public class Hooks {
         //System.out.println("====Scenario ended/ Take screenshot if failed!");
     }
 
-    // @BeforeStep
+    //@BeforeStep
     public void setupStep(){
         System.out.println("--------> applying setup using @BeforeStep");
     }
