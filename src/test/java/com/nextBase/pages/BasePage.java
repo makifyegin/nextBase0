@@ -13,14 +13,6 @@ public abstract class BasePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(name ="USER_LOGIN")
-    public static WebElement usernameInput;
-
-    @FindBy(name ="USER_PASSWORD")
-    public static WebElement passwordInput;
-
-    @FindBy(className ="login-btn")
-    public static WebElement loginButton;
 
     public static void loginAsHR() {
         String username=ConfigurationReader.getProperty("username.hr");
