@@ -1,4 +1,4 @@
-Feature: NextBase app Drive feature
+gitFeature: NextBase app Drive feature
 
   User Story:
   NEXT-786 Drive Feature
