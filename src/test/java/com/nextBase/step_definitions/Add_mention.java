@@ -46,13 +46,6 @@ public class Add_mention {
     }
 
 
-
-    @When("User clicks Send Message on Homepage")
-    public void user_clicks_send_message_on_homepage() {
-        next889.blogPost.click();
-
-    }
-
     @When("User clicks add on message icon in the message box")
     public void user_clicks_add_on_message_icon_in_the_message_box() {
         next889.addMentionIcon.click();

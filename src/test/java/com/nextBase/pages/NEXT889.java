@@ -59,6 +59,45 @@ public class NEXT889 {
     @FindBy(xpath = "//blockquote[@class='bxhtmled-quote']")
     public WebElement blockQuote;
 
+    @FindBy(xpath = "//button[@id='blog-submit-button-save']")
+    public WebElement sendButton;
+
+    @FindBy(xpath = "(//table[@class='blogquote']/tbody/tr/td)[1]")
+    public WebElement postBlogQuote;
+
+    @FindBy(xpath = "//span[@id='bx-b-tag-input-blogPostForm']")
+    public WebElement tagIcon;
+
+    @FindBy(xpath = "//input[@name='TAGS_blogPostForm']")
+    public WebElement tagInputBox;
+
+    @FindBy(xpath = "//span[@class='popup-window-button']")
+    public WebElement addButton;
+
+    @FindBy(xpath = "(//span[@class='feed-add-post-del-but'])[2]")
+    public WebElement removeTag;
+
+    @FindBy(xpath = "//span[contains(@class,'feed-post-more-text')][1]")
+    public WebElement moreOption;
+
+    @FindBy(xpath = "(//span[contains(@class,'menu-popup-item-text')][1])[7]")
+    public WebElement deleteMessage;
+
+    @FindBy(xpath = "(//div[@class='feed-post-cont-wrap sonet-log-item-createdby-694 sonet-log-item-where-U-694-all sonet-log-item-where-U-694-blog-post sonet-log-item-where-U-694-blog'])[1]")
+    public WebElement postBlog;
+
+    @FindBy(xpath = "//span[@class='bxhtmled-top-bar-btn bxhtmled-button-video']/i")
+    public WebElement insertVideoIcon;
+
+    @FindBy(xpath = "//input[@id='video_idPostFormLHE_blogPostForm-source']")
+    public WebElement inputUrl;
+
+    @FindBy(xpath = "//input[@class='adm-btn-save']")
+    public WebElement insertVideoSaveButton;
+
+    @FindBy(xpath = "//input[@id='video_idPostFormLHE_blogPostForm-source']")
+    public WebElement videoSourceTextBox;
+
 
 
 }

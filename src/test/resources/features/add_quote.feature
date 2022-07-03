@@ -5,7 +5,7 @@ Feature: NEXT-889
   Background:
     Given User is on nextBase Homepage
 
-  @wip
+
   Scenario: Add quotes
 
 
