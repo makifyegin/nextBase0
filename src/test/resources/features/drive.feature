@@ -1,6 +1,6 @@
 Feature: NextBase app Drive feature
 
-  User Story:
+ User Story:
   NEXT-786 Drive Feature
   As a user, I should be able to display 'My Drive' and 'All Documents' under Drive module
 
