@@ -4,7 +4,7 @@ Feature: NEXT-889
 
   Background:
     Given User is on nextBase Homepage
-@wip
+
   Scenario: Insert Youtube or Vimeo video
 
     When user enters firstname

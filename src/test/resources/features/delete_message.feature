@@ -4,7 +4,7 @@ Feature: NEXT-889
 
   Background:
     Given User is on nextBase Homepage
-
+@wip
   Scenario: Delete message after sending the message
 
     When user enters firstname
