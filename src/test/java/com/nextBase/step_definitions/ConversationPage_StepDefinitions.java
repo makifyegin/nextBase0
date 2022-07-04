@@ -2,6 +2,7 @@ package com.nextBase.step_definitions;
 
 import com.nextBase.pages.BasePage;
 import com.nextBase.pages.NextBasePage;
+import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -62,6 +63,7 @@ public class ConversationPage_StepDefinitions {
     @When("user clicks {string} button and {string} button")
     public void userClicksMenuButtonAndConversationsButton(String menu, String conversation) {
         nextBasePage.menuBtn.click();
+        BrowserUtils.waitFor(1);
         nextBasePage.ConversationBtn.click();
     }
 
