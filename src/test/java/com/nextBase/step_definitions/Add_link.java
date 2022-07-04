@@ -46,7 +46,7 @@ public class Add_link {
 
         System.out.println("actualResult = " + actualResult);
 
-        //Assert.assertEquals(expectedLink,actualResult);
+        Assert.assertEquals(expectedLink,actualResult);
 
     }
 

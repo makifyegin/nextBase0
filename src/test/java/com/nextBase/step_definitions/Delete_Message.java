@@ -7,6 +7,8 @@ import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -40,17 +42,21 @@ public class Delete_Message {
 
     @And("User clicks Delete")
     public void userClicksDelete() {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
         next889.deleteMessage.click();
 
     }
 
     @And("User clicks OK on the alert prompt")
     public void userClicksOKOnTheAlertPrompt() {
+        Alert alert = Driver.getDriver().switchTo().alert();
+        alert.accept();
 
     }
 
     @Then("User can see The post has been deleted message under Activity Stream")
     public void userCanSeeThePostHasBeenDeletedMessageUnderActivityStream() {
+
+        String text = next889.messageBox.getText();
+        Assert.assertFalse(next889.messageBox.isDisplayed());
     }
 }

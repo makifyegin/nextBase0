@@ -4,6 +4,9 @@ import com.nextBase.pages.NEXT889;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -30,6 +33,11 @@ public class Remove_tags {
     }
     @Then("User should be able to see tags removed")
     public void user_should_be_able_to_see_tags_removed() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
+        wait.until(ExpectedConditions.invisibilityOf(next889.tagDisplay));
+
+
+         Assert.assertFalse(next889.tagDisplay.isDisplayed());
 
     }
 }

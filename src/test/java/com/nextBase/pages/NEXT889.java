@@ -62,7 +62,7 @@ public class NEXT889 {
     @FindBy(xpath = "//button[@id='blog-submit-button-save']")
     public WebElement sendButton;
 
-    @FindBy(xpath = "(//table[@class='blogquote']/tbody/tr/td)[1]")
+    @FindBy(xpath = ("(//table[@class='blogquote']/tbody/tr/td)[1]"))
     public WebElement postBlogQuote;
 
     @FindBy(xpath = "//span[@id='bx-b-tag-input-blogPostForm']")
@@ -97,6 +97,13 @@ public class NEXT889 {
 
     @FindBy(xpath = "//input[@id='video_idPostFormLHE_blogPostForm-source']")
     public WebElement videoSourceTextBox;
+
+
+    @FindBy(xpath = ("(//div[@class='feed-com-files-cont'])[1]/a"))
+    public WebElement actualTag;
+
+    @FindBy(xpath = "//span[@class='feed-add-post-tags']")
+    public WebElement tagDisplay;
 
 
 
