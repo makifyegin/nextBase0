@@ -8,7 +8,7 @@ Feature:  User should be able to display My Calendar
   Background: for the scenarios in the feature file, user is expected to be on login page
     Given user is on the next base login page
 
-
+@wip
   @NEXT-996
   Scenario Outline: Verify that Hr user can display My Calender
 
@@ -18,9 +18,9 @@ Feature:  User should be able to display My Calendar
     And Click the Calendar
     Then Verify that User can see the my calendar on the page.
 
-    Examples:
+  Examples:
 
-      | User      |
-      | Hr        |
-      | Helpdesk  |
-      | Marketing |
+    |User     |
+    |HR       |
+    |Helpdesk |
+    |Marketing|
