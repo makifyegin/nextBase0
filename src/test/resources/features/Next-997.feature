@@ -10,7 +10,7 @@ Feature:  User should be able to display Company Calendar
 
 @wip
   @NEXT-997
-  Scenario Outline: Verify hat HR User can add an event on My Calendar.
+  Scenario Outline: Verify hat <User> User can add an event on My Calendar.
 
 
 

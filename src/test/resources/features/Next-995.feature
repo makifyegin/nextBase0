@@ -10,7 +10,7 @@ Feature:  User should be able to display Company Calendar
 
 @wip
   @NEXT-995
-  Scenario Outline: Verify that HR User can display Company Calendar.
+  Scenario Outline: Verify that <User> User can display Company Calendar.
 
 
 

@@ -10,7 +10,7 @@ Feature:  User should be able to display My Calendar
 
 @wip
   @NEXT-996
-  Scenario Outline: Verify that Hr user can display My Calender
+  Scenario Outline: Verify that <User> user can display My Calender
 
 
 
