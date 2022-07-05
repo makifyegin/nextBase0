@@ -1,0 +1,27 @@
+Feature:  User should be able to display Company Calendar
+
+  User Story :
+  Verify that users can see the calendar
+
+  Accounts are : Hr , Helpdesk, Marketing
+
+  Background: for the scenarios in the feature file, user is expected to be on login page
+    Given user is on the next base login page
+
+
+  @NEXT-995
+  Scenario Outline: Verify that HR User can display Company Calendar.
+
+
+
+    When <User> is on the login page of home page
+    And Click the Calendar
+    And user clicks to login button
+    Then Verify that User can see all the events belong to this Company.
+
+    Examples:
+
+      | User      |
+      | Hr        |
+      | Helpdesk  |
+      | Marketing |
