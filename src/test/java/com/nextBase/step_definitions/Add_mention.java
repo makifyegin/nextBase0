@@ -18,31 +18,6 @@ public class Add_mention {
     @Given("User is on nextBase LoginPage")
     public void user_is_on_next_base_login_page() {
         Driver.getDriver().get("https://qa.nextbasecrm.com/");
-
-
-    }
-
-    @When("user enters firstname")
-    public void userEntersFirstname() {
-        next889.usernameInput.sendKeys("hr2@cybertekschool.com");
-    }
-
-    @And("user enters password")
-    public void user_enters_password() {
-        next889.passwordInput.sendKeys("UserUser");
-    }
-
-    @When("user clicks to login button")
-    public void user_clicks_to_login_button() {
-        next889.loginButton.click();
-    }
-
-
-
-    @Then("user should see CRM")
-    public void user_should_see_crm() {
-        String expectedUrl = "https://qa.nextbasecrm.com/stream/?login=yes";
-        String actualUrl = Driver.getDriver().getCurrentUrl();
     }
 
 

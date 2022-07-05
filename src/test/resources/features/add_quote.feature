@@ -6,17 +6,16 @@ Feature: NEXT-889
     Given User is on nextBase Homepage
 
 
-  Scenario: Add quotes
+  Scenario Outline: Add quotes
 
-
-    When user enters firstname
-    And user enters password
-    And user clicks to login button
-    Then user should see CRM
-
+    Given <User> is on home page
     When User clicks Send Message on Homepage
     And User Types My message in the message box.
     And User clicks the quote icon on the message box.
     And User types in Quote Test.
     And User clicks send.
     Then User can see the post with Quote Test displayed.
+
+    Examples:
+      | User      |
+      | HR        |

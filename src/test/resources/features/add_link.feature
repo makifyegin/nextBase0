@@ -4,16 +4,17 @@ Feature: NEXT-889
 
   Background:
     Given User is on nextBase Homepage
+  @NEXT889
+  Scenario Outline: Add link to specified text
 
-  Scenario: Add link to specified text
-
-    When user enters firstname
-    And user enters password
-    And user clicks to login button
-    Then user should see CRM
-
-    When User clicks Send Message on Homepage
+    Given <User> is on home page
+    And User clicks Send Message on Homepage
     And User clicks link icon on Message box
     And User types in w3 Schools in Text Textbox
     And User add link https://www.w3schools.com/ in Link Textbox
     Then User should see the saved link in the message bar
+
+    Examples:
+      | User      |
+      | HR        |
+
