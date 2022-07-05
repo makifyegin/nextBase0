@@ -14,7 +14,7 @@ Feature:  User should be able to display Company Calendar
 
 
 
-    Given <User> is on the login page of home page
+    Given <User> is on homepage
     And Click the Calendar
     And See the ADD button on  the page and click the arrow.
     And Click the Add event

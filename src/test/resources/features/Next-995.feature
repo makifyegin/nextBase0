@@ -14,9 +14,8 @@ Feature:  User should be able to display Company Calendar
 
 
 
-    When <User> is on the login page of home page
-    And Click the Calendar
-    And user clicks to login button
+    Given <User> is on homepage
+    When Click the Calendar
     Then Verify that User can see all the events belong to this Company.
 
     Examples:
