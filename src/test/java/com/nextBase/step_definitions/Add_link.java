@@ -19,6 +19,7 @@ public class Add_link {
     public void user_is_on_next_base_homepage() {
         Driver.getDriver().get("https://qa.nextbasecrm.com/");
     }
+
     @And("User clicks link icon on Message box")
     public void user_clicks_link_icon_on_message_box() {
         Driver.getDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);

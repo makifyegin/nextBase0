@@ -34,10 +34,10 @@ public class Remove_tags {
     @Then("User should be able to see tags removed")
     public void user_should_be_able_to_see_tags_removed() {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
-        wait.until(ExpectedConditions.invisibilityOf(next889.tagDisplay));
+        wait.until(ExpectedConditions.invisibilityOf(next889.removeTag));
 
 
-         Assert.assertFalse(next889.tagDisplay.isDisplayed());
+         Assert.assertFalse(next889.removeTag.isDisplayed());
 
     }
 }

@@ -7,7 +7,6 @@ Feature: NEXT-889
 
   Scenario Outline: Add mention about only department employees
 
-
     Given <User> is on home page
     When User clicks Send Message on Homepage
     And User mentions about helpdesk2@cybertekschool.com

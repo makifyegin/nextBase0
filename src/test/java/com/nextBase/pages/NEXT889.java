@@ -14,14 +14,6 @@ public class NEXT889 {
     @FindBy(xpath = "//div[@id='microoPostFormLHE_blogPostForm_inner']")
     public WebElement blogPost;
 
-    @FindBy(xpath = "//input[@name='USER_LOGIN']")
-    public WebElement usernameInput;
-
-    @FindBy(xpath ="//input[@name='USER_PASSWORD']")
-    public WebElement passwordInput;
-
-    @FindBy(className ="login-btn")
-    public WebElement loginButton;
 
     @FindBy(xpath = "//span[@id='bx-b-mention-blogPostForm']")
     public WebElement addMentionIcon;
@@ -29,8 +21,8 @@ public class NEXT889 {
     @FindBy(xpath = "//a[@class='bx-finder-box-tab bx-lm-tab-department']")
     public WebElement employeeTagAndDepartmentTag;
 
-    @FindBy(xpath = "//div[@class='bx-finder-company-department-employee-name']")
-    public WebElement hr1CybertekSchoolUser;
+    @FindBy(xpath = "(//div[@class='bx-finder-company-department-employee-name'])[2]")
+    public WebElement helpdesk22CybertekSchoolUser;
 
     @FindBy(xpath = "//body[@contenteditable='true']")
     public WebElement messageBox;
@@ -102,7 +94,14 @@ public class NEXT889 {
     @FindBy(xpath = ("(//div[@class='feed-com-files-cont'])[1]/a"))
     public WebElement actualTag;
 
-    @FindBy(xpath = "//span[@class='feed-add-post-tags']")
+
+    @FindBy(xpath = "//div[@class='feed-add-successfully']")
+    public WebElement postIsDeletedMessage;
+
+    @FindBy(linkText = "hr76@cybertekschool.com")
+    public WebElement mention;
+
+    @FindBy(xpath = "//a[.='#importan']")
     public WebElement tagDisplay;
 
 

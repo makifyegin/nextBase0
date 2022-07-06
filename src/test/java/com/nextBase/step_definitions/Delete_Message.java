@@ -10,6 +10,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
@@ -36,7 +37,9 @@ public class Delete_Message {
 
     @And("User clicks the More option under your sent message")
     public void userClicksTheMoreOptionUnderYourSentMessage() {
-        Driver.getDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
+        wait.until(ExpectedConditions.invisibilityOf(next889.moreOption));
+
         next889.moreOption.click();
     }
 
@@ -56,7 +59,6 @@ public class Delete_Message {
     @Then("User can see The post has been deleted message under Activity Stream")
     public void userCanSeeThePostHasBeenDeletedMessageUnderActivityStream() {
 
-       // String text = next889.messageBox.getText();
-       // Assert.assertFalse(next889.messageBox.isDisplayed());
+        Assert.assertTrue(next889.postIsDeletedMessage.isDisplayed());
     }
 }

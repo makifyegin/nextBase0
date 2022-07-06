@@ -6,13 +6,10 @@ Feature: NEXT-889
     Given User is on nextBase Homepage
 
 
-  Scenario: Add tags in messages
+  Scenario Outline: Add tags in messages
 
-    When user enters firstname
-    And user enters password
-    And user clicks to login button
-    Then user should see CRM
 
+    Given <User> is on home page
     When User clicks Send Message on Homepage
     And User clicks the add tag icon
     And User types #important in the textbox
@@ -20,3 +17,7 @@ Feature: NEXT-889
     And User types Test1 in the message box
     And User clicks send button
     Then User should see the tag in the activity stream
+
+    Examples:
+      | User      |
+      | HR        |

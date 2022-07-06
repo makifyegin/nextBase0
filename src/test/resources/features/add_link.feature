@@ -4,7 +4,7 @@ Feature: NEXT-889
 
   Background:
     Given User is on nextBase Homepage
-  @NEXT889
+
   Scenario Outline: Add link to specified text
 
     Given <User> is on home page
