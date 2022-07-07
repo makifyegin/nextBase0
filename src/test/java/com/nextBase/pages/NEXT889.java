@@ -14,6 +14,9 @@ public class NEXT889 {
     @FindBy(xpath = "//div[@id='microoPostFormLHE_blogPostForm_inner']")
     public WebElement blogPost;
 
+    @FindBy(xpath = "//input[@id='POST_TITLE']")
+    public WebElement postTitle;
+
 
     @FindBy(xpath = "//span[@id='bx-b-mention-blogPostForm']")
     public WebElement addMentionIcon;
@@ -22,7 +25,7 @@ public class NEXT889 {
     public WebElement employeeTagAndDepartmentTag;
 
     @FindBy(xpath = "(//div[@class='bx-finder-company-department-employee-name'])[2]")
-    public WebElement helpdesk22CybertekSchoolUser;
+    public WebElement hr76CybertekSchoolUser;
 
     @FindBy(xpath = "//body[@contenteditable='true']")
     public WebElement messageBox;
@@ -101,7 +104,7 @@ public class NEXT889 {
     @FindBy(linkText = "hr76@cybertekschool.com")
     public WebElement mention;
 
-    @FindBy(xpath = "//a[.='#importan']")
+    @FindBy(xpath = "//a[@class='feed-com-tag']")
     public WebElement tagDisplay;
 
 

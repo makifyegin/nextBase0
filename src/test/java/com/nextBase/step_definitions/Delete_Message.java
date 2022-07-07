@@ -38,7 +38,7 @@ public class Delete_Message {
     @And("User clicks the More option under your sent message")
     public void userClicksTheMoreOptionUnderYourSentMessage() {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
-        wait.until(ExpectedConditions.invisibilityOf(next889.moreOption));
+        wait.until(ExpectedConditions.visibilityOf(next889.moreOption));
 
         next889.moreOption.click();
     }

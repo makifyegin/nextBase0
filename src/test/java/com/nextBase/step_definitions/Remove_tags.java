@@ -15,6 +15,7 @@ public class Remove_tags {
     NEXT889 next889 = new NEXT889();
     @When("User clicks the tag icon")
     public void user_clicks_the_tag_icon() {
+
         next889.tagIcon.click();
 
     }
@@ -28,16 +29,20 @@ public class Remove_tags {
     }
     @When("User clicks the x sign to remove added tag\\/s")
     public void user_clicks_the_x_sign_to_remove_added_tag_s() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
+        wait.until(ExpectedConditions.visibilityOf(next889.removeTag));
+
         next889.removeTag.click();
 
     }
     @Then("User should be able to see tags removed")
     public void user_should_be_able_to_see_tags_removed() {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
-        wait.until(ExpectedConditions.invisibilityOf(next889.removeTag));
 
 
-         Assert.assertFalse(next889.removeTag.isDisplayed());
+     Assert.assertFalse(next889.removeTag.isDisplayed());
+
+
+
 
     }
 }

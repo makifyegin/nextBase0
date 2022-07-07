@@ -1,4 +1,6 @@
 package com.nextBase.step_definitions;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import com.github.javafaker.Faker;
 import com.nextBase.pages.NEXT889;
@@ -14,6 +16,10 @@ import java.util.concurrent.TimeUnit;
 public class Add_tag {
 
     NEXT889 next889 = new NEXT889();
+    StringStorage obj = new StringStorage();
+
+
+
 
     @When("User clicks the add tag icon")
     public void user_clicks_the_add_tag_icon() {
@@ -22,10 +28,13 @@ public class Add_tag {
 
     @When("User types #important in the textbox")
     public void user_types_important_in_the_textbox() {
-        next889.tagInputBox.sendKeys("#importan");
+
+
+
+        String msg = obj.msg;
+        next889.tagInputBox.sendKeys(msg);
 
     }
-
     @When("User clicks add button")
     public void user_clicks_add_button() {
         next889.addButton.click();
@@ -48,19 +57,20 @@ public class Add_tag {
 
     }
 
+
+
+
     @Then("User should see the tag in the activity stream")
     public void user_should_see_the_tag_in_the_activity_stream() {
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
-        wait.until(ExpectedConditions.visibilityOf(next889.tagDisplay));
-       // String expectedResult = "#important";
-       // String actualResult = next889.actualTag.getText();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
+        wait.until(ExpectedConditions.visibilityOf(next889.actualTag));
 
-       // Assert.assertEquals(expectedResult,actualResult);
+       String expectedResult = obj.msg;
+       System.out.println("obj.msg = " + obj.msg);
+       String actualResult = next889.actualTag.getText();
 
-
-        Assert.assertTrue(next889.tagDisplay.isDisplayed());
-
+       Assert.assertEquals(expectedResult,actualResult);
 
     }
 }

@@ -15,35 +15,26 @@ public class Insert_Video {
 
     NEXT889 next889 = new NEXT889();
 
-
-    @When("User clicks the Insert video icon")
-    public void user_clicks_the_insert_video_icon() {
-        next889.insertVideoIcon.click();
+    @Given("<User> is on home page")
+    public void user_is_on_home_page() {
 
     }
-    @When("User paste <Video> on the Video source bar")
-    public void user_paste_video_on_the_video_source_bar() {
-        next889.inputUrl.click();
+    @When("User clicks the Insert video icon")
+    public void user_clicks_the_insert_video_icon() {
+
+    }
+    @When("User writes {string} on the Video source bar")
+    public void user_paste_https_vimeo_com_link_on_the_video_source_bar(Integer int1) {
 
     }
     @When("User clicks save button")
     public void user_clicks_save_button() {
-        next889.saveButton.click();
+
     }
     @Then("User should see the Video title, video size and video itself")
     public void user_should_see_the_video_title_video_size_and_video_itself() {
 
     }
-    @Given("<User> is on home page")
-    public void user_is_on_home_page() {
-        Driver.getDriver().get("https://qa.nextbasecrm.com/");
-    }
-    @When("User paste https:\\/\\/www.youtube.com\\/watch?v=Xd5KFlwF6zM&t=6s on the Video source bar")
-    public void user_paste_https_www_youtube_com_watch_v_xd5k_flw_f6z_m_t_6s_on_the_video_source_bar() {
-        next889.inputUrl.sendKeys("https://www.youtube.com/watch?v=Xd5KFlwF6zM&t=11s");
-    }
-    @When("User paste https:\\/\\/vimeo.com\\/{int} on the Video source bar")
-    public void user_paste_https_vimeo_com_on_the_video_source_bar(Integer int1) {
-        next889.inputUrl.sendKeys("https://vimeo.com/718338402");
-    }
+
+
 }

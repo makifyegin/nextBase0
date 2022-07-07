@@ -5,25 +5,28 @@ Feature: NEXT-889
   Background:
     Given User is on nextBase Homepage
 
-  @NEXT889
-  Scenario Outline: Insert Youtube or Vimeo video
+
+  Scenario : Insert Youtube or Vimeo video
 
 
-    Given <User> is on home page
+    Given "HR" is on Home page
+
     When User clicks Send Message on Homepage
     And User clicks the Insert video icon
-    And User paste <Video> on the Video source bar
+
+
+    | youtubeUrl    |
+    |vimeo          |
+
+
     And User clicks save button
     Then User should see the Video title, video size and video itself
 
-    Examples:
-      | User |
-      | HR   |
 
-    Examples:
-      | Video                                            |
-      | https://www.youtube.com/watch?v=Xd5KFlwF6zM&t=6s |
-      | https://vimeo.com/718338402                      |
+
+
+
+
 
 
 

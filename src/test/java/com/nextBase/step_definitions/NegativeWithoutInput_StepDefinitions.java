@@ -15,7 +15,7 @@ public class NegativeWithoutInput_StepDefinitions {
     String currentURLAfter = "";
 
 
-    @Given("HR is on homepage")
+    @Given("{string} is on homepage")
     public void hr_is_on_homepage() {
 
         //nextBasePage.loginHR();

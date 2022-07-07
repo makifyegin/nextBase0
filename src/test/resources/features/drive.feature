@@ -8,7 +8,7 @@ Feature: NextBase app Drive feature
 
   @drive
   Scenario Outline: Drive feature displaying 'My Drive' and 'All Documents'
-    Given <User> is on Drive page
+    Given "<User>" is on Home page
     When user clicks My Drive
     Then verify that user displays My Drive
     When user clicks All Documents
@@ -19,4 +19,6 @@ Feature: NextBase app Drive feature
       | HR        |
       | Helpdesk  |
       | Marketing |
+
+
 

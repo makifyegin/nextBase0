@@ -9,7 +9,7 @@ Feature: NEXT-889
 
     Given <User> is on home page
     When User clicks Send Message on Homepage
-    And User mentions about helpdesk2@cybertekschool.com
+    And User mentions about hr76@cybertekschool.com
     Then User should be able to see chosen email address under the Message tab
 
 
