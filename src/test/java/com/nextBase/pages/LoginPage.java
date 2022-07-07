@@ -22,6 +22,11 @@ public class LoginPage<usernameInput> {
     @FindBy(xpath = "//div[@class='errortext']")
     public WebElement errorMessage;
 
+    @FindBy(id = "USER_REMEMBER")
+    public WebElement RememberMeBox;
+
+
+
 
 
 
