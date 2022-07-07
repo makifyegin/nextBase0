@@ -12,7 +12,7 @@ Feature: Search feature
   Scenario Outline: Verify that user can't search without providing input
   Searching without input
 
-    Given <User> is on homepage
+    Given "<User>" is on homepage
     And clicks search button without providing input
     Then verify that any page can not opened
 
