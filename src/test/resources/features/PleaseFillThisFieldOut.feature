@@ -1,4 +1,4 @@
-@wip @login
+@wip @login @PleaseFillOut
 Feature: "Please fill out this field" message should be displayed if Username or password input was left empty
 
   US: As a user, I should be able to login, so that I can land on homepage.
@@ -8,7 +8,7 @@ Feature: "Please fill out this field" message should be displayed if Username or
   Scenario Outline:
     When user enters "<password>"
     And user clicks to login button
-    Then user should not see dashboard instead this notice message : "Please fill out this field"
+    Then user should not see dashboard instead this notice message : <Please fill out this field>
     Examples:
 
       | user      | password |
@@ -20,7 +20,7 @@ Feature: "Please fill out this field" message should be displayed if Username or
   Scenario Outline:
     When user enters "<username>"
     And user clicks to login button
-    Then user should not see dashboard instead this notice message : "Please fill out this field"
+    Then user should not see dashboard instead this notice message : <Please fill out this field>
     Examples:
 
       |username                      |
