@@ -25,6 +25,7 @@ public class Login_StepDefinitions {
 
     @When("user clicks to login button")
     public void user_clicks_to_login_button() {
+
         LoginPage.loginButton.click();
     }
 
