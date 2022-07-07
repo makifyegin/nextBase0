@@ -1,7 +1,7 @@
-@wip @login
+@wip @login @IncorrectCred
 Feature: Entering incorrect email address or password should display "Incorrect login or password"
 
-  US: As a user, I should be able to login so that I can land on homepage.{color}
+  US: As a user, I should be able to login so that I can land on homepage.
 
   AC:"Incorrect login or password" should be displayed for invalid credentials.
 
@@ -9,8 +9,8 @@ Feature: Entering incorrect email address or password should display "Incorrect 
   For the scenarios in the feature file, user is expected to be on login pageGiven user is on the login page
 
   Scenario Outline:
-    When user enters "<username>"
-    And user enters "<password>"
+    When user enters username "<username>"
+    And user enters password "<password>"
     And user clicks to login button
     Then user should not see dashboard instead this notice message : "Incorrect login or password."
 
@@ -22,8 +22,8 @@ Feature: Entering incorrect email address or password should display "Incorrect 
 
 
   Scenario Outline:
-    When user enters "<username>"
-    And user enters "<password>"
+    When user enters username "<username>"
+    And user enters password "<password>"
     And user clicks to login button
     Then user should not see dashboard instead this notice message : "Incorrect login or password."
     Examples:
