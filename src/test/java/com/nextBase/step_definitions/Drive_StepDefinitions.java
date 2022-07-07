@@ -10,29 +10,29 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.util.Locale;
+
 public class Drive_StepDefinitions {
 
     DrivePage drivePage= new DrivePage();
 
-    @Given("{string} is on Drive page")
+    @Given("{string} is on Home page")
     public void userIsOnDrivePage(String userType) throws InterruptedException {
-        drivePage.drive.click();
+        switch (userType.toLowerCase()){
+            case "hr":
+                BasePage.loginAsHR();
+                break;
+            case "helpdesk":
+                BasePage.loginAsHelpdesk();
+                break;
+            case "marketing":
+                BasePage.loginAsMarketing();
+                break;
+        }
+
+
     }
-    @Given("HR is on Drive page")
-    public void hr_is_on_drive_page() throws InterruptedException {
-        BasePage.loginAsHR();
-        drivePage.drive.click();
-    }
-    @Given("Helpdesk is on Drive page")
-    public void helpdesk_is_on_drive_page() {
-        BasePage.loginAsHelpdesk();
-        drivePage.drive.click();
-    }
-    @Given("Marketing is on Drive page")
-    public void marketing_is_on_drive_page() {
-        BasePage.loginAsMarketing();
-        drivePage.drive.click();
-    }
+
     @When("user clicks My Drive")
     public void userClicksMyDrive() {
         drivePage.myDrive.click();

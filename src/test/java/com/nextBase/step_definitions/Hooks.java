@@ -14,13 +14,13 @@ import org.openqa.selenium.TakesScreenshot;
 
 
 public class Hooks {
-
-    //import from io.cucumber.java not from junit
-//    @Before (order = 1)
-//    public void setupScenario(){
-//        Driver.getDriver();
-//        //System.out.println("====Setting up browser using cucumber @Before");
-//    }
+//
+//    //import from io.cucumber.java not from junit
+//    @Ramazan (order = 1)
+////    public void setupScenario(){
+////        Driver.getDriver();
+////        //System.out.println("====Setting up browser using cucumber @Before");
+////    }
 
     @Before
     public void setupScenarioForLogins(){
