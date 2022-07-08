@@ -8,7 +8,7 @@ Feature:  User should be able to display Company Calendar
   Background: for the scenarios in the feature file, user is expected to be on login page
     Given user is on the next base login page
 
-@wip
+
   @NEXT-997
   Scenario : Verify hat <User> User can add an event on My Calendar.
 
