@@ -10,20 +10,14 @@ Feature:  User should be able to display Company Calendar
 
 @wip
   @NEXT-997
-  Scenario Outline: Verify hat <User> User can add an event on My Calendar.
+  Scenario : Verify hat <User> User can add an event on My Calendar.
 
 
 
-    Given <User> is on homepage
+  Given "<User>" is on Home page
     And Click the Calendar
     And See the ADD button on  the page and click the arrow.
     And Click the Add event
     And Click SAVE(CTRL + ENTER)
     Then Verify that User can see your new event on the calendar.
 
-  Examples:
-
-    |User     |
-    |HR       |
-    |Helpdesk |
-    |Marketing|
