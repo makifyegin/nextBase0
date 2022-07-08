@@ -1,5 +1,6 @@
 package com.nextBase.step_definitions;
 
+import com.nextBase.pages.BasePage;
 import com.nextBase.pages.HrTaskPage;
 import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
@@ -14,10 +15,7 @@ public class Hr_Task_Negative_StepDefinitions {
     HrTaskPage hrTaskPage = new HrTaskPage();
     @Given("User  is on home page")
     public void user_is_on_home_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("nextBase.url"));
-        hrTaskPage.usernameInput.sendKeys(ConfigurationReader.getProperty("hr.username"));
-        hrTaskPage.passwordInput.sendKeys(ConfigurationReader.getProperty("hr.password"));
-        hrTaskPage.loginButton.click();
+        BasePage.loginAsHR();
 
     }
     @When("User  clicks Tasks button on the home page")
