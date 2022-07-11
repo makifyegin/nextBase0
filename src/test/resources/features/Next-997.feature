@@ -13,7 +13,7 @@ Feature:  User should be able to display Company Calendar
   @NEXT-997
   Scenario: Verify hat  User can add an event on My Calendar.
 
-    Given "<Hr>" is on Home page
+    Given "hr" is on homepage
     And Click the Calendar
     And Click the Add event
     And Select the event date and fill out th event name

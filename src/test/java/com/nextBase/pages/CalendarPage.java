@@ -12,19 +12,19 @@ public class CalendarPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "(//button[@class='ui-btn-main']")
+    @FindBy(xpath = "//button[@class='ui-btn-main']")
     public WebElement add;
 
 
 
-    @FindBy(xpath = "//*[@id='calendar_slider_84180_date_from']")
+    @FindBy(xpath = "(//*[@class='calendar-field calendar-field-datetime'])[1]")
     public WebElement dateFromInput;
 
-    @FindBy(xpath = "//*[@id='calendar_slider_84180_date_to']")
+    @FindBy(xpath = "(//*[@class='calendar-field calendar-field-datetime'])[2]")
     public WebElement dateToInput;
 
     // Pleaser add eventNameInput is akif.
-    @FindBy(xpath = "//*[@id='calendar_slider_578462_entry_name']")
+    @FindBy(xpath = "//*[@name='name']")
     public WebElement eventNameInput;
 
 
