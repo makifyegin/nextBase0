@@ -1,3 +1,4 @@
+@wip
 Feature:  User should be able to display Company Calendar
 
   User Story :
@@ -7,7 +8,7 @@ Feature:  User should be able to display Company Calendar
 
   Background: for the scenarios in the feature file, user is expected to be on login page
     Given user is on the next base login page
-    And  "<User>" is on Home page
+    And  "<Hr>" is on Home page
     And Click the Calendar
     And Click the Add event
     And Select the event date and fill out th event name
@@ -16,11 +17,12 @@ Feature:  User should be able to display Company Calendar
 
 
   @NEXT-995
-  Scenario : Verify that  User can display Company Calendar.
+  Scenario: Verify that  User can display Company Calendar.
 
 
 
-    Given "<User>" is on Home page
+    Given "<Hr>" is on Home page
     When Click the Calendar
+    And Click the Company Calendar
     Then Verify that User can see all the events belong to this Company.
 

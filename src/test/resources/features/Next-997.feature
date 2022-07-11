@@ -10,14 +10,14 @@ Feature:  User should be able to display Company Calendar
 
 
   @NEXT-997
-  Scenario : Verify hat  User can add an event on My Calendar.
+  Scenario: Verify hat  User can add an event on My Calendar.
 
-
-
-  Given "<User>" is on Home page
+    Given "<User>" is on Home page
     And Click the Calendar
-    And See the ADD button on  the page and click the arrow.
     And Click the Add event
+    And Select the event date and fill out th event name
     And Click SAVE(CTRL + ENTER)
+    When Click the Calendar
+    And Click the MyCalendar
     Then Verify that User can see your new event on the calendar.
 

@@ -15,6 +15,8 @@ public class CalendarPage {
     @FindBy(xpath = "(//button[@class='ui-btn-main']")
     public WebElement add;
 
+
+
     @FindBy(xpath = "//*[@id='calendar_slider_84180_date_from']")
     public WebElement dateFromInput;
 
@@ -31,6 +33,16 @@ public class CalendarPage {
 
     @FindBy(xpath = "//span[text()='akif']")
     public WebElement eventNameFind;
+
+    @FindBy(xpath = "    //span[text()='My Calendar']")
+    public WebElement myCalendar;
+
+    @FindBy(xpath = "    //span[text()='Company Calendar']")
+    public WebElement companyCalendar;
+
+
+
+
 
 
 }
