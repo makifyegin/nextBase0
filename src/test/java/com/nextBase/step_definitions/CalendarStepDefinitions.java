@@ -48,6 +48,7 @@ public class CalendarStepDefinitions {
 
     @And("Select the event date and fill out th event name")
     public void selectTheEventDateAndFillOutThEventName() {
+        calendarPage.eventNameInput.clear();
         calendarPage.eventNameInput.sendKeys("akif");
         calendarPage.dateFromInput.sendKeys("07/11/2022");
         calendarPage.dateToInput.sendKeys("07/11/2022");

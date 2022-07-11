@@ -28,7 +28,7 @@ public class CalendarPage {
     public WebElement eventNameInput;
 
 
-    @FindBy(xpath = "//*[@id='calendar_slider_84180_save']")
+    @FindBy(xpath = "//*[@class='ui-btn ui-btn-success']")
     public WebElement calendarSliderSaveButton;
 
     @FindBy(xpath = "//span[text()='akif']")
