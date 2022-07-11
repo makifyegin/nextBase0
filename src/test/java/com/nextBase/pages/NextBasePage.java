@@ -37,6 +37,9 @@ public class NextBasePage {
     @FindBy(xpath = "//input[@name='q']")
     public WebElement searchBtn;
 
+    
+
+
 
 //  @FindBy(xpath = "//span[@class='header-search-icon header-search-icon-title']")
 //  public WebElement searchSymbol;
@@ -57,6 +60,9 @@ public class NextBasePage {
 
     @FindBy(xpath = "//*[@id=\"feed-empty-wrap\"]/div")
     public WebElement nothingFoundTitle;
+
+    @FindBy(xpath = "(//span[normalize-space(text()) = 'Calendar'])[1]")
+    public WebElement calendar;
 
 //    public void loginHelpdesk(){
 //        userName.sendKeys(ConfigurationReader.getProperty("helpdesk.username"));

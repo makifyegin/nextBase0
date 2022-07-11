@@ -1,3 +1,4 @@
+
 Feature: Search feature
 
   User Story : Verify that user can't search without providing input

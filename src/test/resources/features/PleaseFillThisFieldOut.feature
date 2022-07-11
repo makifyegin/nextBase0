@@ -1,4 +1,4 @@
-@wip @login @PleaseFillOut
+@login @PleaseFillOut
 Feature: "Please fill out this field" message should be displayed if Username or password input was left empty
 
   US: As a user, I should be able to login, so that I can land on homepage.
