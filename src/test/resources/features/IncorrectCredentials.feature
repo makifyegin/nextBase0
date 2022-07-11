@@ -1,4 +1,4 @@
-@wip @login @IncorrectCred
+ @login @IncorrectCred
 Feature: Entering incorrect email address or password should display "Incorrect login or password"
 
   US: As a user, I should be able to login so that I can land on homepage.

@@ -34,15 +34,11 @@ public class CalendarPage {
     @FindBy(xpath = "//span[text()='akif']")
     public WebElement eventNameFind;
 
-    @FindBy(xpath = "    //span[text()='My Calendar']")
+    @FindBy(xpath = "//span[text()='My Calendar']")
     public WebElement myCalendar;
 
-    @FindBy(xpath = "    //span[text()='Company Calendar']")
+    @FindBy(xpath = "//span[text()='Company Calendar']")
     public WebElement companyCalendar;
-
-
-
-
 
 
 }

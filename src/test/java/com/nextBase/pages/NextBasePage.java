@@ -61,7 +61,7 @@ public class NextBasePage {
     @FindBy(xpath = "//*[@id=\"feed-empty-wrap\"]/div")
     public WebElement nothingFoundTitle;
 
-    @FindBy(xpath = "//span[normalize-space(text()) = 'Calendar']")
+    @FindBy(xpath = "(//span[normalize-space(text()) = 'Calendar'])[1]")
     public WebElement calendar;
 
 //    public void loginHelpdesk(){

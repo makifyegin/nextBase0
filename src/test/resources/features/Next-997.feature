@@ -1,3 +1,4 @@
+@wip
 Feature:  User should be able to display Company Calendar
 
   User Story :
@@ -12,7 +13,7 @@ Feature:  User should be able to display Company Calendar
   @NEXT-997
   Scenario: Verify hat  User can add an event on My Calendar.
 
-    Given "<User>" is on Home page
+    Given "<Hr>" is on Home page
     And Click the Calendar
     And Click the Add event
     And Select the event date and fill out th event name

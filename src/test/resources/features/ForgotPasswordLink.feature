@@ -1,4 +1,4 @@
-@wip @login
+@login
 Feature: Verify that user can see the "Forgot password?" page
 
  US: As a user, I should be able to login, so that I can land on homepage.
