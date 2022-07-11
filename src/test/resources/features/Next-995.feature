@@ -7,10 +7,16 @@ Feature:  User should be able to display Company Calendar
 
   Background: for the scenarios in the feature file, user is expected to be on login page
     Given user is on the next base login page
+    And  "<User>" is on Home page
+    And Click the Calendar
+    And Click the Add event
+    And Select the event date and fill out th event name
+    And Click SAVE\CTRL + ENTER
+
 
 
   @NEXT-995
-  Scenario : Verify that <User> User can display Company Calendar.
+  Scenario : Verify that  User can display Company Calendar.
 
 
 

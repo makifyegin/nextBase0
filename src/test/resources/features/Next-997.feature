@@ -10,7 +10,7 @@ Feature:  User should be able to display Company Calendar
 
 
   @NEXT-997
-  Scenario : Verify hat <User> User can add an event on My Calendar.
+  Scenario : Verify hat  User can add an event on My Calendar.
 
 
 
