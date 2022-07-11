@@ -13,7 +13,7 @@ Feature: Finding related items
   Scenario Outline: Verify that users can find related items to written keyword
   Finding related keyword
 
-    Given <User> is on home page
+    Given "<User>" is on homepage
     When user click search button
     And user search for "task" and clicks enter
     Then verify that  "task" related  can be seen
