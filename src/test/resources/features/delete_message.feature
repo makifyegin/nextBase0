@@ -5,10 +5,10 @@ Feature: NEXT-889
   Background:
     Given User is on nextBase Homepage
 
-  Scenario Outline: Delete message after sending the message
+  Scenario: Delete message after sending the message
 
 
-    Given <User> is on home page
+    Given "HR" is on Home page
     When User clicks Send Message on Homepage
     And User Types My message in the message box
     And User clicks send button
@@ -17,6 +17,3 @@ Feature: NEXT-889
     And User clicks OK on the alert prompt
     Then User can see The post has been deleted message under Activity Stream
 
-    Examples:
-      | User      |
-      | HR        |

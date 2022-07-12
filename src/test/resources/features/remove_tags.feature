@@ -5,10 +5,10 @@ Feature: NEXT-925
   Background:
     Given User is on nextBase Homepage
 
-  Scenario Outline: Remove tags before sending the message
+  Scenario: Remove tags before sending the message
 
 
-    Given <User> is on home page
+    Given "HR" is on Home page
     When User clicks Send Message on Homepage
     And User clicks the tag icon
     And User types tag test
@@ -16,6 +16,3 @@ Feature: NEXT-925
     And User clicks the x sign to remove added tag/s
     Then User should be able to see tags removed
 
-    Examples:
-      | User      |
-      | HR        |

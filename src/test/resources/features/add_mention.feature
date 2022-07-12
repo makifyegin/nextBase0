@@ -5,17 +5,15 @@ Feature: NEXT-889
   Background:
     Given User is on nextBase Homepage
 
-  Scenario Outline: Add mention about only department employees
+  Scenario: Add mention about only department employees
 
-    Given <User> is on home page
+    Given "HR" is on Home page
     When User clicks Send Message on Homepage
     And User mentions about hr76@cybertekschool.com
     Then User should be able to see chosen email address under the Message tab
 
 
-    Examples:
-      | User      |
-      | HR        |
+
 
 
 

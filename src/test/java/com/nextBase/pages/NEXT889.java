@@ -10,7 +10,18 @@ public class NEXT889 {
     public NEXT889(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+/*
+    public NEXT889(WebElement element){
+          element= this.toNext889Elem();
 
+    }
+
+     public WebElement toNext889Elem() {
+       NEXT889 nextObj = new NEXT889();
+       return
+    }
+
+     */
     @FindBy(xpath = "//div[@id='microoPostFormLHE_blogPostForm_inner']")
     public WebElement blogPost;
 

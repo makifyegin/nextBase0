@@ -4,7 +4,9 @@ import com.nextBase.pages.NEXT889;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.mk_latn.No;
 import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -38,8 +40,13 @@ public class Remove_tags {
     @Then("User should be able to see tags removed")
     public void user_should_be_able_to_see_tags_removed() {
 
+        try{
+            Assert.assertFalse(next889.removeTag.isDisplayed());
+        }catch(NoSuchElementException e){
+            System.out.println("Catch NoSuchElement");
+        }
 
-     Assert.assertFalse(next889.removeTag.isDisplayed());
+
 
 
 

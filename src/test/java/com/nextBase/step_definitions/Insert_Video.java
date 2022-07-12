@@ -15,18 +15,18 @@ public class Insert_Video {
 
     NEXT889 next889 = new NEXT889();
 
-    @Given("<User> is on home page")
-    public void user_is_on_home_page() {
-
+    @When("User clicks the {string} video icon")
+    public void user_clicks_the_video_icon(String string, io.cucumber.datatable.DataTable dataTable) {
+        // Write code here that turns the phrase above into concrete actions
+        // For automatic transformation, change DataTable to one of
+        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+        // Double, Byte, Short, Long, BigInteger or BigDecimal.
+        //
+        // For other transformations you can register a DataTableType.
+        throw new io.cucumber.java.PendingException();
     }
-    @When("User clicks the Insert video icon")
-    public void user_clicks_the_insert_video_icon() {
 
-    }
-    @When("User writes {string} on the Video source bar")
-    public void user_paste_https_vimeo_com_link_on_the_video_source_bar(Integer int1) {
-
-    }
     @When("User clicks save button")
     public void user_clicks_save_button() {
 

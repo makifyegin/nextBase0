@@ -26,7 +26,7 @@ public class Add_tag {
         next889.tagIcon.click();
     }
 
-    @When("User types #important in the textbox")
+    @When("User types important in the textbox")
     public void user_types_important_in_the_textbox() {
 
 

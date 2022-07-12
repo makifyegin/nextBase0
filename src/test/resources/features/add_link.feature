@@ -5,9 +5,11 @@ Feature: NEXT-889
   Background:
     Given User is on nextBase Homepage
 
-  Scenario : Add link to specified text
+  Scenario: Add link to specified text
 
     Given "HR" is on Home page
+    When User clicks telephone
+    And User clicks mobile
     And User clicks Send Message on Homepage
     And User clicks link icon on Message box
     And User types in w3 Schools in Text Textbox

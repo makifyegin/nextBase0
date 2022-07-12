@@ -1,6 +1,7 @@
 package com.nextBase.step_definitions;
 
 import com.nextBase.pages.LoginPage;
+import com.nextBase.pages.NEXT889;
 import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -52,7 +53,11 @@ public class Login_StepDefinitions {
         Assert.assertTrue(Driver.getDriver().getTitle().contains(arg0));
     }
 
+    @When("User clicks {toNextObject}")
+    public void userClicksTelephone(NEXT889 telephone) {
 
+
+    }
 
 
 //    @Then("user should see the dashboard")
