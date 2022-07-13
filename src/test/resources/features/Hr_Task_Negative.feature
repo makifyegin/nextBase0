@@ -1,4 +1,5 @@
-Feature: HR user  task  features negative scenarios
+@NEXT-998
+Feature: HR user task features negative scenarios
 	#*US:[NEXT-785]*
 	#
 	#1. As an HR User, I should be able to display All Tasks.
@@ -12,9 +13,6 @@ Feature: HR user  task  features negative scenarios
 	#HR user can create task
 	#
 	#HR user can edit task
-
-  @NEXT-998
-  Scenario:  HR users  can not display  all task , create task and edit task.
 
   Background:
     Given User is on home page
@@ -38,4 +36,4 @@ Feature: HR user  task  features negative scenarios
     And User clicks Project menu
     And User clicks Soccer team
     And User clicks ADD TASK button
-    Then User can not create task recent time.
+    Then Verify that task hasn't been created recent time

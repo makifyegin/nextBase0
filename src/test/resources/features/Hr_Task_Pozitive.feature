@@ -1,5 +1,5 @@
 @NEXT-981
-Feature: Default
+Feature: HR user  task  features
 
 	#*US:* [NEXT-785|http://jira.cydeo.com/browse/NEXT-785]
 	#{color:#de350b}1. As an HR User, I should be able to display All Tasks.{color}
@@ -9,11 +9,6 @@ Feature: Default
 	# * All user types can see the all tasks
 	# * All user types can see the ongoing tasks
 	# *  HR user can create task
-
-
-
-  Scenario: Verify that HR User  can  display all  task , ongoing task and create a task
-Feature: HR user  task  features
 
   Background:
     Given User is on home page

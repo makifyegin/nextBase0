@@ -16,25 +16,23 @@ public class Hr_Task_Negative_StepDefinitions {
     @Given("User  is on home page")
     public void user_is_on_home_page() {
         BasePage.loginAsHR();
-
     }
     @When("User  clicks Tasks button on the home page")
     public void user_clicks_tasks_button_on_the_home_page() {
         hrTaskPage.taskButton.click();
-
     }
     @When("User  clicks NEW TASK button")
     public void user_clicks_new_task_button() {
         hrTaskPage.newTaskButton.click();
-
     }
     @When("User  displays new task page")
     public void user_displays_new_task_page() {
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='side-panel-iframe']")));
         //System.out.println("Driver.getDriver().getCurrentUrl() = " + Driver.getDriver().getCurrentUrl());
         String expectedContainsUrl = "task/edit";
-        Assert.assertTrue(expectedContainsUrl, Driver.getDriver().getCurrentUrl().contains("task/edit"));
 
+        Assert.assertTrue(expectedContainsUrl,
+                Driver.getDriver().getCurrentUrl().contains("task/edit"));
     }
 
     @And("User  clicks ADD TASK button")
@@ -97,7 +95,7 @@ public class Hr_Task_Negative_StepDefinitions {
         hrTaskPage.soccerTeam.click();
     }
 
-    @Then("User can not create task recent time.")
+    @Then("Verify that task hasn't been created recent time")
     public void userCanNotCreateTaskRecentTime() throws InterruptedException {
         Driver.getDriver().switchTo().defaultContent();
         Thread.sleep(2);
