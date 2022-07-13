@@ -9,12 +9,28 @@ Feature: Search feature
 
 
   @NEXT-994
+#  Scenario Outline: Verify that users can't search with non-related characters
+#
+#
+#    Given <User> is on homepage
+#    And clicks search button with non-releated "41356251547471"
+#    Then verify that user has get Nothing found title
+#
+#    Examples:
+#
+#      |User     |
+#      |HR       |
+#      |Helpdesk |
+#      |Marketing|
+
+
   Scenario Outline: Verify that users can't search with non-related characters
 
 
-    Given <User> is on homepage
+    Given "<User>" is on homepage
     And clicks search button with non-releated "41356251547471"
     Then verify that user has get Nothing found title
+
 
     Examples:
 
@@ -22,3 +38,6 @@ Feature: Search feature
       |HR       |
       |Helpdesk |
       |Marketing|
+
+
+

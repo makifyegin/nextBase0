@@ -1,4 +1,4 @@
-@wip @login
+ @login
 Feature: Default
 
 	#2. As a Helpdesk user, I should be able to login; so that I can land on homepage.

@@ -1,4 +1,4 @@
-@wip @login
+ @login
 Feature: Default
 
 	#1. As an HR user, I should be able to login; so that I can land on homepage.

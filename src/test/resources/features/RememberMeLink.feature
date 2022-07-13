@@ -1,4 +1,4 @@
-@wip @login @RememberMe
+@login @RememberMe
 Feature: Remember Me Link is displayed and clickable
 
 	US:As a user, I should be able to login; so that I can land on homepage.

@@ -13,7 +13,7 @@ Feature: Conversation Page feature
   Scenario Outline: Verify that users can see the conversations
   Conversation page is displayed
 
-    Given <User> is on home page
+    Given "<User>" is on homepage
     When user clicks 'Menu' button and 'Conversations' button
     Then verify that user displayes 'Conversations'
 
