@@ -1,4 +1,5 @@
-Feature: Default
+@NEXT-998
+Feature: HR user  task  features negative scenarios
 
 	#*US:[NEXT-785]*
 	#
@@ -14,9 +15,8 @@ Feature: Default
 	#
 	#HR user can edit task
 
-  @NEXT-998
-  Scenario:  HR users  can not display  all task , create task and edit task.
-Feature: HR user  task  features negative scenarios
+
+
   Background:
     Given User  is on home page
     When  User  clicks Tasks button on the home page
@@ -32,13 +32,13 @@ Feature: HR user  task  features negative scenarios
 
   @2
   Scenario: HR User can not create recent
-    When user  clicks on header  and types "almost task ".
-    And user  clicks Text area and types "I'm creating recent  task as a HR user"
-    And User  clicks Deadline dropdown menu
+    When user clicks on header  and types "almost task ".
+    And user clicks Text area and types "I'm creating recent  task as a HR user"
+    And User clicks Deadline dropdown menu
     And user clicks left arrow button on calender.
-    And User  select "10/06/2022" date
-    And User  clicks more menu
-    And User  clicks Project menu
-    And User  clicks Soccer team
-    And User  clicks ADD TASK button
-    Then User can not create task recent time.
+    And User select "10/06/2022" date
+    And User clicks more menu
+    And User clicks Project menu
+    And User clicks Soccer team
+    And User clicks ADD TASK button
+    Then Verify that user can not create task recent time.
