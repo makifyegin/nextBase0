@@ -48,6 +48,7 @@ public class Driver {
                     break;
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
+                    driver=new ChromeDriver();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     driver.manage().window().maximize();
                     break;
