@@ -16,26 +16,38 @@ public class Hr_Task_Pozitive_StepDefinitions {
     HrTaskPage hrTaskPage = new HrTaskPage();
 
 
+
     @Given("User is on home page")
     public void userIsOnHomePage() {
-        BasePage.loginAsHR();
+
+        BasePage.loginAsHR();;
+
     }
 
 
-    @When("User clicks Tasks button on the home page")
+    @Given("User clicks Tasks button on the home page")
     public void userClicksTasksButtonOnTheHomePage() {
         hrTaskPage.taskButton.click();
+
+
+
     }
 
     @When("User verify  display task page")
     public void userVerifyaDisplayTaskPage() {
         String expectedContainUrl = "tasks";
         Assert.assertTrue(expectedContainUrl, Driver.getDriver().getCurrentUrl().contains("tasks"));
+
+
+
+
     }
 
     @And("User clicks All button")
     public void userClicksAllButton() {
         hrTaskPage.allButton.click();
+
+
     }
 
 
@@ -43,11 +55,14 @@ public class Hr_Task_Pozitive_StepDefinitions {
     public void userSeesTasksIsOnTheTaskPage() {
         String allTaskContainsUrl = "SECTION=ADVANCED";
         Assert.assertTrue(allTaskContainsUrl, Driver.getDriver().getCurrentUrl().contains("SECTION=ADVANCED"));
+
     }
 
     @And("User clicks Ongoing button")
     public void userClicksOngoingButton() {
         hrTaskPage.ongoingButton.click();
+
+
     }
 
     @Then("User sees Role:ongoing   on the ongoing task page")
@@ -60,6 +75,11 @@ public class Hr_Task_Pozitive_StepDefinitions {
     @And("User clicks NEW TASK button")
     public void userClicksNEWTASKButton() {
         hrTaskPage.newTaskButton.click();
+
+
+
+
+
     }
 
     @And("User displays new task page")
@@ -68,11 +88,17 @@ public class Hr_Task_Pozitive_StepDefinitions {
         //System.out.println("Driver.getDriver().getCurrentUrl() = " + Driver.getDriver().getCurrentUrl());
         String expectedContainsUrl = "task/edit";
         Assert.assertTrue(expectedContainsUrl, Driver.getDriver().getCurrentUrl().contains("task/edit"));
+
+
+
     }
 
     @And("user clicks on header  and types {string}.")
     public void userClicksOnHeaderAndTypes(String newTask) {
         hrTaskPage.thingsToDo.sendKeys(newTask, Keys.ENTER);
+
+
+
     }
 
     @And("user clicks Text area and types {string}")
@@ -80,34 +106,45 @@ public class Hr_Task_Pozitive_StepDefinitions {
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
         hrTaskPage.textArea.click();
         hrTaskPage.textArea.sendKeys(arg0);
+
+
     }
 
     @And("User clicks Deadline dropdown menu")
     public void userClicksDeadlineDropdownMenu() {
         Driver.getDriver().switchTo().parentFrame();
         hrTaskPage.deadline.click();
-    }
 
+
+
+    }
     @And("User select {string} date")
     public void userSelectDate(String arg0) {
         hrTaskPage.days.click();
         hrTaskPage.selectButton.click();
-    }
 
+
+    }
     @And("User clicks more menu")
     public void userClicksMoreMenu() {
         hrTaskPage.clickMore.click();
-    }
 
+    }
     @And("User clicks Project menu")
-    public void userClicksProjectMenu() {
+    public void userClicksProjectMenu()  {
         hrTaskPage.projectAddButton.click();
+
+
+
     }
 
 
     @And("User clicks Soccer team")
     public void userClicksSoccerTeam() {
         hrTaskPage.soccerTeam.click();
+
+
+
     }
 
     @And("User clicks ADD TASK button")
@@ -116,23 +153,17 @@ public class Hr_Task_Pozitive_StepDefinitions {
 
 
 
-
-
     }
+
 
     @Then("User sees New Task on the task page")
     public void userSeesNewTaskOnTheTaskPage() {
 
-        /*
          Driver.getDriver().switchTo().defaultContent();
         String expectedAttribute="tasks-grid-group-link";
 
-
-        Assert.assertTrue(expectedAttribute,
-                hrTaskPage.
+        Assert.assertTrue(expectedAttribute,hrTaskPage.
                 underSoccerTeamCreatedTask.getAttribute("class").contains("tasks-grid-group-link"));
-
-         */
 
     }
 }

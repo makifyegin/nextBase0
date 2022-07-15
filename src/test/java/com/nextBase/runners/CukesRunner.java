@@ -9,15 +9,15 @@ import org.junit.runner.RunWith;
 
         plugin = {
                 //"pretty",
+                "json:target/cucumber.json",
                 "html:target/cucumber-reports.html",
                 "rerun:target/rerun.txt",
-                "me.jvt.cucumber.report.PrettyReports:target/cucumber",
-                "json:target/cucumber.json"
+                "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features",
         glue = "com/nextBase/step_definitions",
         dryRun = false,
-        tags = "@NEXT-1051",
+        tags = "@NEXT-1035",
         publish = false
 
 
@@ -25,3 +25,5 @@ import org.junit.runner.RunWith;
 
 public class CukesRunner {
 }
+
+
