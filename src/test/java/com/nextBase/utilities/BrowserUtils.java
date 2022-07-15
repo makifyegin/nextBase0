@@ -2,6 +2,10 @@ package com.nextBase.utilities;
 
 
 import org.junit.Assert;
+import org.monte.media.Format;
+import org.monte.media.FormatKeys;
+import org.monte.media.math.Rational;
+import org.monte.screenrecorder.ScreenRecorder;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -9,21 +13,42 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import static org.monte.media.FormatKeys.*;
+import static org.monte.media.VideoFormatKeys.*;
+
 public class BrowserUtils {
+
+
+    //For video recording
+    public static ScreenRecorder screenRecorder;
+
+    public static void startRecording() throws Exception {
+        GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration();
+        screenRecorder = new ScreenRecorder(gc,
+                new Format(MediaTypeKey, FormatKeys.MediaType.FILE, MimeTypeKey, MIME_AVI),
+                new Format(MediaTypeKey, FormatKeys.MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
+                        CompressorNameKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE, DepthKey, 24, FrameRateKey, Rational.valueOf(15), QualityKey, 1.0f, KeyFrameIntervalKey, 15 * 60), new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black", FrameRateKey, Rational.valueOf(30)), null);
+        screenRecorder.start();
+    }
+
+    public static void stopRecording() throws Exception {
+        screenRecorder.stop();
+    }
 
     /*
 This method will accept int (in seconds) and execute Thread.sleep
 for given duration
  */
-    public static void sleep(int second){
-        second *=1000;
+    public static void sleep(int second) {
+        second *= 1000;
         try {
             Thread.sleep(second);
-        }catch (InterruptedException e ) {
+        } catch (InterruptedException e) {
 
         }
     }
@@ -35,7 +60,7 @@ for given duration
         - If condition matches, will break loop.
     Arg3: expectedInTitle to be compared against actualTitle
      */
-    public static void switchWindowAndVerify(String expectedInUrl, String expectedInTitle){
+    public static void switchWindowAndVerify(String expectedInUrl, String expectedInTitle) {
 
         Set<String> allWindowsHandles = Driver.getDriver().getWindowHandles();
 
@@ -45,7 +70,7 @@ for given duration
 
             System.out.println("Current URL: " + Driver.getDriver().getCurrentUrl());
 
-            if (Driver.getDriver().getCurrentUrl().contains(expectedInUrl)){
+            if (Driver.getDriver().getCurrentUrl().contains(expectedInUrl)) {
                 break;
             }
         }
@@ -58,7 +83,7 @@ for given duration
     /*
     This method accepts a String "expectedTitle" and Asserts if it is true
      */
-    public static void verifyTitle(String expectedTitle){
+    public static void verifyTitle(String expectedTitle) {
 
         Assert.assertEquals(Driver.getDriver().getTitle(), expectedTitle);
 
@@ -66,9 +91,10 @@ for given duration
 
     /**
      * This method will accept a String as expected value and verify actual URL CONTAINS the value.
+     *
      * @param expectedInURL
      */
-    public static void verifyURLContains(String expectedInURL){
+    public static void verifyURLContains(String expectedInURL) {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
     }
 
@@ -76,23 +102,24 @@ for given duration
     /**
      * This method will accept a dropdown as a WebElement
      * and return all the options' text in a List of String.
+     *
      * @param dropdownElement
      * @return List<String> actualOptionsAsString
      */
-    public static List<String> dropdownOptionsAsString(WebElement dropdownElement){
+    public static List<String> dropdownOptionsAsString(WebElement dropdownElement) {
         Select select = new Select(dropdownElement);
 
         //List of all ACTUAL month <options> as a web element
         List<WebElement> actualOptionsAsWebElement = select.getOptions();
 
         //List of all ACTUAL month <options> as a string
-        List<String> actualOptionsAsString= new ArrayList<>();
+        List<String> actualOptionsAsString = new ArrayList<>();
 
         for (WebElement each : actualOptionsAsWebElement) {
             actualOptionsAsString.add(each.getText());
         }
 
-        return  actualOptionsAsString;
+        return actualOptionsAsString;
 
     }
 
@@ -100,14 +127,15 @@ for given duration
     /**
      * This method will accept a group radio buttons as a List of WebElement.
      * It will loop through the List, and click to the radio button with provided attributeValue
+     *
      * @param radioButtons
      * @param attributeValue
      */
-    public static void clickRadioButton(List<WebElement> radioButtons, String attributeValue){
+    public static void clickRadioButton(List<WebElement> radioButtons, String attributeValue) {
 
         for (WebElement each : radioButtons) {
 
-            if (each.getAttribute("value").equalsIgnoreCase(attributeValue)){
+            if (each.getAttribute("value").equalsIgnoreCase(attributeValue)) {
                 each.click();
             }
         }
@@ -115,6 +143,7 @@ for given duration
 
     /**
      * Switches to new window by the exact title. Returns to original window if target title not found
+     *
      * @param targetTitle
      */
     public static void switchToWindow(String targetTitle) {
@@ -371,6 +400,7 @@ for given duration
 
     /**
      * Highlighs an element by changing its background and border color
+     *
      * @param element
      */
     public static void highlight(WebElement element) {
@@ -466,8 +496,9 @@ for given duration
     }
 
     /**
-     *  checks that an element is present on the DOM of a page. This does not
-     *    * necessarily mean that the element is visible.
+     * checks that an element is present on the DOM of a page. This does not
+     * * necessarily mean that the element is visible.
+     *
      * @param by
      * @param time
      */
