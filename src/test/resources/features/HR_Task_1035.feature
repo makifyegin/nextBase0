@@ -1,4 +1,4 @@
-Feature: Default
+Feature:HR user high priority task feature
 
 	#*US:*{color:#de350b} {color}NEXT-1011
 	#{color:#de350b}1. HR User can create a high priority task in duration of the certain deadline by mentioning about a user.{color}
@@ -26,23 +26,20 @@ Feature: Default
 	#9. In the 11th AC, "Responsible person can change deadline", "Approve task when completed" Options should be checked.
   @NEXT-1035
   Scenario: Verify that  HR User can create a high priority task in duration of the certain deadline by mentioning about a user
-Feature : HR user high priority task feature
 
-  Scenario: HR User Displays Create Task  Verification
     Given User is on home page
     When  User clicks Tasks button on the home page
     And User verify  display task page
     And User clicks NEW TASK button
     And User displays new task page
     And user clicks on header  and types "high priority task"
-    And user clicks High Priority button
-    And user clicks Created by button
-    And user clicks Text area and types "I'm creating high priority task as a HR user"
+    And User clicks High Priority button
+    And user clicks Text area and types "I'm creating new task as a HR user"
+    And User clicks Created by button
     And User clicks Deadline dropdown menu
     And User selects "31/07/2022" date
     And User clicks Project menu
     And User clicks Soccer team
-    And User clicks more menu
     And User clicks ADD TASK button
 
     Then Verify that "high priority task" on the task page

@@ -98,6 +98,19 @@ public class HrTaskPage extends LoginPage {
     @FindBy(xpath = " //a[@href='/company/personal/user/693/tasks/task/view/974/']")
     public WebElement lastTaskAssertion;
 
+    //input[@id="tasks-task-priority-cb"]
+    @FindBy(xpath = "//input[@id='tasks-task-priority-cb']")
+    public WebElement highPriority;
+
+    @FindBy(xpath = "(//span[@data-target='originator'])[1]")
+    public WebElement createdByButton;
+
+
+    @FindBy(xpath = "//a[@data-date='1659225600000']")
+    public WebElement getDate31ThJun;
+
+
+
 
 
 

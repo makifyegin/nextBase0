@@ -11,10 +11,6 @@ Feature: HR user  task  features
 	# *  HR user can create task
 
 
-
-
-
-
   Background:
     Given User is on home page
     When User clicks Tasks button on the home page
