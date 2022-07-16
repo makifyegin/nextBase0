@@ -39,6 +39,7 @@ Feature: NextBase App appreciation feature
 
   Scenario: User should be able to add mention by clicking on the Add mention icon.
     When
+
   Scenario: User should be able to send appreciation.
 
 
