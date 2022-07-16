@@ -108,11 +108,12 @@ public class Hr_Task_Pozitive_StepDefinitions {
         hrTaskPage.textArea.sendKeys(arg0);
 
 
+
     }
 
     @And("User clicks Deadline dropdown menu")
     public void userClicksDeadlineDropdownMenu() {
-        Driver.getDriver().switchTo().parentFrame();
+        //Driver.getDriver().switchTo().frame(hrTaskPage.newTaskPageIframe);
         hrTaskPage.deadline.click();
 
 
