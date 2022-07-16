@@ -2,9 +2,15 @@ package com.nextBase.pages;
 
 import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NextBasePage {
 
@@ -82,4 +88,103 @@ public class NextBasePage {
 //        passWord.sendKeys(ConfigurationReader.getProperty("nextBase.password"));
 //        loginBtn.click();
 //    }
+
+
+    ///////////////////////////////SPRINT 4 /////////////////////////////////////////////////
+
+
+    @FindBy(xpath = "//span[@id='feed-add-post-form-tab-message']")
+    public WebElement messageButton;
+
+
+    @FindBy(xpath = "//span[@id='bx-b-uploadfile-blogPostForm']")
+    public WebElement uploadedIcon;
+
+
+    @FindBy(xpath = "(//div[@class='diskuf-uploader'])[1]")
+    public WebElement uploadedFileAndImages;
+
+    @FindBy(xpath = "//*[@id=\"bx-b-link-blogPostForm\"]/span/i")
+    public WebElement uploadedLink;
+
+    @FindBy(xpath = "//*[@id=\"bx-b-video-blogPostForm\"]/span/i")
+    public WebElement insertVideo;
+
+    @FindBy(xpath = "//input[@id=\"video_idPostFormLHE_blogPostForm-source\"]")
+    public WebElement videoURL;
+
+    @FindBy(xpath = "/html/body/span/img")
+    public WebElement videoTitle;
+
+
+    @FindBy(xpath = "//*[@id=\"bx-b-quote-blogPostForm\"]/span/i")
+    public WebElement addQuote;
+
+    @FindBy(xpath = "/html/body/blockquote")
+    public WebElement Quote;
+
+    @FindBy(xpath = "//span[@id='bx-b-mention-blogPostForm']")
+    public WebElement addMention;
+
+    @FindBy(xpath = "//button[@id='blog-submit-button-save']")
+    public WebElement sendButton;
+
+    @FindBy(xpath = "//span[@id='feed-add-post-destination-item']")
+    public WebElement contact;
+
+    @FindBy(xpath= "//div[@class=\"bx-finder-box-tabs\"]/a[3]")
+    public WebElement employeeAndDepartmentButton;
+
+    @FindBy(xpath = "//div[@class='bx-finder-company-department-employee-name']")
+    public List<WebElement>oneContact;
+
+
+    @FindBy(xpath = "//input[@id='linkidPostFormLHE_blogPostForm-text']")
+    public WebElement linkText;
+
+
+    @FindBy(xpath = "//input[@id='linkidPostFormLHE_blogPostForm-href']")
+    public WebElement linkURL;
+
+
+    @FindBy(xpath = "//input[@id='undefined']")
+    public WebElement saveButton;
+
+
+    @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
+    public WebElement iframe;
+
+    @FindBy(xpath = "/html/body/a")
+    public WebElement cydeoLink;
+
+
+    @FindBy(xpath = "//div[@class='bx-finder-box-item-t7-name']")
+    public List<WebElement>oneOfMention;
+
+
+
+    @FindBy(xpath = "//span[@class='bx-finder-groupbox-content']/a")
+    public WebElement contactList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
