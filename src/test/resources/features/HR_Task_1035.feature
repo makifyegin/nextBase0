@@ -35,11 +35,15 @@ Feature:HR user high priority task feature
     And user clicks on header  and types "high priority task"
     And User clicks High Priority button
     And user clicks Text area and types "I'm creating new task as a HR user"
-    And User clicks Created by button
+    And user clicks Add more menu
+    And user clicks "responsible person" and clicks pop up button
     And User clicks Deadline dropdown menu
     And User selects "31/07/2022" date
+    And User clicks more menu
     And User clicks Project menu
     And User clicks Soccer team
+    And user clicks time tracking button.
+    And user clicks hours button and writes "2" on the time tracking
+    And user clikcs minutes button and writes "30" on the time tracking
     And User clicks ADD TASK button
-
     Then Verify that "high priority task" on the task page
