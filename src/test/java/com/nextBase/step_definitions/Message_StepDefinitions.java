@@ -4,6 +4,7 @@ import com.nextBase.pages.NextBasePage;
 import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
