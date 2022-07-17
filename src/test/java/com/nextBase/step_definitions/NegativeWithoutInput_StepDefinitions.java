@@ -15,7 +15,12 @@ public class NegativeWithoutInput_StepDefinitions {
     String currentURLAfter = "";
 
 
+    @Given("{string} is on homepage")
+    public void hr_is_on_homepage() {
 
+        //nextBasePage.loginHR();
+        BasePage.loginAsHR();
+    }
     @Given("clicks search button without providing input")
     public void clicks_search_button_without_providing_input() {
         // nextBasePage.searchBtn.click();
@@ -32,28 +37,21 @@ public class NegativeWithoutInput_StepDefinitions {
 
     }
 
-    //    @Given("HR is on homepage")
-//    public void hr_is_on_homepage() {
-//
-//        //nextBasePage.loginHR();
-//        BasePage.loginAsHR();
-//    }
+
+    @Given("Helpdesk is on homepage")
+    public void helpdesk_is_on_homepage() {
+
+        //nextBasePage.loginHelpdesk();
+        BasePage.loginAsHelpdesk();
+    }
 
 
-//    @Given("Helpdesk is on homepage")
-//    public void helpdesk_is_on_homepage() {
-//
-//        //nextBasePage.loginHelpdesk();
-//        BasePage.loginAsHelpdesk();
-//    }
-//
-//
-//
-//    @Given("Marketing is on homepage")
-//    public void marketing_is_on_homepage() {
-//
-//        //nextBasePage.loginMarketing();
-//        BasePage.loginAsMarketing();
-//    }
+
+    @Given("Marketing is on homepage")
+    public void marketing_is_on_homepage() {
+
+        //nextBasePage.loginMarketing();
+        BasePage.loginAsMarketing();
+    }
 
 }
