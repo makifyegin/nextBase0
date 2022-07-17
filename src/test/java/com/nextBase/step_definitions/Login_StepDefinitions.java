@@ -1,24 +1,12 @@
 package com.nextBase.step_definitions;
 
 import com.nextBase.pages.LoginPage;
-import com.nextBase.pages.NEXT889;
-import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import org.junit.Assert;
-import org.junit.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-
-import java.util.concurrent.TimeUnit;
-
-import java.util.concurrent.TimeUnit;
 
 public class Login_StepDefinitions {
 
@@ -53,11 +41,7 @@ public class Login_StepDefinitions {
         Assert.assertTrue(Driver.getDriver().getTitle().contains(arg0));
     }
 
-    @When("User clicks {toNextObject}")
-    public void userClicksTelephone(NEXT889 telephone) {
 
-
-    }
 
 
 //    @Then("user should see the dashboard")

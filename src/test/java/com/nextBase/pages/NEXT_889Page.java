@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class NEXT889 {
+public class NEXT_889Page {
 
-    public NEXT889(){
+    public NEXT_889Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 /*

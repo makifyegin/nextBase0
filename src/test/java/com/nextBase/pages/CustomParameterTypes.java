@@ -3,7 +3,7 @@ package com.nextBase.pages;
 import io.cucumber.java.ParameterType;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebElement;
-
+/*
 public class CustomParameterTypes {
 
     @ParameterType(".*")
@@ -11,3 +11,5 @@ public class CustomParameterTypes {
         return new NEXT889(element);
     }
 }
+
+ */
