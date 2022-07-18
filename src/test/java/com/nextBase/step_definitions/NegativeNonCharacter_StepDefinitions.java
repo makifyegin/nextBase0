@@ -33,6 +33,7 @@ public class NegativeNonCharacter_StepDefinitions {
     @Given("User is on homepage")
     public void is_on_homepage(DataTable dataTable) {
         dataTable.asLists().get(0).toString().toUpperCase().contains("HR");
+        dataTable.asMap().get("USER").contains("HR");// dataTable should start with USER - And, not sure if it's gonna work
     }
     @Given("clicks search button with non-releated {string}")
     public void clicks_search_button_with_non_releated(String string) {
