@@ -41,4 +41,13 @@ public class CalendarPage {
     public WebElement companyCalendar;
 
 
+    @FindBy(xpath = "(//input[@tabindex='1'])[1]")
+    public WebElement filterAndSearch;
+
+    @FindBy(xpath = "//div[@class = 'calendar-timeline-stream-content-event-name']")
+    public WebElement calendarTimeLine;
+
+
+    //div[@class = 'calendar-timeline-stream-content-event-name']
+
 }
