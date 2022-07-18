@@ -20,8 +20,6 @@ Feature:  User should be able to display Company Calendar
   Scenario: Verify that  User can display Company Calendar.
 
 
-
-    Given "hr" is on homepage
     When Click the Calendar
     And Click the Company Calendar
     Then Verify that User can see all the events belong to this Company.

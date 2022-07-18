@@ -2,10 +2,13 @@ package com.nextBase.step_definitions;
 
 import com.nextBase.pages.CalendarPage;
 import com.nextBase.pages.NextBasePage;
+import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 public class CalendarStepDefinitions {
 
@@ -43,6 +46,7 @@ public class CalendarStepDefinitions {
 
     @Then("Verify that User can see your new event on the calendar.")
     public void verify_that_user_can_see_your_new_event_on_the_calendar() {
+        System.out.println();
 
     }
 
@@ -70,6 +74,21 @@ public class CalendarStepDefinitions {
     @And("Click Save")
     public void clickSave() {
         calendarPage.calendarSliderSaveButton.click();
+
+    }
+
+    @And("Click the Filter and Search")
+    public void clickTheFilterAndSearch() {
+        calendarPage.filterAndSearch.click();
+
+    }
+
+    @And("Write on your event name")
+    public void writeOnYourEventName() {
+        calendarPage.filterAndSearch.sendKeys("akif");
+
+        calendarPage.filterAndSearch.sendKeys(Keys.ENTER);
+
 
     }
 }
