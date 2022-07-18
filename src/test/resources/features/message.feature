@@ -6,8 +6,10 @@ Feature: Uploaded feature
   Accounts are : HR , Helpdesk , Marketing
 
   Background: For the scenarios in the feature file, user is expected to be on login page
-    Given "User" is on homepage
-      | HR |  | Marketing |  | helpdesk |
+    Given User is on homepage
+      | HR |
+      | Marketing |
+      | helpdesk |
     When user clicks 'MESSAGE' button
 #What should we write here to login with three users at the same time inside the background. it's like a preconditions.
 
