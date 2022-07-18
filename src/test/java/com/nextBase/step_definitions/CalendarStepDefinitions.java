@@ -46,7 +46,8 @@ public class CalendarStepDefinitions {
 
     @Then("Verify that User can see your new event on the calendar.")
     public void verify_that_user_can_see_your_new_event_on_the_calendar() {
-        System.out.println();
+        System.out.println("calendarPage.calendarTimeLine.getText().contains(\"akif\") = " + calendarPage.calendarTimeLine.getText().contains("akif"));
+
 
     }
 

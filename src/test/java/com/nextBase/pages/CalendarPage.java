@@ -48,6 +48,6 @@ public class CalendarPage {
     public WebElement calendarTimeLine;
 
 
-    //div[@class = 'calendar-timeline-stream-content-event-name']
+
 
 }
