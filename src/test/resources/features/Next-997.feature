@@ -21,4 +21,7 @@ Feature:  User should be able to display Company Calendar
     When Click the Calendar
     And Click the MyCalendar
     Then Verify that User can see your new event on the calendar.
+    And Click the Filter and Search
+    And Write on your event name
+    And Verify that User can see your new event on the calendar.
 
