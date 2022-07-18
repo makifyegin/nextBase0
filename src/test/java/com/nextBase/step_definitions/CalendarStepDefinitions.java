@@ -66,4 +66,10 @@ public class CalendarStepDefinitions {
     public void clickTheCompanyCalendar() {
         calendarPage.companyCalendar.click();
     }
+
+    @And("Click Save")
+    public void clickSave() {
+        calendarPage.calendarSliderSaveButton.click();
+
+    }
 }
