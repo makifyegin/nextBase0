@@ -32,6 +32,9 @@ public class AppreciationPage {
     @FindBy(xpath = "//a[@rel='U512']/div[@class='bx-finder-company-department-employee-info']")
     public WebElement helpdesk22User;
 
+    @FindBy(xpath = "//span[@class='popup-window-close-icon']")
+    public WebElement closeUserTab;
+
     @FindBy(xpath = "//span[@class='bxhtmled-top-bar-btn bxhtmled-button-link']/i")
     public WebElement linkIcon;
 
