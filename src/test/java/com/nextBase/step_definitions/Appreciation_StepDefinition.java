@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import com.github.javafaker.HarryPotter;
 import com.nextBase.pages.AppreciationPage;
 import com.nextBase.pages.BasePage;
+import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -70,7 +71,7 @@ public class Appreciation_StepDefinition {
         appreciationPage.helpdesk22User.click();
     }
 
-    //------3rd Scenario------------//
+    //------3rd Scenario------DONE------//
 
     @When("user clicks link icon")
     public void userClicksLinkIcon() {
@@ -79,7 +80,7 @@ public class Appreciation_StepDefinition {
 
     @When("user paste link url to link bar")
     public void userPasteLinkUrlToLinkBar() {
-        ConfigurationReader.getProperty("linkURL");
+        appreciationPage.linkURLBar.sendKeys(ConfigurationReader.getProperty("linkURL"));
     }
 
     @And("user clicks to Save button")
@@ -87,11 +88,20 @@ public class Appreciation_StepDefinition {
         appreciationPage.saveVideoLink.click();
     }
 
-    @Then("user should see link url under Appreciation")
-    public void userShouldSeeLinkUrlUnderAppreciation() {
+    @And("send link to Appreciation page")
+    public void sendLinkToAppreciationPage() {
+        appreciationPage.sendButton.click();
     }
 
-    //------4th Scenario------------//
+    @Then("verify that user can see link")
+    public void verifyThatUserCanSeeLink() {
+        WebElement link= Driver.getDriver().findElement(By.xpath("(//a[.='https://jira.cydeo.com/browse/NEXT-1016'])[1]"));
+        System.out.println("link.isDisplayed() = " + link.isDisplayed());
+    }
+
+
+
+    //------4th Scenario--------!!problem after passing link----//
 
     @When("user clicks Insert video icon")
     public void userClicksInsertVideoIcon() {
@@ -106,6 +116,7 @@ public class Appreciation_StepDefinition {
     @And("user insert video link and click save")
     public void userInsertVideoLinkAndClickSave() {
         appreciationPage.videoLinkBar.sendKeys(ConfigurationReader.getProperty("VimeoLink"));
+        BrowserUtils.waitFor(5);
         appreciationPage.saveVideoLink.click();
     }
 
@@ -162,4 +173,6 @@ public class Appreciation_StepDefinition {
         WebElement helpdeskUser= Driver.getDriver().findElement(By.xpath("//a[@rel='U512']/div[@class='bx-finder-company-department-employee-info']"));
         System.out.println("helpdeskUser.isDisplayed() = " + helpdeskUser.isDisplayed());
     }
+
+
 }
