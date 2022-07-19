@@ -17,14 +17,14 @@ Feature:  User should be able to display Company Calendar
   @NEXT-995
   Scenario: Verify that  User can display Company Calendar.
 
-
-    When Click the Calendar
-    And Click the Company Calendar
+    
+    When Click the Company Calendar
     Then Verify that User can see all the events belong to this Company.
 
 
   @NEXT-996
 
   Scenario: Verify that  User can display My Calendar.
-    And Click the Calendar
+
+
     Then Verify that User can see the my calendar on the page.
