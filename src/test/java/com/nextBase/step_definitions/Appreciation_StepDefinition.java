@@ -1,12 +1,17 @@
 package com.nextBase.step_definitions;
 
+import com.github.javafaker.Faker;
+import com.github.javafaker.HarryPotter;
 import com.nextBase.pages.AppreciationPage;
 import com.nextBase.pages.BasePage;
 import com.nextBase.utilities.ConfigurationReader;
+import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class Appreciation_StepDefinition {
 
@@ -31,7 +36,7 @@ public class Appreciation_StepDefinition {
         appreciationPage.appreciationButton.click();
     }
 
-/*
+
     //***look here missing part
     @When("user clicks upload files icon")
     public void user_clicks_upload_files_icon() {
@@ -47,8 +52,6 @@ public class Appreciation_StepDefinition {
     public void user_should_see_pictures_files() {
 
     }
-
- */
 
     //------2nd Scenario------------//
 
@@ -102,7 +105,7 @@ public class Appreciation_StepDefinition {
 
     @And("user insert video link and click save")
     public void userInsertVideoLinkAndClickSave() {
-        //insert video link
+        appreciationPage.videoLinkBar.sendKeys(ConfigurationReader.getProperty("VimeoLink"));
         appreciationPage.saveVideoLink.click();
     }
 
@@ -110,19 +113,53 @@ public class Appreciation_StepDefinition {
     public void userShouldSeeSavedVideoUnderAppreciation() {
     }
 
-    //------5th Scenario------------//
+
+    //------5th Scenario------done------//
 
 
+    Faker faker= new Faker();
+
+    @When("user clicks quote text icon")
+    public void userClicksQuoteTextIcon() {
+        appreciationPage.quoteIcon.click();
+        Driver.getDriver().switchTo().frame(0);
+    }
+
+    @And("user types quote in text bar")
+    public void userTypesQuoteInTextBar() {
+        HarryPotter harryPotter = faker.harryPotter();
+        appreciationPage.quoteInputBar.sendKeys(harryPotter.quote());
+        Driver.getDriver().switchTo().parentFrame();
+    }
+
+    @Then("user should send quote")
+    public void userShouldSendQuote() {
+        appreciationPage.sendButton.click();
+    }
 
 
+    //------6th Scenario------done------//
+
+    @When("user clicks Add Mention icon")
+    public void userClicksAddMentionIcon() {
+        appreciationPage.addMentionIcon.click();
+    }
 
 
+    @And("user clicks Employees and departments button")
+    public void userClicksEmployeesAndDepartmentsButton() {
+        appreciationPage.employeesAndDepartments.click();
+    }
 
+    @Then("user should click one user from the list and send appreciation")
+    public void userShouldClickOneUserFromTheListAndSendAppreciation() {
+        appreciationPage.helpdesk22User.click();
+        appreciationPage.sendButton.click();
+    }
 
-
-
-
-
-
-
+    @Then("verify that user can see sent mention.")
+    public void verifyThatUserCanSeeSentMention() {
+        WebElement helpdeskUser= Driver.getDriver().findElement(By.xpath("//a[@rel='U512']/div[@class='bx-finder-company-department-employee-info']"));
+        System.out.println("helpdeskUser.isDisplayed() = " + helpdeskUser.isDisplayed());
+    }
 }
