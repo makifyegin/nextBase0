@@ -80,6 +80,13 @@ public class CalendarPage {
     @FindBy(xpath = "//*[@id='calendar_slider_820357_private']")
     public WebElement privateEventInput;
 
+    @FindBy(xpath = "//span[@class='calendar-field-colorpicker-color-item-more-link']")
+    public WebElement otherColorSelect;
+
+    @FindBy(xpath = "//span[@class='calendar-field-colorpicker-color-item-more-link']")
+    public WebElement NavyBlueColor;
+
+
 
 
 
