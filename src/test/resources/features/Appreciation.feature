@@ -7,16 +7,18 @@ Feature: NextBase App appreciation feature
   Background: user is on Activity Stream
     Given "hr" is on Home page and clicks Appreciation button from More  dropdown menu
 
-
+  @file  #ASK
   Scenario: User should be able to click on upload files icon to upload files and pictures from local disks.
     When user clicks upload files icon
     And user clicks Upload files and images
     Then user should see Pictures files
 
+  @addUser #DONE BUT ASK BUG? NOT? WITHOUT PASSING STH, IT DOESN'T SEND
   Scenario: User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
     When user clicks Add More button
     And user clicks Employees and departments
-    Then user should see multiple contacts and add one of them
+    And user should see multiple contacts and add one of them
+    Then send added user to Activity Stream and verify if it's displayed or not
 
   @link #done
   Scenario: User should be able to attach link by clicking on the link icon.
@@ -26,7 +28,7 @@ Feature: NextBase App appreciation feature
     And send link to Appreciation page
     Then verify that user can see link
 
-  @video #passed, but does not add video link
+  @video #passed, but problem after passing link url
   Scenario: User should be able to insert videos by clicking on the video icon and entering the video URL.
     When user clicks Insert video icon
     And user clicks video source bar

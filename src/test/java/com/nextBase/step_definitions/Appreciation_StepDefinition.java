@@ -37,8 +37,8 @@ public class Appreciation_StepDefinition {
         appreciationPage.appreciationButton.click();
     }
 
+    //-----------1nd Scenario-------!!!!!!!!!!!!!!!!-----//
 
-    //***look here missing part
     @When("user clicks upload files icon")
     public void user_clicks_upload_files_icon() {
         appreciationPage.uploadFilesIcon.click();
@@ -48,13 +48,16 @@ public class Appreciation_StepDefinition {
     @When("user clicks Upload files and images")
     public void user_clicks_upload_files_and_images() {
         appreciationPage.uploadFilesAndImagesButton.click();
+        String filePath= "\u202AC:\\Users\\44739\\OneDrive\\Desktop\\Project Check";
+        appreciationPage.uploadFilesAndImagesButton.sendKeys(filePath);
     }
     @Then("user should see Pictures files")
     public void user_should_see_pictures_files() {
 
+
     }
 
-    //------2nd Scenario------------//
+    //------2nd Scenario----PASSED, BUT IT DOES NOT SEND IT BEFORE TYPING STH IN, ASK BUG?--------//
 
     @When("user clicks Add More button")
     public void userClicksAddMoreButton() {
@@ -66,9 +69,16 @@ public class Appreciation_StepDefinition {
         appreciationPage.employeesAndDepartments.click();
     }
 
-    @Then("user should see multiple contacts and add one of them")
+    @And("user should see multiple contacts and add one of them")
     public void userShouldSeeMultipleContactsAndAddOneOfThem() {
         appreciationPage.helpdesk22User.click();
+        appreciationPage.closeUserTab.click();
+    }
+
+    @Then("send added user to Activity Stream and verify if it's displayed or not")
+    public void sendAddedUserToActivityStreamAndVerifyIfItSDisplayedOrNot() {
+        appreciationPage.sendButton.click();
+        //WebElement addedUser= Driver.getDriver().findElement(By.xpath(""));
     }
 
     //------3rd Scenario------DONE------//
@@ -173,6 +183,7 @@ public class Appreciation_StepDefinition {
         WebElement helpdeskUser= Driver.getDriver().findElement(By.xpath("//a[@rel='U512']/div[@class='bx-finder-company-department-employee-info']"));
         System.out.println("helpdeskUser.isDisplayed() = " + helpdeskUser.isDisplayed());
     }
+
 
 
 }
