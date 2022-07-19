@@ -8,11 +8,10 @@ Feature: NextBase App appreciation feature
     Given "hr" is on Home page and clicks Appreciation button from More  dropdown menu
 
 
-
-#  Scenario: User should be able to click on upload files icon to upload files and pictures from local disks.
-#    When user clicks upload files icon
-#    And user clicks Upload files and images
-#    Then user should see Pictures files
+  Scenario: User should be able to click on upload files icon to upload files and pictures from local disks.
+    When user clicks upload files icon
+    And user clicks Upload files and images
+    Then user should see Pictures files
 
   Scenario: User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
     When user clicks Add More button
@@ -25,22 +24,26 @@ Feature: NextBase App appreciation feature
     And user clicks to Save button
     Then user should see link url under Appreciation
 
-    @video
+    @video #passed, but does not add video link
   Scenario: User should be able to insert videos by clicking on the video icon and entering the video URL.
     When user clicks Insert video icon
     And user clicks video source bar
     And user insert video link and click save
     Then user should see saved video under Appreciation
 
+  @quote #done
   Scenario: User should be able to create a quote by clicking on the Comma icon.
     When user clicks quote text icon
     And user types quote in text bar
-    #missing part
+    Then user should send quote
 
+  @mention #done
   Scenario: User should be able to add mention by clicking on the Add mention icon.
-    When
+    When user clicks Add Mention icon
+    And user clicks Employees and departments button
+    Then user should click one user from the list and send appreciation
+    Then verify that user can see sent mention.
 
-  Scenario: User should be able to send appreciation.
 
 
 
