@@ -44,10 +44,12 @@ public class CalendarPage {
     @FindBy(xpath = "(//input[@tabindex='1'])[1]")
     public WebElement filterAndSearch;
 
+
     @FindBy(xpath = "//div[@class = 'calendar-timeline-stream-content-event-name']")
     public WebElement calendarTimeLine;
 
-
+    @FindBy(xpath = "//input[@name = 'skip_time']")
+    public WebElement allDayCheckBox;
 
 
 }
