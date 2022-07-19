@@ -86,6 +86,9 @@ public class CalendarPage {
     @FindBy(xpath = "//span[@class='calendar-field-colorpicker-color-item-more-link']")
     public WebElement NavyBlueColor;
 
+    @FindBy(xpath = "//div[@class='calendar-timeline-stream-content-event-name']")
+    public WebElement eventName;
+
 
 
 
