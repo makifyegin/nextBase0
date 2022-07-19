@@ -11,12 +11,13 @@ import org.junit.runner.RunWith;
                 //"pretty",
                 "html:target/cucumber-reports.html",
                 "rerun:target/rerun.txt",
-                "me.jvt.cucumber.report.PrettyReports:target/cucumber"
+                "me.jvt.cucumber.report.PrettyReports:target/cucumber",
+                "json:target/cucumber.json"
         },
         features = "src/test/resources/features",
         glue = "com/nextBase/step_definitions",
         dryRun = false,
-        tags = "@NEXT-997",
+        tags = "@NEXT-995",
         publish = false
 
 

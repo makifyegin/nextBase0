@@ -16,7 +16,6 @@ public class CalendarPage {
     public WebElement add;
 
 
-
     @FindBy(xpath = "(//*[@class='calendar-field calendar-field-datetime'])[1]")
     public WebElement dateFromInput;
 
@@ -50,6 +49,18 @@ public class CalendarPage {
 
     @FindBy(xpath = "//input[@name = 'skip_time']")
     public WebElement allDayCheckBox;
+
+    @FindBy(xpath = "(//div[@class='calendar-timeline-stream-section-wrap'])[2]")
+    public WebElement calenderCompanyEvents;
+
+
+    @FindBy(xpath = "//input[@id ='calendar_slider_200334_important' ]")
+    public WebElement thisEventIsImportant;
+
+
+
+    @FindBy(xpath = "    //select[@name='EVENT_RRULE[FREQ]' ]")
+    public WebElement repeatSelector;
 
 
 }
