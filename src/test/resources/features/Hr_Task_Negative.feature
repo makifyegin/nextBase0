@@ -1,4 +1,5 @@
 @NEXT-998
+
 Feature: HR user  task  features negative scenarios
 
 	#*US:[NEXT-785]*
@@ -15,20 +16,16 @@ Feature: HR user  task  features negative scenarios
 	#
 	#HR user can edit task
 
-
-
   Background:
-    Given User  is on home page
-    When  User  clicks Tasks button on the home page
-    And User  clicks NEW TASK button
-    And User  displays new task page
-
+    Given User is on home page
+    When User clicks Tasks button on the home page
+    And User clicks NEW TASK button
+    And User displays new task page
 
   @1
   Scenario: HR User can not create  new task without any input
-    When User  clicks ADD TASK button
+    When User clicks ADD TASK button
     Then User displays "The task name is not specified."
-
 
   @2
   Scenario: HR User can not create recent
@@ -41,4 +38,7 @@ Feature: HR user  task  features negative scenarios
     And User clicks Project menu
     And User clicks Soccer team
     And User clicks ADD TASK button
-    Then Verify that user can not create task recent time.
+
+   
+
+    Then Verify that task hasn't been created recent time

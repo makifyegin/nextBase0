@@ -8,10 +8,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
 
-        glue = "com/nextBase/stepdefinitions",
+        glue = {"com/nextBase/stepdefinitions","com/nextBase/failedTestHooks"},
         features = "@target/rerun.txt"
 
 )
 public class FailedTestRunner {
+
 
 }

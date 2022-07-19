@@ -8,20 +8,22 @@ Feature: CRM app login feature
   User Story:
   As an HR user, I should be able to login; so that I can land on homepage.
 
+  Background
+    Given user is on login page
+
   @HR
   Scenario: Login as HR
     When user enters username "hr1@cybertekschool.com"
     And user enters password "UserUser"
     And user clicks to login button
     Then user should see the "Portal"
-    
+
   @Helpdesk
   Scenario: Login as Helpdesk
     When user enters username "helpdesk1@cybertekschool.com"
     And user enters password "UserUser"
     And user clicks to login button
-    Then user should see the "Portal"
-    
+
   @Marketing
   Scenario: Login as Marketing
     When user enters username "marketing1@cybertekschool.com"
