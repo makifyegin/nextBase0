@@ -4,21 +4,20 @@ Feature: NEXT-1014
 
   Background:
 
-    Given User is on nextBase Homepage
+    When "HR" is on Home page
+    And user clicks employees
+
 
 
     Scenario: Display company structure
 
-    Given "HR" is on Home page
-    When user clicks employees
+    When user clicks on company structure
     Then user can see company structure
 
 
   Scenario: Add a department
 
-    Given "HR" is on Home page
-    When user clicks employees
-    And user adds department
+    When user adds department
     And user adds Taskmaster as department name
     And user clicks add
     Then user can see the name of the newly created department
@@ -26,18 +25,14 @@ Feature: NEXT-1014
 
     Scenario: Find employees by search box
 
-    Given "HR" is on Home page
-    When user clicks employees
-    And user clicks Find Employees
+    When user clicks Find Employees
     And user types dada in the search box
     Then user can see dada employee info displayed
 
 
     Scenario: Find employees by search by Alphabet
 
-    Given "HR" is on Home page
-    When user clicks employees
-    And user clicks Find Employees
+    When user clicks Find Employees
     And user clicks Search By Alphabet button
     And user clicks the letter D
     Then user can see employee info
@@ -45,17 +40,33 @@ Feature: NEXT-1014
 
   Scenario: Export the employee list
 
-    Given "HR" is on Home page
-    And user clicks employees
-    And user clicks Find Employees
+    When user clicks Find Employees
     And user clicks the more button
     And user clicks Export to Excel
     Then user can see the file in download
-  @wip
+
+
   Scenario: Display the telephone directory
 
-    Given "HR" is on Home page
-    When user clicks employees
-    And user clicks Find Employees
-    And user clicks telephone directory
+    When user clicks telephone directory
     Then user can see the telephone directory displayed
+
+  @wip
+  Scenario: Display company structure
+
+
+    When user clicks telephone directory
+    And user clicks employee Moussa
+    And user clicks send message button
+    And user types a random message
+    And user clicks enter
+    And user press enter key
+    And user clicks close
+    And user logout
+    And user enter Moussa's username
+    And user enter Moussa's password
+    And user clicks message avatar
+    Then user verify that the message has been received
+
+
+

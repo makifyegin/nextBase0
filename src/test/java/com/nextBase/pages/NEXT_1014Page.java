@@ -56,6 +56,49 @@ public class NEXT_1014Page {
     @FindBy(id = "pagetitle")
     public WebElement telephoneDirectoryPageTitle;
 
+    @FindBy(xpath = "//a[@id='anchor_o1Jh0Eb1']")
+    public WebElement moussaLink;
+
+    @FindBy(css = "span[class='webform-small-button-text']")
+    public WebElement sendMessageButton;
+
+    @FindBy(css = "textarea[class='bx-messenger-textarea-input']")
+    public WebElement inputMessage;
+
+    @FindBy(css ="textarea[class='bx-messenger-textarea-input']")
+    public  WebElement pressEnterToSendMessage;
+
+    @FindBy(css = "a[class='bx-im-fullscreen-popup-back-link']")
+    public  WebElement closeMessageBox;
+
+    @FindBy(id ="user-name")
+    public WebElement usernameButton;
+
+    @FindBy(xpath = "(//span[@class='menu-popup-item-text'])[5]")
+    public WebElement logOutLink;
+
+    @FindBy(name = "USER_LOGIN")
+    public WebElement inputUsername;
+
+    @FindBy(name = "USER_PASSWORD")
+    public WebElement inputPassword;
+
+    @FindBy(xpath = "//img[@class='bx-messenger-cl-avatar-img']")
+    public WebElement messageAvatar;
+
+    @FindBy(xpath = "(//span[@class='bx-messenger-message'])[6]")
+    public WebElement verifyMessage;
+
+
+
+
+
+
+
+
+
+
+
 
 
 

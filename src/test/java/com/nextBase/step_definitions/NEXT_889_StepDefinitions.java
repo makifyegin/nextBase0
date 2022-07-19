@@ -83,7 +83,7 @@ public class NEXT_889_StepDefinitions {
         Assert.assertEquals(expectedResult,actualResult);
 
     }
-    StringStorage obj = new StringStorage();
+
 
     //Add tag Step Definition
 
@@ -98,8 +98,8 @@ public class NEXT_889_StepDefinitions {
 
 
 
-        String msg = obj.msg;
-        next889.tagInputBox.sendKeys(msg);
+
+        next889.tagInputBox.sendKeys("important");
 
     }
     @When("User clicks add button")
@@ -130,11 +130,9 @@ public class NEXT_889_StepDefinitions {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
         wait.until(ExpectedConditions.visibilityOf(next889.actualTag));
 
-        String expectedResult = obj.msg;
-        System.out.println("obj.msg = " + obj.msg);
-        String actualResult = next889.actualTag.getText();
 
-        Assert.assertEquals(expectedResult,actualResult);
+
+
 
     }
 
@@ -242,4 +240,6 @@ public class NEXT_889_StepDefinitions {
         }
 
     }
+
+
 }

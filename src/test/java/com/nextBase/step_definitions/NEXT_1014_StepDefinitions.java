@@ -1,7 +1,9 @@
 package com.nextBase.step_definitions;
 
+import com.github.javafaker.Faker;
 import com.nextBase.pages.NEXT_1014Page;
 import com.nextBase.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -135,4 +137,75 @@ public class NEXT_1014_StepDefinitions {
         Assert.assertEquals("Telephone Directory", next_1014Page.telephoneDirectoryPageTitle.getText());
 
     }
+
+    @When("user clicks on company structure")
+    public void userClicksOnCompanyStructure() {
+        next_1014Page.viewCompanyStructure.click();
+    }
+
+
+
+    @When("user clicks employee Moussa")
+    public void user_clicks_employee_moussa() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+        wait.until(ExpectedConditions.visibilityOf(next_1014Page.moussaLink));
+       next_1014Page.moussaLink.click();
+    }
+    @And("user types a random message")
+    public void user_types_a_random_message() {
+        Faker faker = new Faker();
+        String messageFromTelephoneDirectory = faker.chuckNorris().fact();
+
+        next_1014Page.inputMessage.sendKeys("Bonjour");
+
+
+
+    }
+    @And("user clicks enter")
+    public void user_clicks_enter() {
+
+    }
+    @And("user press enter key")
+    public void user_press_enter_key() {
+        next_1014Page.pressEnterToSendMessage.sendKeys(Keys.ENTER);
+    }
+    @And("user clicks close")
+    public void user_cliks_close() {
+        next_1014Page.closeMessageBox.click();
+    }
+    @And("user logout")
+    public void user_logout() {
+        next_1014Page.usernameButton.click();
+        next_1014Page.logOutLink.click();
+    }
+    @And("user enter Moussa's username")
+    public void user_enter_moussa_s_username() {
+        next_1014Page.inputMessage.clear();
+        next_1014Page.inputUsername.sendKeys("helpdesk21@cybertekschool.com");
+
+    }
+    @And("user enter Moussa's password")
+    public void user_enter_moussa_s_password() {
+        next_1014Page.inputPassword.sendKeys("UserUser");
+
+    }
+    @And("user clicks message avatar")
+    public void user_clicks_moussa_s_icon() {
+        next_1014Page.messageAvatar.click();
+
+    }
+    @Then("user verify that the message has been received")
+    public void user_verify_that_the_message_has_been_received() {
+        String message = next_1014Page.verifyMessage.getText();
+        Assert.assertEquals("Bonjour",message);
+
+
+    }
+
+    @And("user clicks send message button")
+    public void userClicksSendMessageButton() {
+        next_1014Page.sendMessageButton.click();
+    }
+
+
 }
