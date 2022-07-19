@@ -34,6 +34,8 @@ public class CalendarStepDefinitions {
     @Then("Verify that User can see all the events belong to this Company.")
     public void verify_that_user_can_see_all_the_events_belong_to_this_company() {
 
+        System.out.println(calendarPage.calenderCompanyEvents.getText());
+
 
     }
 
