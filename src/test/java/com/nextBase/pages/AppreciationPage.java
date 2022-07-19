@@ -41,7 +41,7 @@ public class AppreciationPage {
     @FindBy(xpath = "//span[@class='bxhtmled-top-bar-btn bxhtmled-button-video']/i")
     public WebElement insertVideoIcon;
 
-    @FindBy(xpath = "//input[@id='video_idPostFormLHE_blogPostForm-source']")
+    @FindBy(xpath = "//table/tbody/tr[1]/td[2]/input[@id='video_idPostFormLHE_blogPostForm-source']")
     public WebElement videoLinkBar;
 
     @FindBy(xpath = "//input[@value='Save']")

@@ -18,13 +18,15 @@ Feature: NextBase App appreciation feature
     And user clicks Employees and departments
     Then user should see multiple contacts and add one of them
 
+  @link #done
   Scenario: User should be able to attach link by clicking on the link icon.
     When user clicks link icon
     When user paste link url to link bar
     And user clicks to Save button
-    Then user should see link url under Appreciation
+    And send link to Appreciation page
+    Then verify that user can see link
 
-    @video #passed, but does not add video link
+  @video #passed, but does not add video link
   Scenario: User should be able to insert videos by clicking on the video icon and entering the video URL.
     When user clicks Insert video icon
     And user clicks video source bar
