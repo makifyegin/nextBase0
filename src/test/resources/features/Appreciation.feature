@@ -7,11 +7,11 @@ Feature: NextBase App appreciation feature
   Background: user is on Activity Stream
     Given "hr" is on Home page and clicks Appreciation button from More  dropdown menu
 
-  @file  #ASK
+  @file
   Scenario: User should be able to click on upload files icon to upload files and pictures from local disks.
     When user clicks upload files icon
     And user clicks Upload files and images
-    Then user should see Pictures files
+    Then verify that user can upload file and images from local disk
 
   @addUser #done
   Scenario: User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
