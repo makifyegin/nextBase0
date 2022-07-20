@@ -52,11 +52,10 @@ public class Appreciation_StepDefinition {
         String filePath= "\u202AC:\\Users\\44739\\OneDrive\\Desktop\\Project Check";
         appreciationPage.uploadFilesAndImagesButton.sendKeys(filePath);
     }
-    @Then("user should see Pictures files")
-    public void user_should_see_pictures_files() {
-
-
+    @Then("verify that user can upload file and images from local disk")
+    public void verifyThatUserCanUploadFileAndImagesFromLocalDisk() {
     }
+
 
     //------2nd Scenario----DONE--------//
 
