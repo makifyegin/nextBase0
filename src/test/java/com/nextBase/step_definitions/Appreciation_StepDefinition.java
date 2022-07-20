@@ -1,5 +1,6 @@
 package com.nextBase.step_definitions;
 
+import com.github.javafaker.Business;
 import com.github.javafaker.Faker;
 import com.github.javafaker.HarryPotter;
 import com.nextBase.pages.AppreciationPage;
@@ -57,7 +58,7 @@ public class Appreciation_StepDefinition {
 
     }
 
-    //------2nd Scenario----PASSED, BUT IT DOES NOT SEND IT BEFORE TYPING STH IN, ASK BUG?--------//
+    //------2nd Scenario----DONE--------//
 
     @When("user clicks Add More button")
     public void userClicksAddMoreButton() {
@@ -73,12 +74,18 @@ public class Appreciation_StepDefinition {
     public void userShouldSeeMultipleContactsAndAddOneOfThem() {
         appreciationPage.helpdesk22User.click();
         appreciationPage.closeUserTab.click();
+        Faker faker= new Faker();
+        Business business = faker.business();
+        Driver.getDriver().switchTo().frame(0);
+        appreciationPage.passingMessageForAddingUser.sendKeys(business.toString());
+        Driver.getDriver().switchTo().parentFrame();
     }
 
     @Then("send added user to Activity Stream and verify if it's displayed or not")
     public void sendAddedUserToActivityStreamAndVerifyIfItSDisplayedOrNot() {
         appreciationPage.sendButton.click();
-        //WebElement addedUser= Driver.getDriver().findElement(By.xpath(""));
+        WebElement addedUser= Driver.getDriver().findElement(By.xpath("//a[@id='dest_1639_512']"));
+        System.out.println("addedUser.isDisplayed() = " + addedUser.isDisplayed());
     }
 
     //------3rd Scenario------DONE------//
