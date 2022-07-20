@@ -8,8 +8,7 @@ Feature: NEXT-1014
     And user clicks employees
 
 
-
-    Scenario: Display company structure
+  Scenario: Display company structure
 
     When user clicks on company structure
     Then user can see company structure
@@ -23,14 +22,14 @@ Feature: NEXT-1014
     Then user can see the name of the newly created department
 
 
-    Scenario: Find employees by search box
+  Scenario: Find employees by search box
 
     When user clicks Find Employees
     And user types dada in the search box
     Then user can see dada employee info displayed
 
 
-    Scenario: Find employees by search by Alphabet
+  Scenario: Find employees by search by Alphabet
 
     When user clicks Find Employees
     And user clicks Search By Alphabet button
@@ -52,22 +51,34 @@ Feature: NEXT-1014
     Then user can see the telephone directory displayed
 
   @NEXT1014
-  Scenario: Display company structure
-
+  Scenario Outline: Display company structure
 
     When user clicks telephone directory
-    And user clicks employee Moussa
+    And user clicks employee "<employeeReceiver>"
     And user clicks send message button
     And user types a random message
-    And user clicks enter
     And user press enter key
     And user clicks close
     And user logout
-    And user enter Moussa's username
-    And user enter Moussa's password
+    And user enter employee "<employeeReceiver>" username
+    And user enter employee "<employeeReceiver>" password
     And user clicks login button
     And user clicks message avatar
-    Then user verify that the message has been received
+    Then user verify that employee "<employeeReceiver>" got the message from employee "<employeeSender>"
+
+    Examples:
+      | employeeSender    | employeeReceiver |
+      | dadasdasdasd dada | Mousa Adolai     |
+
+
+  Scenario: Can not use number to find employees
+
+
+    When user clicks employees
+    And user clicks Find Employees
+    And user types nothing in the search box
+    And user click search button
+    Then user can not see any employee info displayed
 
 
 

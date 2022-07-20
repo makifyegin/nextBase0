@@ -216,4 +216,40 @@ public class NEXT_1014_StepDefinitions {
     }
 
 
+    @And("user types nothing in the search box")
+    public void userTypesInTheSearchBox() {
+        next_1014Page.inputEmployeeSearchBox.sendKeys("");
+    }
+
+    @Then("user can not see any employee info displayed")
+    public void userCanNotSeeAnyEmployeeInfoDisplayed() {
+
+        Assert.assertEquals("",next_1014Page.inputEmployeeSearchBox.getText());
+    }
+
+
+    @And("user clicks employee {string}")
+    public void userClicksEmployee(String arg0) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+        wait.until(ExpectedConditions.visibilityOf(next_1014Page.moussaLink));
+        next_1014Page.moussaLink.click();
+
+    }
+
+    @And("user enter employee {string} username")
+    public void userEnterEmployeeUsername(String arg0) {
+        next_1014Page.inputUsername.clear();
+        next_1014Page.inputUsername.sendKeys("helpdesk21@cybertekschool.com");
+    }
+
+    @And("user enter employee {string} password")
+    public void userEnterEmployeePassword(String arg0) {
+            next_1014Page.inputPassword.sendKeys("UserUser");
+    }
+
+    @Then("user verify that employee {string} got the message from employee {string}")
+    public void userVerifyThatEmployeeGotTheMessageFromEmployee(String arg0, String arg1) {
+        String message = next_1014Page.verifyMessage.getText();
+        Assert.assertEquals("Bonjour",message);
+    }
 }
