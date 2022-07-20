@@ -13,7 +13,7 @@ Feature: NextBase App appreciation feature
     And user clicks Upload files and images
     Then user should see Pictures files
 
-  @addUser #DONE BUT ASK BUG? NOT? WITHOUT PASSING STH, IT DOESN'T SEND
+  @addUser #done
   Scenario: User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
     When user clicks Add More button
     And user clicks Employees and departments

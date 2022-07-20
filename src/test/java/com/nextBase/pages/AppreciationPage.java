@@ -29,8 +29,14 @@ public class AppreciationPage {
     @FindBy(xpath = "//a[@class='bx-finder-box-tab bx-lm-tab-department']")
     public WebElement employeesAndDepartments;
 
+    @FindBy(xpath = "//body[@contenteditable='true']")
+    public WebElement passingMessageForAddingUser;
+
     @FindBy(xpath = "//a[@rel='U512']/div[@class='bx-finder-company-department-employee-info']")
     public WebElement helpdesk22User;
+
+    @FindBy(xpath = "//a[@id='dest_1639_512']")
+    public WebElement aTagHelpdeskUser;
 
     @FindBy(xpath = "//span[@class='popup-window-close-icon']")
     public WebElement closeUserTab;
