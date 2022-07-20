@@ -1,6 +1,7 @@
 package com.nextBase.step_definitions;
 
 import com.github.javafaker.Faker;
+import com.nextBase.pages.LoginPage;
 import com.nextBase.pages.NEXT_1014Page;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -17,6 +18,7 @@ import java.io.File;
 public class NEXT_1014_StepDefinitions {
 
     NEXT_1014Page next_1014Page = new NEXT_1014Page();
+
 
     @When("user clicks employees")
     public void user_clicks_employees() {
@@ -158,17 +160,18 @@ public class NEXT_1014_StepDefinitions {
 
         next_1014Page.inputMessage.sendKeys("Bonjour");
 
-
-
-    }
-    @And("user clicks enter")
-    public void user_clicks_enter() {
-
     }
     @And("user press enter key")
     public void user_press_enter_key() {
         next_1014Page.pressEnterToSendMessage.sendKeys(Keys.ENTER);
     }
+
+    @And("user clicks enter")
+    public void user_clicks_enter() {
+
+
+    }
+
     @And("user clicks close")
     public void user_cliks_close() {
         next_1014Page.closeMessageBox.click();
@@ -180,7 +183,7 @@ public class NEXT_1014_StepDefinitions {
     }
     @And("user enter Moussa's username")
     public void user_enter_moussa_s_username() {
-        next_1014Page.inputMessage.clear();
+        next_1014Page.inputUsername.clear();
         next_1014Page.inputUsername.sendKeys("helpdesk21@cybertekschool.com");
 
     }
@@ -205,6 +208,11 @@ public class NEXT_1014_StepDefinitions {
     @And("user clicks send message button")
     public void userClicksSendMessageButton() {
         next_1014Page.sendMessageButton.click();
+    }
+
+    @When("user clicks login button")
+    public void user_clicks_to_login_button() {
+        next_1014Page.logInButton.click();
     }
 
 

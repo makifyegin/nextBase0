@@ -4,7 +4,7 @@ Feature: NEXT-1014
 
   Background:
 
-    When "HR" is on Home page
+    Given "HR" is on Home page
     And user clicks employees
 
 
@@ -51,7 +51,7 @@ Feature: NEXT-1014
     When user clicks telephone directory
     Then user can see the telephone directory displayed
 
-  @wip
+  @NEXT1014
   Scenario: Display company structure
 
 
@@ -65,6 +65,7 @@ Feature: NEXT-1014
     And user logout
     And user enter Moussa's username
     And user enter Moussa's password
+    And user clicks login button
     And user clicks message avatar
     Then user verify that the message has been received
 

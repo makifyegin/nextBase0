@@ -56,7 +56,7 @@ public class NEXT_1014Page {
     @FindBy(id = "pagetitle")
     public WebElement telephoneDirectoryPageTitle;
 
-    @FindBy(xpath = "//a[@id='anchor_o1Jh0Eb1']")
+    @FindBy(linkText = "Mousa Adolai")
     public WebElement moussaLink;
 
     @FindBy(css = "span[class='webform-small-button-text']")
@@ -86,8 +86,11 @@ public class NEXT_1014Page {
     @FindBy(xpath = "//img[@class='bx-messenger-cl-avatar-img']")
     public WebElement messageAvatar;
 
-    @FindBy(xpath = "(//span[@class='bx-messenger-message'])[6]")
+    @FindBy(xpath = "(//span[@class='bx-messenger-message'])[9]")
     public WebElement verifyMessage;
+
+    @FindBy(css = "input[class='login-btn']")
+    public WebElement logInButton;
 
 
 
