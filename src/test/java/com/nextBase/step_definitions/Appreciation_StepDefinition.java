@@ -81,7 +81,7 @@ public class Appreciation_StepDefinition {
 
     @And("user should see multiple contacts and add one of them")
     public void userShouldSeeMultipleContactsAndAddOneOfThem() {
-        appreciationPage.helpdesk22User.click();
+        appreciationPage.helpDesk22.click();
         appreciationPage.closeUserTab.click();
         Faker faker= new Faker();
         Business business = faker.business();
@@ -197,7 +197,7 @@ public class Appreciation_StepDefinition {
     @Then("user should click one user from the list and send appreciation")
     public void userShouldClickOneUserFromTheListAndSendAppreciation() {
         BrowserUtils.sleep(2);
-        appreciationPage.helpdesk22User.click();
+        appreciationPage.helpdesk23User.click();
         BrowserUtils.sleep(2);
         appreciationPage.sendButton.click();
     }
@@ -206,6 +206,9 @@ public class Appreciation_StepDefinition {
     public void verifyThatUserCanSeeSentMention() {
         WebElement helpdeskUser= Driver.getDriver().findElement(By.xpath("//a[@rel='U512']/div[@class='bx-finder-company-department-employee-info']"));
         System.out.println("helpdeskUser.isDisplayed() = " + helpdeskUser.isDisplayed());
+
+//        appreciationPage.more.click();
+//        appreciationPage.deleteButton.click();
     }
 
 
