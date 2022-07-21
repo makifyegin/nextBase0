@@ -131,14 +131,14 @@ public class Message_StepDefinitions {
     @When("user add link text")
     public void user_add_link_text() {
         BrowserUtils.sleep(2);
-       nextBasePage.linkText.sendKeys("cydeo");
+       nextBasePage.linkText.sendKeys(ConfigurationReader.getProperty("link.text"));
 
 
     }
     @When("user add link URL")
     public void user_add_link_url() {
         BrowserUtils.sleep(2);
-        nextBasePage.linkURL.sendKeys("https://cydeo.com/");
+        nextBasePage.linkURL.sendKeys(ConfigurationReader.getProperty("link.URL"));
 
     }
 
@@ -170,9 +170,7 @@ public class Message_StepDefinitions {
     @When("user add video URL")
     public void user_add_video_url() {
        BrowserUtils.sleep(2);
-       nextBasePage.videoURL.sendKeys("https://vimeo.com/726713693");
-     //  BrowserUtils.waitForVisibility(nextBasePage.videoURL,2);
-       BrowserUtils.sleep(7);
+       nextBasePage.videoURL.sendKeys(ConfigurationReader.getProperty("video.URL"));
 
 
     }
@@ -253,7 +251,8 @@ public class Message_StepDefinitions {
 
         Boolean actualContact = nextBasePage.oneOfMentionAssert.getText().contains("com");
 
-        System.out.println("actualContact = " + actualContact);
+
+       System.out.println("actualContact = " + actualContact);
 
         Assert.assertEquals(true, actualContact);
 
