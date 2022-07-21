@@ -9,7 +9,6 @@ import org.junit.runner.RunWith;
 
         plugin = {
                 //"pretty",
-                "json:target/cucumber.json",
                 "html:target/cucumber-reports.html",
                 "rerun:target/rerun.txt",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
@@ -25,5 +24,3 @@ import org.junit.runner.RunWith;
 
 public class CukesRunner {
 }
-
-

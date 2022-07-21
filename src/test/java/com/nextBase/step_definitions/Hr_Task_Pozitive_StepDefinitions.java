@@ -2,27 +2,15 @@ package com.nextBase.step_definitions;
 
 import com.nextBase.pages.BasePage;
 import com.nextBase.pages.HrTaskPage;
-import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.bouncycastle.jcajce.provider.asymmetric.EC;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import javax.swing.*;
-import java.util.function.Function;
 
 public class Hr_Task_Pozitive_StepDefinitions {
     HrTaskPage hrTaskPage = new HrTaskPage();
@@ -120,12 +108,11 @@ public class Hr_Task_Pozitive_StepDefinitions {
         hrTaskPage.textArea.sendKeys(arg0);
 
 
-
     }
 
     @And("User clicks Deadline dropdown menu")
     public void userClicksDeadlineDropdownMenu() {
-        //Driver.getDriver().switchTo().frame(hrTaskPage.newTaskPageIframe);
+        Driver.getDriver().switchTo().parentFrame();
         hrTaskPage.deadline.click();
 
 
@@ -140,11 +127,7 @@ public class Hr_Task_Pozitive_StepDefinitions {
     }
     @And("User clicks more menu")
     public void userClicksMoreMenu() {
-
         hrTaskPage.clickMore.click();
-
-
-
 
     }
     @And("User clicks Project menu")
