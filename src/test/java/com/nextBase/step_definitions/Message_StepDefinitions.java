@@ -1,9 +1,13 @@
 package com.nextBase.step_definitions;
 
+import com.nextBase.pages.BasePage;
 import com.nextBase.pages.NextBasePage;
 import com.nextBase.utilities.BrowserUtils;
+import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -18,6 +22,20 @@ public class Message_StepDefinitions {
     NextBasePage nextBasePage = new NextBasePage();
 
     List<WebElement>userName;
+
+
+//    @Given("user is on homepage")
+//    public void user_is_on_homepage(DataTable dataTable) {
+//
+//        if (dataTable.asList().get(0).toString().toLowerCase().contains("hr")) {
+//            BasePage.loginAsHR();
+//        } else if (dataTable.asList().get(0).toString().toLowerCase().contains("helpdesk")) {
+//            BasePage.loginAsHelpdesk();
+//        } else if (dataTable.asList().get(0).toString().toLowerCase().contains("marketing")) {
+//            BasePage.loginAsMarketing();
+//        }
+//    }
+
 
     @When("user clicks {string} button")
     public void user_clicks_button(String string) {
@@ -72,6 +90,7 @@ public class Message_StepDefinitions {
 
         }
 
+
         nextBasePage.employeeAndDepartmentButton.click();
 
 
@@ -79,7 +98,7 @@ public class Message_StepDefinitions {
         Driver.getDriver().switchTo().window(mainHandle);
 
     }
-    @When("user select multiple contact from contact list")
+    @When("verify that user select multiple contact from contact list")
     public void user_select_multiple_contact_from_contact_list() {
    // nextBasePage.contactList.click();
 
@@ -91,27 +110,16 @@ public class Message_StepDefinitions {
 
         for (int i = 0; i < 3; i++) {
             userName.get(i).click();
+            Boolean actualContact = userName.get(i).getText().contains("@");
+            Assert.assertEquals(true,actualContact);
             System.out.println(userName.get(i));
+
 
         }
 
 
     }
 
-
-    @Then("verify that user can add multiple contact")
-    public void verify_that_user_can_add_multiple_contact() {
-
-
-//        String expectedText = "helpdesk22@cybertekschool.com";
-//        String actualText = Driver.getDriver().findElement(By.xpath("//*[@id=\"feed-add-post-destination-item\"]/span[2]/span[1]")).getText();
-//
-//        Assert.assertEquals(expectedText,actualText);
-
-       // System.out.println(Driver.getDriver().findElement(By.xpath("//div[@class='bx-finder-company-department-employee-name'")));
-      //  System.out.println(BrowserUtils.getElementsText(userName));
-
-    }
 
 
     //////////////////LINK FEATURE////////////////////////////////////////////
@@ -165,15 +173,26 @@ public class Message_StepDefinitions {
        nextBasePage.videoURL.sendKeys("https://vimeo.com/726713693");
      //  BrowserUtils.waitForVisibility(nextBasePage.videoURL,2);
        BrowserUtils.sleep(7);
+
+
     }
+
+
+    @And("user click save button for video")
+    public void userClickSaveButtonForVideo() {
+        nextBasePage.videoSaveButton.click();
+    }
+
+
     @Then("verify that user can add video")
     public void verify_that_user_can_add_video() {
 
-        Driver.getDriver().switchTo().frame(nextBasePage.iframe);
+        System.out.println("nextBasePage.videoUploadedError.getAttribute(\"class\") = " + nextBasePage.videoUploadedError.getAttribute("class"));
 
-        Assert.assertTrue(nextBasePage.videoTitle.getAttribute("title").equals("Video"));
+        String expected = "bxhtmled-video-error";
 
-        Driver.getDriver().switchTo().parentFrame();
+        Assert.assertEquals(expected,nextBasePage.videoUploadedError.getAttribute("class"));
+
     }
 
 
@@ -200,51 +219,48 @@ public class Message_StepDefinitions {
     public void user_clicks_mention_icon() {
         nextBasePage.addMention.click();
 
-//        for (int i = 0; i < 3; i++) {
-//            userName.get(i).click();
-//            System.out.println(userName.get(i));
-//        }
-//
-//            Driver.getDriver().switchTo().frame(nextBasePage.iframe);
-//
-//        System.out.println(Driver.getDriver().findElement(By.xpath("//span[@id='bxid503909697']")).getText());
-//
-//        Driver.getDriver().switchTo().parentFrame();
-
 
     }
 
     @And("user select mention")
     public void userSelectMention() {
 
-        List<WebElement>userName = BrowserUtils.getElement(nextBasePage.oneOfMention);
 
-        for (int i = 0; i < 3; i++) {
-            userName.get(i).click();
-            System.out.println(userName.get(i));
+        String mainHandle = Driver.getDriver().getWindowHandle();
+        Set<String> allWindowHandles = Driver.getDriver().getWindowHandles();
+        // window handle 1 - main window
+        // window handle 2 - 2nd window
+
+        for (String each : allWindowHandles) {
+
+            Driver.getDriver().switchTo().window(each);
+
+            nextBasePage.oneOfMention.click();
+
 
         }
-
-
-        }
-
-
-
-//    @Then("verify that user can add mention")
-//    public void verify_that_user_can_add_mention() {
-//
-//
-//
-//        String expected = "helpdesk22@cybertekschool.com";
-//
-//        String actual = Driver.getDriver().findElement(By.xpath("//span[text()='helpdesk22@cybertekschool.com']")).getText();
-//
-//
-//
+        Driver.getDriver().switchTo().window(mainHandle);
 
 
 
-//   }
+    }
+
+
+    @Then("verify that user can add mention")
+    public void verify_that_user_can_add_mention() {
+
+        Driver.getDriver().switchTo().frame(nextBasePage.iframe);
+
+        Boolean actualContact = nextBasePage.oneOfMentionAssert.getText().contains("com");
+
+        System.out.println("actualContact = " + actualContact);
+
+        Assert.assertEquals(true, actualContact);
+
+
+        Driver.getDriver().switchTo().parentFrame();
+
+    }
 
 
 
