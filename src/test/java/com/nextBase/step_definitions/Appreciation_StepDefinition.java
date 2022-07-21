@@ -126,7 +126,7 @@ public class Appreciation_StepDefinition {
 
 
 
-    //------4th Scenario--------!!problem after passing link----//
+    //------4th Scenario--------!!problem after passing video----//
 
     @When("user clicks Insert video icon")
     public void userClicksInsertVideoIcon() {
@@ -141,12 +141,14 @@ public class Appreciation_StepDefinition {
     @And("user insert video link and click save")
     public void userInsertVideoLinkAndClickSave() {
         appreciationPage.videoLinkBar.sendKeys(ConfigurationReader.getProperty("VimeoLink"));
-        BrowserUtils.waitFor(5);
+        BrowserUtils.waitForVisibility(By.xpath("//label[.='Video title:']"),10);
         appreciationPage.saveVideoLink.click();
     }
 
     @Then("user should see saved video under Appreciation")
     public void userShouldSeeSavedVideoUnderAppreciation() {
+        appreciationPage.sendButton.click();
+
     }
 
 
