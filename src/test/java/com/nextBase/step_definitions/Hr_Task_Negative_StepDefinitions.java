@@ -79,10 +79,6 @@ public class Hr_Task_Negative_StepDefinitions {
         hrTaskPage.selectButton.click();
     }
 
-    @And("User  clicks more menu")
-    public void userClicksMoreMenu() {
-        hrTaskPage.clickMore.click();
-    }
 
     @And("User  clicks Project menu")
     public void userClicksProjectMenu() {
