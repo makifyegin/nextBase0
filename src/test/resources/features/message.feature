@@ -1,4 +1,4 @@
-Feature: Uploaded feature
+Feature: Send messages feature
 
   User Story :
   Verify that user should be able to send messages by clicking on Message tab under Active Stream.
@@ -6,82 +6,146 @@ Feature: Uploaded feature
   Accounts are : HR , Helpdesk , Marketing
 
   Background: For the scenarios in the feature file, user is expected to be on login page
-    Given User is on homepage
-      | HR |
-      | Marketing |
-      | helpdesk |
-    When user clicks 'MESSAGE' button
-#What should we write here to login with three users at the same time inside the background. it's like a preconditions.
+    Given user is on the next base login page
+#      | HR        |
+#      | Helpdesk  |
+#      | Marketing |
 
-  @NEXT-1018
-  Scenario: Verify that files and pictures are uploaded
 
+  @NEXT-1040
+  Scenario Outline: Verify that files and pictures are uploaded
+
+    Given "<User>" is on homepage
+    And user clicks 'MESSAGE' button
     When user clicks uploaded files button
     And user clicks uploaded files and images button
     Then verify that user can upload file and images from local disk
 
+    Examples:
 
-  @1018-contact
+      |User     |
+      |HR       |
+      |Helpdesk |
+      |Marketing|
 
-  Scenario: User should be able to add users from selecting multiple contacts from Employees and Departments
+
+  @NEXT-1041
+
+  Scenario Outline: User should be able to add users from selecting multiple contacts from Employees and Departments
   contact lists.
 
-
-    When user clicks contact button
+    Given "<User>" is on homepage
+    And user clicks 'MESSAGE' button
+    And user clicks contact button
     And user clicks Employees and Departments button
-    And user select multiple contact from contact list
-    Then verify that user can add multiple contact
+    #And user select multiple contact from contact list
+    Then verify that user can add multiple contact from contact list
+
+    Examples:
+
+      |User     |
+      |HR       |
+      |Helpdesk |
+      |Marketing|
 
 
-  @1018-link
+  @NEXT-1042
 
-  Scenario: User should be able to attach link by clicking on the link icon.
+  Scenario Outline: User should be able to attach link by clicking on the link icon.
 
 
-    When user clicks link icon
+    Given "<User>" is on homepage
+    And user clicks 'MESSAGE' button
+    And user clicks link icon
     And user add link text
     And user add link URL
     And user click save button
     Then verify that user can add link
 
+    Examples:
 
-  @1018-video
+      |User     |
+      |HR       |
+      |Helpdesk |
+      |Marketing|
 
-  Scenario: User should be able to insert videos by clicking on the video icon and entering the video URL.
 
 
-    When user clicks video icon
+
+
+  @NEXT-1043
+
+  Scenario Outline: User should be able to insert videos by clicking on the video icon and entering the video URL.
+
+
+    Given "<User>" is on homepage
+    And user clicks 'MESSAGE' button
+    And user clicks video icon
     And user add video URL
     And user click save button
     Then verify that user can add video
 
+    Examples:
 
-  @1018-quote
+      |User     |
+      |HR       |
+      |Helpdesk |
+      |Marketing|
 
-  Scenario: User should be able to create a quote by clicking on the Comma icon
+
+  @NEXT-1044
+
+  Scenario Outline: User should be able to create a quote by clicking on the Comma icon
 
 
-    When user clicks comma icon
+    Given "<User>" is on homepage
+    And user clicks 'MESSAGE' button
+    And user clicks comma icon
     Then verify that user can add quote
 
 
-  @1018-mention
+    Examples:
 
-  Scenario: User should be able to add mention by clicking on the Add mention icon.
+      |User     |
+      |HR       |
+      |Helpdesk |
+      |Marketing|
+
+  @NEXT-1045
+
+  Scenario Outline: User should be able to add mention by clicking on the Add mention icon.
 
 
-    When user clicks mention icon
+    Given "<User>" is on homepage
+    And user clicks 'MESSAGE' button
+    And user clicks mention icon
     And user select mention
   #  Then verify that user can add mention
 
+    Examples:
+
+      |User     |
+      |HR       |
+      |Helpdesk |
+      |Marketing|
 
 
-  @1018-sendMessage
 
-  Scenario: User should be able to send a message.
+  @NEXT-1046
 
-    When user click send button
+  Scenario Outline: User should be able to send a message.
+
+    Given "<User>" is on homepage
+    And user clicks 'MESSAGE' button
+    And user click send button
     Then verify that user can send message
+
+    Examples:
+
+      |User     |
+      |HR       |
+      |Helpdesk |
+      |Marketing|
 
 
 

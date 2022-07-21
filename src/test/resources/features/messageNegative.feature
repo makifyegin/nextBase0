@@ -1,4 +1,4 @@
-Feature: Uploaded feature
+Feature: Sending Message feature
 
   User Story :
   Verify that user should be able to send messages by clicking on Message tab under Active Stream.
