@@ -98,7 +98,7 @@ public class Message_StepDefinitions {
         Driver.getDriver().switchTo().window(mainHandle);
 
     }
-    @When("verify that user select multiple contact from contact list")
+    @When("verify that user can add multiple contact from contact list")
     public void user_select_multiple_contact_from_contact_list() {
    // nextBasePage.contactList.click();
 
