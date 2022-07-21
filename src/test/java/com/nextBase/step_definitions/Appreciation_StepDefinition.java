@@ -48,7 +48,8 @@ public class Appreciation_StepDefinition {
 
     @When("user clicks Upload files and images")
     public void user_clicks_upload_files_and_images() {
-        appreciationPage.uploadFilesAndImagesButton.click();
+
+        //appreciationPage.uploadFilesAndImagesButton.click();
     }
 
     @Then("verify that user can upload file and images from local disk")
@@ -65,8 +66,8 @@ public class Appreciation_StepDefinition {
 
     }
 
-
     //------2nd Scenario----DONE--------//
+
 
     @When("user clicks Add More button")
     public void userClicksAddMoreButton() {
@@ -105,7 +106,8 @@ public class Appreciation_StepDefinition {
 
     @When("user paste link url to link bar")
     public void userPasteLinkUrlToLinkBar() {
-        appreciationPage.linkURLBar.sendKeys(ConfigurationReader.getProperty("linkURL"));
+        Faker faker= new Faker();
+        appreciationPage.linkURLBar.sendKeys(faker.internet().url());
     }
 
     @And("user clicks to Save button")
@@ -124,9 +126,7 @@ public class Appreciation_StepDefinition {
         System.out.println("link.isDisplayed() = " + link.isDisplayed());
     }
 
-
-
-    //------4th Scenario--------!!problem after passing video----//
+    //------4th Scenario--------DONE----//
 
     @When("user clicks Insert video icon")
     public void userClicksInsertVideoIcon() {
@@ -196,7 +196,9 @@ public class Appreciation_StepDefinition {
 
     @Then("user should click one user from the list and send appreciation")
     public void userShouldClickOneUserFromTheListAndSendAppreciation() {
+        BrowserUtils.sleep(2);
         appreciationPage.helpdesk22User.click();
+        BrowserUtils.sleep(2);
         appreciationPage.sendButton.click();
     }
 

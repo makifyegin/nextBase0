@@ -28,7 +28,7 @@ Feature: NextBase App appreciation feature
     And send link to Appreciation page
     Then verify that user can see link
 
-  @video #passed, but problem after passing link url
+  @video #passed
   Scenario: User should be able to insert videos by clicking on the video icon and entering the video URL.
     When user clicks Insert video icon
     And user clicks video source bar
