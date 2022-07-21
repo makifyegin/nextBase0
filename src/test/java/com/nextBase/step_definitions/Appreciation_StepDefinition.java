@@ -149,6 +149,11 @@ public class Appreciation_StepDefinition {
     public void userShouldSeeSavedVideoUnderAppreciation() {
         appreciationPage.sendButton.click();
 
+        Driver.getDriver().switchTo().frame(0);
+        WebElement visibleVideo= Driver.getDriver().findElement(By.xpath("//div[@class='vp-overlay-bg']"));
+        System.out.println("visibleVideo.isDisplayed() = " + visibleVideo.isDisplayed());
+        Driver.getDriver().switchTo().parentFrame();
+
     }
 
 
