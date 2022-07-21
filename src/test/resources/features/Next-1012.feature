@@ -1,15 +1,12 @@
+@wip
 Feature: Default
-  User Story :
 
 	#*US :* *NEXT-1012*
 	#
 	#{*}A.C.{*}:
 	#
 	# ** 
-	#{color:#de350b}
- # 1. HR User can add new important repeating event with description
- #
- # by specifying the start-end dates in the specific time zones,
+	#{color:#de350b}1. HR User can add new important repeating event with description by specifying the start-end dates in the specific time zones, 
  # adding certain location, adding attendees, color as "Pink" and availability as "Occupied". {color}
 	#2. HR User can edit the 1st AC's task color as "Navy Blue" by using "other color". 
 	#3. HR User can edit the 1st AC's privacy as "Private event". 
@@ -31,14 +28,14 @@ Feature: Default
 	#4. In the 1st AC, the location should be as Central Meeting Room.
 	#5.In the 6th AC, event name should be "MY_TEST_EVENT".
 
-#  Scenario: Verify that HR User should add new important repeating event with description by
-#  specifying the start-end dates in the specific time zones, adding certain location,
-#  adding attendees, color as "Pink" and availability as "Occupied".
-#Feature:  HR User can add new important repeating event
-#  with description by specifying the start-end dates in the
-#  specific time zones, adding certain
-#  location, adding attendees, color as
-#  "Pink" and availability as "Occupied".
+  @NEXT-1050
+
+  Scenario: Verify that HR User should add new important repeating event with description by specifying the start-end dates in the specific time zones, adding certain location, adding attendees, color as "Pink" and availability as "Occupied".
+Feature:  HR User can add new important repeating event
+  with description by specifying the start-end dates in the
+  specific time zones, adding certain
+  location, adding attendees, color as
+  "Pink" and availability as "Occupied".
 
   Background:
     Given user is on the next base login page
@@ -47,18 +44,18 @@ Feature: Default
     And Click the Add event
     And Click the This event is important
     And Fill out the "event name"
-    And Specifying "start" dates in the spesific "end"
+    And Specifying "start-end" dates in the spesific "time zone"
     And Click the repeating event with description
     And Add "specific" time zones
     And Add certain "location"
-    And Add [attendees]
+    And Add "attendies"
     And Click More
     And Add colour of "Pink"
     And Choose availability "Occupied"
     And user click save button
 
   @NEXT-1051
-  Scenario: HR User can edit the 1st AC's task color as
+  Scenario:
 
     Given Click the Event
     When Click the Open
@@ -172,3 +169,12 @@ Feature: Default
     And Click the I am an Organiser
     And Click the Search
     Then Verify that User can displays these events
+
+
+#  @NEXT-1062
+#  Scenario: HR User can filter events by using filter and search box after clicking I'm an organiser.
+#
+#    When  Click the Filter and Search
+#    And Click the I am an Organiser
+#    And Click the Search
+#    Then Verify that User can displays these events
