@@ -8,24 +8,23 @@ Feature: HR user  task  features
 	#*A.C*
 	# * All user types can see the all tasks
 	# * All user types can see the ongoing tasks
-	# *  HR user can create task
-
+	# *   HR user can create task
 
   Background:
     Given User is on home page
-    When User clicks Tasks button on the home page
-    And User verify  display task page
+    And User clicks Tasks button on the home page
+  #--Present simple with no action -->  is on
 
   Scenario: HR User Displays All Task  Verification
-    And User clicks All button
+    When User clicks All button
     Then User sees tasks  is on the task page
 
   Scenario: HR User Displays Ongoing Task  Verification
-    And User clicks Ongoing button
+    When User clicks Ongoing button
     Then User sees Role:ongoing   on the ongoing task page
 
-  Scenario: HR User Displays Create Task  Verification
-    And User clicks NEW TASK button
+  Scenario: HR User creates task
+    When User clicks NEW TASK button
     And User displays new task page
     And user clicks on header  and types "New Task".
     And user clicks Text area and types "I'm creating new task as a HR user"
@@ -36,3 +35,8 @@ Feature: HR user  task  features
     And User clicks Soccer team
     And User clicks ADD TASK button
     Then User sees New Task on the task page
+
+@EditTask
+  Scenario: HR User edits already created task
+    Given HR User has already created task as "Task for precondition to edit task"
+    When

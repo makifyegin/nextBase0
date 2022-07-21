@@ -1,5 +1,9 @@
 Feature:HR user high priority task feature
 
+  Background:
+    Given User is on home page
+    When User clicks Tasks button on the home page
+    Then User verify display task page
 	#*US:*{color:#de350b} {color}NEXT-1011
 	#{color:#de350b}1. HR User can create a high priority task in duration of the certain deadline by mentioning about a user.{color}
 	#2. Marketing User can edit the task by declaring himself/herself as responsible person.
@@ -27,23 +31,20 @@ Feature:HR user high priority task feature
   @NEXT-1035
   Scenario: Verify that  HR User can create a high priority task in duration of the certain deadline by mentioning about a user
 
-    Given User is on home page
-    When  User clicks Tasks button on the home page
-    And User verify  display task page
-    And User clicks NEW TASK button
+    When User clicks NEW TASK button
     And User displays new task page
-    And user clicks on header  and types "high priority task"
+    And user clicks on header and types "high priority task"
     And User clicks High Priority button
     And user clicks Text area and types "I'm creating new task as a HR user"
-    And user clicks Add more menu
-    And user clicks "responsible person" and clicks pop up button
     And User clicks Deadline dropdown menu
     And User selects "31/07/2022" date
+    And user clicks Add more menu
+    And user clicks "responsible person" and clicks pop up button
     And User clicks more menu
     And User clicks Project menu
     And User clicks Soccer team
     And user clicks time tracking button.
     And user clicks hours button and writes "2" on the time tracking
-    And user clikcs minutes button and writes "30" on the time tracking
+    And user clicks minutes button and writes "30" on the time tracking
     And User clicks ADD TASK button
     Then Verify that "high priority task" on the task page
