@@ -38,7 +38,7 @@ public class Appreciation_StepDefinition {
         appreciationPage.appreciationButton.click();
     }
 
-    //-----------1nd Scenario-------!!!!!!!!!!!!!!!!-----//
+    //-----------1nd Scenario-----DONE-------//
 
     @When("user clicks upload files icon")
     public void user_clicks_upload_files_icon() {
@@ -48,17 +48,21 @@ public class Appreciation_StepDefinition {
 
     @When("user clicks Upload files and images")
     public void user_clicks_upload_files_and_images() {
-
-        Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']")).sendKeys("");
-
-        BrowserUtils.sleep(2);
-
         appreciationPage.uploadFilesAndImagesButton.click();
-        String filePath= "\u202AC:\\Users\\44739\\OneDrive\\Desktop\\photo.jpg";
-        appreciationPage.uploadFilesAndImagesButton.sendKeys(filePath);
     }
+
     @Then("verify that user can upload file and images from local disk")
     public void verifyThatUserCanUploadFileAndImagesFromLocalDisk() {
+
+        Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']")).sendKeys("C:\\Users\\44739\\OneDrive\\Desktop\\Project Check");
+        BrowserUtils.sleep(2);
+
+//        appreciationPage.uploadFilesAndImagesButton.click();
+//        String filePath= "\u202AC:\\Users\\44739\\OneDrive\\Desktop\\photo.jpg";
+//        appreciationPage.uploadFilesAndImagesButton.sendKeys(filePath);
+
+        appreciationPage.sendButton.click();
+
     }
 
 
