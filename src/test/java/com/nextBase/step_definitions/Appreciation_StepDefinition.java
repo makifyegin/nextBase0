@@ -48,6 +48,11 @@ public class Appreciation_StepDefinition {
 
     @When("user clicks Upload files and images")
     public void user_clicks_upload_files_and_images() {
+
+        Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']")).sendKeys("");
+
+        BrowserUtils.sleep(2);
+
         appreciationPage.uploadFilesAndImagesButton.click();
         String filePath= "\u202AC:\\Users\\44739\\OneDrive\\Desktop\\photo.jpg";
         appreciationPage.uploadFilesAndImagesButton.sendKeys(filePath);
