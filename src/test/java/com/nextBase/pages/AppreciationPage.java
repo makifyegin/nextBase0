@@ -33,7 +33,10 @@ public class AppreciationPage {
     public WebElement passingMessageForAddingUser;
 
     @FindBy(xpath = "//a[@rel='U512']/div[@class='bx-finder-company-department-employee-info']")
-    public WebElement helpdesk22User;
+    public WebElement helpDesk22;
+
+    @FindBy(xpath = "//a[@rel='U513']/div/div[@class='bx-finder-company-department-employee-name']")
+    public WebElement helpdesk23User;
 
     @FindBy(xpath = "//a[@id='dest_1639_512']")
     public WebElement aTagHelpdeskUser;
@@ -68,8 +71,16 @@ public class AppreciationPage {
     @FindBy(xpath = "(//div[.='hr1@cybertekschool.com'])[3]")
     public WebElement hrUserMention;
 
+    @FindBy(xpath = "(//span[@class='feed-post-more-text'])[1]")
+    public WebElement more;
+
+    @FindBy(xpath = "(//span[.='Delete'])[1]")
+    public WebElement deleteButton;
+
     @FindBy(xpath = "//button[@id='blog-submit-button-save']")
     public WebElement sendButton;
+
+
 
 
 }
