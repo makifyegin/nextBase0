@@ -48,7 +48,7 @@ Feature:  HR User can add new important repeating event
     And Click the repeating event with description
     And Add "specific" time zones
     And Add certain "location"
-    And Add "attendies"
+    And Add "attendees"
     And Click More
     And Add colour of "Pink"
     And Choose availability "Occupied"
