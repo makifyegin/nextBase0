@@ -20,7 +20,7 @@ public class AppreciationPage {
     @FindBy(xpath = "//span[@id='bx-b-uploadfile-blogPostForm']")
     public WebElement uploadFilesIcon;
 
-    @FindBy(xpath = "(//div[@class='diskuf-uploader'])[1]")
+    @FindBy(xpath = "(//table[@class='diskuf-selector-table wd-fa-add-file-light-table']/tbody/tr/td/div/input[@class='diskuf-fileUploader wd-test-file-light-inp '])[1]")
     public WebElement uploadFilesAndImagesButton;
 
     @FindBy(xpath = "//a[.='Add more']")
