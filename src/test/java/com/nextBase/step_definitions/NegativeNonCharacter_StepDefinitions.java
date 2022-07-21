@@ -30,11 +30,11 @@ public class NegativeNonCharacter_StepDefinitions {
                 break;
         }
     }
-    @Given("User is on homepage")
-    public void is_on_homepage(DataTable dataTable) {
-        dataTable.asLists().get(0).toString().toUpperCase().contains("HR");
-        dataTable.asMap().get("USER").contains("HR");// dataTable should start with USER - And, not sure if it's gonna work
-    }
+//    @Given("User is on homepage")
+//    public void is_on_homepage(DataTable dataTable) {
+//        dataTable.asLists().get(0).toString().toUpperCase().contains("HR");
+//        dataTable.asMap().get("USER").contains("HR");// dataTable should start with USER - And, not sure if it's gonna work
+//    }
     @Given("clicks search button with non-releated {string}")
     public void clicks_search_button_with_non_releated(String string) {
         nextBasePage.searchBtn.sendKeys(string + Keys.ENTER);
@@ -47,4 +47,3 @@ public class NegativeNonCharacter_StepDefinitions {
 
 
 }
-
