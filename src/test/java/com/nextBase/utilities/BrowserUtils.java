@@ -164,7 +164,7 @@ for given duration
      */
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(element).perform();
+        actions.moveToElement(element).build().perform();
     }
 
     /**

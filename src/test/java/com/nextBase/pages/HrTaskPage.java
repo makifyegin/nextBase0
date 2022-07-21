@@ -61,8 +61,9 @@ public class HrTaskPage extends LoginPage {
     public WebElement selectButton;
 
 
-    @FindBy(xpath = "//div[@class='task-additional-alt-more']")
+    @FindBy(xpath = "//div[contains(text(),'\t\t\t\t\t\tMore\t\t\t\t\t')]")
     public WebElement clickMore;
+    //div[@data-bx-id="task-edit-footer"]
 
 
     @FindBy(xpath = "(//a[@href='javascript:void(0);'])[10]")
