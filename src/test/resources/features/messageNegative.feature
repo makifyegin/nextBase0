@@ -17,14 +17,14 @@ Feature: Sending Message feature
 
 
   @NEXT-1067
-  Scenario Outline: Verify that user can not upload folder
+  Scenario Outline: Verify that user can not upload anything except files and images
 
     Given "<User>" is on homepage
     When user clicks 'MESSAGE' button
     And user clicks uploaded files button
     And user clicks uploaded files and images button
-    And user uploaded folders
-    Then verify that user can not upload folders from local disk
+    And user uploaded anything except files and images
+    Then verify that user can not upload anything except files and images from local disk
 
 
     Examples:
