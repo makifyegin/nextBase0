@@ -36,6 +36,8 @@ public class Appreciation_StepDefinition {
 
         appreciationPage.moreButton.click();
         appreciationPage.appreciationButton.click();
+
+
     }
 
     //-----------1nd Scenario-----DONE-------//
@@ -57,10 +59,6 @@ public class Appreciation_StepDefinition {
 
         Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']")).sendKeys("C:\\Users\\44739\\OneDrive\\Desktop\\Project Check");
         BrowserUtils.sleep(2);
-
-//        appreciationPage.uploadFilesAndImagesButton.click();
-//        String filePath= "\u202AC:\\Users\\44739\\OneDrive\\Desktop\\photo.jpg";
-//        appreciationPage.uploadFilesAndImagesButton.sendKeys(filePath);
 
         appreciationPage.sendButton.click();
 
@@ -93,7 +91,7 @@ public class Appreciation_StepDefinition {
     @Then("send added user to Activity Stream and verify if it's displayed or not")
     public void sendAddedUserToActivityStreamAndVerifyIfItSDisplayedOrNot() {
         appreciationPage.sendButton.click();
-        WebElement addedUser= Driver.getDriver().findElement(By.xpath("//a[@id='dest_1639_512']"));
+        WebElement addedUser= Driver.getDriver().findElement(By.xpath("(//a[@class='feed-add-post-destination-new'])[1]"));
         System.out.println("addedUser.isDisplayed() = " + addedUser.isDisplayed());
     }
 
@@ -120,11 +118,11 @@ public class Appreciation_StepDefinition {
         appreciationPage.sendButton.click();
     }
 
-    @Then("verify that user can see link")
-    public void verifyThatUserCanSeeLink() {
-        WebElement link= Driver.getDriver().findElement(By.xpath("(//a[.='https://jira.cydeo.com/browse/NEXT-1016'])[1]"));
-        System.out.println("link.isDisplayed() = " + link.isDisplayed());
-    }
+//    @Then("verify that user can see link")
+//    public void verifyThatUserCanSeeLink() {
+//        WebElement link= Driver.getDriver().findElement(By.xpath("(//a[.='https://jira.cydeo.com/browse/NEXT-1016'])[1]"));
+//        System.out.println("link.isDisplayed() = " + link.isDisplayed());
+//    }
 
     //------4th Scenario--------DONE----//
 
@@ -140,8 +138,8 @@ public class Appreciation_StepDefinition {
 
     @And("user insert video link and click save")
     public void userInsertVideoLinkAndClickSave() {
-        appreciationPage.videoLinkBar.sendKeys(ConfigurationReader.getProperty("VimeoLink"));
-        BrowserUtils.waitForVisibility(By.xpath("//label[.='Video title:']"),10);
+        appreciationPage.videoLinkBar.sendKeys(ConfigurationReader.getProperty("vimeo.url"));
+        BrowserUtils.waitForVisibility(By.xpath("//table/tbody/tr/td[.='Video size:']"),20);
         appreciationPage.saveVideoLink.click();
     }
 
@@ -204,8 +202,8 @@ public class Appreciation_StepDefinition {
 
     @Then("verify that user can see sent mention.")
     public void verifyThatUserCanSeeSentMention() {
-        WebElement helpdeskUser= Driver.getDriver().findElement(By.xpath("//a[@rel='U512']/div[@class='bx-finder-company-department-employee-info']"));
-        System.out.println("helpdeskUser.isDisplayed() = " + helpdeskUser.isDisplayed());
+//        WebElement helpdeskUser= Driver.getDriver().findElement(By.xpath("//a[@rel='U512']/div[@class='bx-finder-company-department-employee-info']"));
+//        System.out.println("helpdeskUser.isDisplayed() = " + helpdeskUser.isDisplayed());
 
 //        appreciationPage.more.click();
 //        appreciationPage.deleteButton.click();
