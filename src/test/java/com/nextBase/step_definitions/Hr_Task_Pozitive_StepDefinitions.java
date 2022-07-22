@@ -22,6 +22,7 @@ public class Hr_Task_Pozitive_StepDefinitions {
     }
     @Given("User clicks Tasks button on the home page")
     public void userClicksTasksButtonOnTheHomePage() {
+        BrowserUtils.waitForClickablility(hrTaskPage.taskButton,90);
         hrTaskPage.taskButton.click();
     }
     @When("User verify display task page")
@@ -83,7 +84,6 @@ public class Hr_Task_Pozitive_StepDefinitions {
     public void userClicksMoreMenu() {
         BrowserUtils.scrollToElement(hrTaskPage.clickMore);
         hrTaskPage.clickMore.click();
-       // hrTaskPage.clickMore.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN);
     }
     @And("User clicks Soccer team")
     public void userClicksSoccerTeam() {
@@ -97,13 +97,8 @@ public class Hr_Task_Pozitive_StepDefinitions {
     public void userSeesNewTaskOnTheTaskPage() {
         Driver.getDriver().switchTo().defaultContent();
         String expectedAttribute="tasks-grid-group-link";
-
         Assert.assertTrue(expectedAttribute,hrTaskPage.
                 underSoccerTeamCreatedTask.getAttribute("class").contains("tasks-grid-group-link"));
     }
-    @Given("HR User has already created task as {string}")
-    public void hrUserHasAlreadyCreatedTaskAs(String taskName) {
-         hrTaskPage.newTaskButton.click();
-         hrTaskPage.textArea.click();
-    }
+
 }

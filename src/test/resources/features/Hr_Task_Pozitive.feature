@@ -36,6 +36,5 @@ Feature: HR user  task  features
     And User clicks ADD TASK button
     Then User sees New Task on the task page
 
-@EditTask
-  Scenario: HR User edits already created task
-    Given HR User has already created task as "Task for precondition to edit task"
+
+

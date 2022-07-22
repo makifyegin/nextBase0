@@ -30,7 +30,6 @@ Feature:HR user high priority task feature
 	#9. In the 11th AC, "Responsible person can change deadline", "Approve task when completed" Options should be checked.
   @NEXT-1035
   Scenario: Verify that  HR User can create a high priority task in duration of the certain deadline by mentioning about a user
-
     When User clicks NEW TASK button
     And User displays new task page
     And user clicks on header  and types "New Priorty".
@@ -49,3 +48,12 @@ Feature:HR user high priority task feature
     And User clicks ADD TASK button
 
     Then Verify that "high priority task" on the task page
+@EditTask
+  Scenario: HR User edits already created task
+    Given HR User has already created task as "Task for precondition to edit task"
+    And user clicks created task button
+    And users clicks edit button
+    And user clicks more button
+    And user clicks hours button and writes "3"
+    And user clicks  SAVE CHANGES button
+    And user verify that chanced time
