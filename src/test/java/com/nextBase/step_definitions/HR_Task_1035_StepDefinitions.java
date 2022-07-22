@@ -1,10 +1,12 @@
 package com.nextBase.step_definitions;
 
 import com.nextBase.pages.HrTaskPage;
+import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
@@ -12,7 +14,7 @@ import org.openqa.selenium.Keys;
 public class HR_Task_1035_StepDefinitions {
     HrTaskPage hrTaskPage = new HrTaskPage();
 
-    @When("user clicks on header and types {string}")
+    @When("user clicks on header  and types {string}")
     public void user_clicks_on_header_and_types(String string) {
         hrTaskPage.thingsToDo.sendKeys(string, Keys.ENTER);
     }
@@ -20,6 +22,7 @@ public class HR_Task_1035_StepDefinitions {
     public void user_clicks_high_priority_button() {
         hrTaskPage.highPriority.sendKeys(Keys.BACK_SPACE);
         hrTaskPage.highPriority.click();
+
     }
     @When("User clicks Text area and types {string}")
     public void user_clicks_text_area_and_types(String string) throws InterruptedException {
@@ -27,42 +30,76 @@ public class HR_Task_1035_StepDefinitions {
         hrTaskPage.textArea.click();
         hrTaskPage.textArea.sendKeys(string);
         Thread.sleep(3);
+
+
     }
     @When("User clicks Created by button")
     public void user_clicks_created_by_button() throws InterruptedException {
+
+
+
     }
 
     @When("User selects {string} date")
     public void user_selects_date(String string) {
         hrTaskPage.getDate31ThJun.click();
         hrTaskPage.selectButton.click();
+
+
+
     }
     @Then("Verify that {string} on the task page")
     public void verify_that_on_the_task_page(String string) {
+        Driver.getDriver().switchTo().defaultContent();
+
+       String actual= hrTaskPage.highPriorityTaskAssert.getText();
+
+        Assert.assertEquals("High Priorty",actual);
+
+
 
     }
-
     @And("user clicks Add more menu")
     public void userClicksAddMoreMenu() {
+      // Driver.getDriver().switchTo().parentFrame();
         hrTaskPage.addMoreResponsible.click();
     }
-
     @And("user clicks time tracking button.")
     public void userClicksTimeTrackingButton() {
+        BrowserUtils.scrollToElement(hrTaskPage.timeTrackingButton);
         hrTaskPage.timeTrackingButton.click();
+
+
     }
 
     @And("user clicks hours button and writes {string} on the time tracking")
-    public void userClicksHoursButtonAndWritesOnTheTimeTracking(String arg0) {
+    public void userClicksHoursButtonAndWritesOnTheTimeTracking(String hours) {
+        hrTaskPage.timeTrackingHoursButton.click();
+        BrowserUtils.waitForClickablility(hrTaskPage.timeTrackingHoursButton,60);
+        hrTaskPage.timeTrackingHoursButton.sendKeys("2");
+
+
     }
 
     @And("user clicks minutes button and writes {string} on the time tracking")
-    public void userClicksMinutesButtonAndWritesOnTheTimeTracking(String arg0) {
+    public void userClikcsMinutesButtonAndWritesOnTheTimeTracking(String minutes) {
+        hrTaskPage.timeTrackingMinuteButton.click();
+        hrTaskPage.timeTrackingMinuteButton.sendKeys(minutes);
     }
+    @When("User clicks Project menu")
+    public void user_clicks_project_menu() {
+
+        hrTaskPage.projectAddButton.click();
+    }
+
+
+
+
 
     @And("user clicks {string} and clicks pop up button")
     public void userClicksAndClicksPopUpButton(String arg0) {
         hrTaskPage.responsiblePersonHR.click();
         hrTaskPage.responsiblePersonPopUpButton.click();
+
     }
 }

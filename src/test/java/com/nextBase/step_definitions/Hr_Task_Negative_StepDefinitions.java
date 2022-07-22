@@ -61,7 +61,7 @@ public class Hr_Task_Negative_StepDefinitions {
 
     @And("User  clicks Deadline dropdown menu")
     public void userClicksDeadlineDropdownMenu() {
-        Driver.getDriver().switchTo().parentFrame();
+        //Driver.getDriver().switchTo().parentFrame();
         hrTaskPage.deadline.click();
     }
 
@@ -77,22 +77,6 @@ public class Hr_Task_Negative_StepDefinitions {
         hrTaskPage.selectButton.click();
     }
 
-
-    @And("User  clicks Project menu")
-    public void userClicksProjectMenu() {
-        hrTaskPage.projectAddButton.click();
-
-    }
-
-
-
-    @And("User  clicks Soccer team")
-    public void userClicksSoccerTeam() {
-        hrTaskPage.soccerTeam.click();
-    }
-
-
-   
     @Then("Verify that task hasn't been created recent time")
     public void userCanNotCreateTaskRecentTime() throws InterruptedException {
         Driver.getDriver().switchTo().defaultContent();

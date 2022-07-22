@@ -66,7 +66,7 @@ public class HrTaskPage extends LoginPage {
     //div[@data-bx-id="task-edit-footer"]
 
 
-    @FindBy(xpath = "(//a[@href='javascript:void(0);'])[10]")
+    @FindBy(xpath = "(//a[@class='js-id-tdp-mem-sel-is-open-form task-form-field-when-empty task-form-field-link add'])[4]")
     public WebElement projectAddButton;
 
 
@@ -124,6 +124,17 @@ public class HrTaskPage extends LoginPage {
     @FindBy(xpath = "//span[@class='popup-window-close-icon']")
     public WebElement responsiblePersonPopUpButton;
 
+
+
+    @FindBy(xpath = "//input[@class='js-id-timeestimate-time js-id-timeestimate-hour task-options-inp']")
+    public WebElement timeTrackingHoursButton;
+
+    @FindBy(xpath = "//input[@class='js-id-timeestimate-time js-id-timeestimate-minute task-options-inp']")
+    public WebElement timeTrackingMinuteButton;
+
+
+    @FindBy(xpath = "//a[@href='/company/personal/user/693/tasks/task/view/1054/'] ")
+    public WebElement highPriorityTaskAssert;
 
 
 

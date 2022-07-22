@@ -39,4 +39,3 @@ Feature: HR user  task  features
 @EditTask
   Scenario: HR User edits already created task
     Given HR User has already created task as "Task for precondition to edit task"
-    When

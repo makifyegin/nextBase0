@@ -2,6 +2,7 @@ package com.nextBase.step_definitions;
 
 import com.nextBase.pages.BasePage;
 import com.nextBase.pages.HrTaskPage;
+import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -10,6 +11,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 
 public class Hr_Task_Pozitive_StepDefinitions {
@@ -58,6 +60,7 @@ public class Hr_Task_Pozitive_StepDefinitions {
     @And("User clicks NEW TASK button")
     public void userClicksNEWTASKButton() {
         hrTaskPage.newTaskButton.click();
+
     }
 
     @And("User displays new task page")
@@ -96,16 +99,17 @@ public class Hr_Task_Pozitive_StepDefinitions {
 
     @And("User clicks more menu")
     public void userClicksMoreMenu() {
+        BrowserUtils.scrollToElement(hrTaskPage.clickMore);
         hrTaskPage.clickMore.click();
+       // hrTaskPage.clickMore.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN);
+
+
     }
 
-    @And("User clicks Project menu")
-    public void userClicksProjectMenu()  {
-        hrTaskPage.projectAddButton.click();
-    }
 
     @And("User clicks Soccer team")
     public void userClicksSoccerTeam() {
+
         hrTaskPage.soccerTeam.click();
     }
 
