@@ -26,7 +26,7 @@ Feature: NextBase App appreciation feature
     When user paste link url to link bar
     And user clicks to Save button
     And send link to Appreciation page
-    Then verify that user can see link
+    #Then verify that user can see link
 
   @video #passed
   Scenario: User should be able to insert videos by clicking on the video icon and entering the video URL.
@@ -46,7 +46,7 @@ Feature: NextBase App appreciation feature
     When user clicks Add Mention icon
     And user clicks Employees and departments button
     Then user should click one user from the list and send appreciation
-    Then verify that user can see sent mention.
+    #Then verify that user can see sent mention.
 
 
 
