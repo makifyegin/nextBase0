@@ -1,11 +1,15 @@
 Feature: Negative Appreciation feature
 
   Background:
-    Given user is on home page
-    And user is on Appreciation page
+  Background: user is on Activity Stream
+    Given "hr" is on Home page and clicks Appreciation button from More  dropdown menu
 
-  Scenario: User should be able to click on upload files icon to upload files and pictures from local disks.
-      #upload folder
+  Scenario: User should be able to upload application on upload files and pictures from local disks.
+    When user clicks upload files icon
+    And user clicks Upload files and images
+    And user upload application instead of file
+    Then verify that user can upload application
+
   Scenario: User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
       #without sending any message , non exit contact
   Scenario: User should be able to attach link by clicking on the link icon.
