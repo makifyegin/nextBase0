@@ -2,6 +2,7 @@ package com.nextBase.step_definitions;
 
 import com.nextBase.pages.NextBasePage;
 import com.nextBase.utilities.BrowserUtils;
+import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -11,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
+import javax.lang.model.SourceVersion;
 import javax.swing.*;
 import java.util.List;
 import java.util.Set;
@@ -22,19 +24,27 @@ public class MessageNegative_StepDefinitions {
     ////////////////////UPLOADED FEATURE///////////////////////////
 
 
-    @When("user uploaded folders")
+    @When("user uploaded anything except files and images")
     public void user_uploaded_folders() {
-        Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']")).sendKeys("C:\\Users\\SDVISTANBUL\\Desktop\\SDETTTT");
-
+        Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']")).sendKeys("C:\\Users\\SDVISTANBUL\\Desktop\\League of Legends (TM) Client 2021-11-24 19-40-10.mp4");
+//C:\Users\SDVISTANBUL\Desktop\SDETTTT
         BrowserUtils.sleep(2);
     }
-    @Then("verify that user can not upload folders from local disk")
+    @Then("verify that user can not upload anything except files and images from local disk")
     public void verify_that_user_can_not_upload_folders_from_local_disk() {
 
-        String expected = "Upload files and images";
-        String actual = nextBasePage.uploadedFileAndImages.getText();
+        String expected = "League of Legends (TM) Client 2021-11-24 19-40-10.mp4";
 
-        Assert.assertTrue(expected,actual.contains("upload"));
+        String actualFalse = nextBasePage.negativeUploaded.getText();
+        System.out.println("actualFalse = " + actualFalse);
+
+        Assert.assertEquals(expected, actualFalse);
+
+        //with AssertTrue
+        //String expected ="Upload files and images";
+        // String actual = nextBasePage.uploadedFileAndImages.getText();
+        //System.out.println("nextBasePage.uploadedFileAndImages.getText() = " + nextBasePage.uploadedFileAndImages.getText());
+        //Assert.assertTrue(expected,actual.contains("upload"));
 
 
     }
@@ -46,20 +56,23 @@ public class MessageNegative_StepDefinitions {
 
     @When("user add {string}")
     public void user_add(String string) {
-        nextBasePage.videoURL.sendKeys("https://www.dailymotion.com/video/x8ckpok?playlist=x7g4o0");
+        nextBasePage.videoURL.sendKeys(ConfigurationReader.getProperty("daily.URL"));
         //  BrowserUtils.waitForVisibility(nextBasePage.videoURL,2);
         BrowserUtils.sleep(7);
     }
     @Then("verify that user can not add video which is not vimeo or youtube url")
     public void verify_that_user_can_not_add_video_which_is_not_vimeo_or_youtube_url() {
 
-        System.out.println("nextBasePage.negativeVideoURL.getAttribute(\"class\") = " + nextBasePage.negativeVideoURL.getAttribute("class"));
+       // System.out.println("nextBasePage.negativeVideoURL.getAttribute(\"class\") = " + nextBasePage.negativeVideoURL.getAttribute("class"));
 
         String attribute = "bxhtmled-video-error";
 
-        Assert.assertEquals(attribute,nextBasePage.negativeVideoURL.getAttribute("class"));
-    }
+       // Assert.assertEquals(attribute,nextBasePage.negativeVideoURL.getAttribute("class"));
 
+       Boolean mainPage=Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']")).isDisplayed();
+
+        Assert.assertNotEquals(attribute,mainPage);
+    }
 
 
 
@@ -94,14 +107,13 @@ public class MessageNegative_StepDefinitions {
     @Then("verify that user can not send message without add recipient")
     public void verify_that_user_can_not_send_message_without_add_recipient() {
 
+    System.out.println("nextBasePage.sendMessagewithoutRecipient.getText() = " + nextBasePage.sendMessageWithoutRecipient.getText());
+
+     String expected = "Please specify at least one person.";
+
+     Assert.assertEquals(expected,nextBasePage.sendMessageWithoutRecipient.getText());
 
 
-
-       System.out.println("nextBasePage.sendMessagewithoutRecipient.getText() = " + nextBasePage.sendMessageWithoutRecipient.getText());
-
-       String expected = "Please specify at least one person.";
-
-      Assert.assertEquals(expected,nextBasePage.sendMessageWithoutRecipient.getText());
     }
 
 
@@ -126,6 +138,8 @@ public class MessageNegative_StepDefinitions {
          Assert.assertEquals(expected,nextBasePage.sendMessageWithoutRecipient.getText());
 
     }
+
+    //////////////// ADD RECIPIENTS FEATURE/////////////////
 
 
     @And("user adds {string}")
@@ -160,6 +174,8 @@ public class MessageNegative_StepDefinitions {
 
     }
 
+    //////////////////LINK FEATURE//////////////////////
+
     @And("user add link text {string}")
     public void userAddLinkText(String string) {
 
@@ -169,7 +185,9 @@ public class MessageNegative_StepDefinitions {
     @And("user add link URL {string}")
     public void userAddLinkURL(String string) {
         nextBasePage.linkURL.sendKeys(string);
+        BrowserUtils.waitFor(3);
     }
+
 
     @Then("verify that user can not add missing link")
     public void verifyThatUserCanNotAddMissingLink() {

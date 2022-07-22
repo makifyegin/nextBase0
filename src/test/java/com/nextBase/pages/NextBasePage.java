@@ -208,6 +208,9 @@ public class NextBasePage {
     @FindBy(xpath = "/html/body/a[1]")
     public WebElement missingLink;
 
+    @FindBy(xpath = "//span[text()='League of Legends (TM) Client 2021-11-24 19-40-10.mp4']")
+    public WebElement negativeUploaded;
+
 
 
 }
