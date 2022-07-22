@@ -169,9 +169,9 @@ public class Message_StepDefinitions {
     }
     @When("user add video URL")
     public void user_add_video_url() {
-       BrowserUtils.sleep(2);
+       BrowserUtils.sleep(5);
        nextBasePage.videoURL.sendKeys(ConfigurationReader.getProperty("video.URL"));
-
+        BrowserUtils.sleep(5);
 
     }
 
@@ -185,11 +185,18 @@ public class Message_StepDefinitions {
     @Then("verify that user can add video")
     public void verify_that_user_can_add_video() {
 
-        System.out.println("nextBasePage.videoUploadedError.getAttribute(\"class\") = " + nextBasePage.videoUploadedError.getAttribute("class"));
+         System.out.println("nextBasePage.videoUploadedError.getAttribute(\"class\") = " + nextBasePage.videoUploadedError.getAttribute("class"));
 
         String expected = "bxhtmled-video-error";
 
-        Assert.assertEquals(expected,nextBasePage.videoUploadedError.getAttribute("class"));
+//      Assert.assertEquals(expected,nextBasePage.videoUploadedError.getAttribute("class"));
+
+
+        Boolean mainPage=Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']")).isDisplayed();
+
+        Assert.assertNotEquals(expected,mainPage);
+
+
 
     }
 
