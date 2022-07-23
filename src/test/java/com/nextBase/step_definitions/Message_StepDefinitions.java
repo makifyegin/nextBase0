@@ -282,22 +282,7 @@ public class Message_StepDefinitions {
     }
     @Then("verify that user can send message")
     public void verifyThatUserCanSendMessage() {
-        //1
-       // Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//*[@id=\"feed-add-post-form-notice-blockblogPostForm\"]/div")).isDisplayed());
-       // WebElement mainPage = Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']"));
-       // System.out.println("mainPage.getText() = " + mainPage.getText());
-
-        //2
-        //WebElement sendMessageToAllEmployees = Driver.getDriver().findElement(By.xpath("//span[text()=\"To all employees\"]"));
-        // String verifySendAllEmployeesGetText = sendMessageToAllEmployees.getText();
-        // System.out.println("verifySendAllEmployeesGetText = " + verifySendAllEmployeesGetText);
-        // String expected ="To all employees";
-        // Assert.assertEquals(expected,verifySendAllEmployeesGetText);
-
-         //3
-        WebElement verifySendingMessage = Driver.getDriver().findElement(By.xpath("//div[@class=\"feed-add-error\"]"));
-        Assert.assertTrue(verifySendingMessage.isDisplayed());
-        BrowserUtils.waitForVisibility(verifySendingMessage,2);
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//div[@id=\"microoPostFormLHE_blogPostForm\"]/div/span[1]")).isDisplayed());
 
 
 
