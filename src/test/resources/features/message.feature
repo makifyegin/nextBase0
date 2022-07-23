@@ -137,6 +137,7 @@ Feature: Send messages feature
 
     Given "<User>" is on homepage
     And user clicks 'MESSAGE' button
+    And user writes "1" in the title space
     And user click send button
     Then verify that user can send message
 
