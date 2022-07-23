@@ -57,7 +57,8 @@ public class Appreciation_StepDefinition {
     @Then("verify that user can upload file and images from local disk")
     public void verifyThatUserCanUploadFileAndImagesFromLocalDisk() {
 
-        Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']")).sendKeys("C:\\Users\\44739\\OneDrive\\Desktop\\Project Check");
+        Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']"))
+                .sendKeys("C:\\Users\\44739\\OneDrive\\Desktop\\Project Check");
         BrowserUtils.sleep(2);
 
         appreciationPage.sendButton.click();

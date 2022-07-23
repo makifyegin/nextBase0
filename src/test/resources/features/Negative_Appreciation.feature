@@ -4,6 +4,7 @@ Feature: Negative Appreciation feature
   Background: user is on Activity Stream
     Given "hr" is on Home page and clicks Appreciation button from More  dropdown menu
 
+    @uploadApp
   Scenario: User should be able to upload application on upload files and pictures from local disks.
     When user clicks upload files icon
     And user clicks Upload files and images
