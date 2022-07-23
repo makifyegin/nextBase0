@@ -47,7 +47,7 @@ public class HrTaskPage extends LoginPage {
     public WebElement textAreaIframe;
 
 
-    @FindBy(xpath = "(//input[@data-bx-id=\"datepicker-display\"])[1]")
+    @FindBy(xpath = "(//input[@data-bx-id='datepicker-display'])[1]")
     public WebElement deadline;
 
 
@@ -61,8 +61,9 @@ public class HrTaskPage extends LoginPage {
     public WebElement selectButton;
 
 
-    @FindBy(xpath = "//div[@class='task-additional-alt-more']")
+    @FindBy(xpath = "//div[contains(text(),'\t\t\t\t\t\tMore\t\t\t\t\t')]")
     public WebElement clickMore;
+    //div[@data-bx-id="task-edit-footer"]
 
 
     @FindBy(xpath = "(//a[@href='javascript:void(0);'])[10]")
@@ -105,9 +106,24 @@ public class HrTaskPage extends LoginPage {
     @FindBy(xpath = "(//span[@data-target='originator'])[1]")
     public WebElement createdByButton;
 
-
     @FindBy(xpath = "//a[@data-date='1659225600000']")
     public WebElement getDate31ThJun;
+
+    @FindBy(xpath = "(//a[@class='js-id-tdp-mem-sel-is-open-form task-form-field-when-filled task-form-field-link add'])[1]")
+    public WebElement addMoreResponsible;
+
+
+
+    @FindBy(xpath = "//input[@data-target='allow-time-tracking']")
+    public WebElement timeTrackingButton;
+
+    @FindBy(xpath = "//div[contains(text(),'hr78@cybertekschool.com')]")
+    public WebElement responsiblePersonHR;
+
+
+    @FindBy(xpath = "//span[@class='popup-window-close-icon']")
+    public WebElement responsiblePersonPopUpButton;
+
 
 
 
