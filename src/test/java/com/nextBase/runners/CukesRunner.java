@@ -17,9 +17,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/nextBase/step_definitions",
         dryRun = false,
-        tags = "@NEXT-1067",
+        tags = "@NEXT-1072",
         publish = false
-
 
 )
 
