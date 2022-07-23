@@ -52,10 +52,10 @@ public class Negative_Appreciation_StepDefinitions {
     @And("user upload application instead of file")
     public void userUploadApplicationInsteadOfFile() {
         Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']"))
-                .sendKeys("C:\\Users\\44739\\OneDrive\\Desktop\\Zoom.lnk");
+                .sendKeys("C:\\Users\\44739\\OneDrive\\Desktop\\Project Check");
         BrowserUtils.sleep(2);
 
-        appreciationPage.sendButton.click();
+        //appreciationPage.sendButton.click();
 
     }
 
