@@ -1,5 +1,6 @@
 package com.nextBase.step_definitions;
 
+import com.github.javafaker.Faker;
 import com.nextBase.pages.NextBasePage;
 import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.ConfigurationReader;
@@ -89,13 +90,18 @@ public class MessageNegative_StepDefinitions {
     }
 
 
+    Faker faker = new Faker();
+    String message = "";
+
+
+
     @And("user writes {string} in the title space")
     public void userWritesInTheTitleSpace(String string) {
-
+        message = faker.name().fullName();
 
         Driver.getDriver().switchTo().frame(nextBasePage.iframe);
         nextBasePage.messageBody.click();
-        nextBasePage.messageBody.sendKeys(string);
+        nextBasePage.messageBody.sendKeys(message);
         BrowserUtils.sleep(1);
         Driver.getDriver().switchTo().parentFrame();
 
