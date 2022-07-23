@@ -51,7 +51,7 @@ Feature: Default
     And Click the repeating event with description
     And Add "specific" time zones
     And Add certain "location"
-    And Add "attendees"
+    And Add [attendees]
     And Click More
     And Add colour of "Pink"
     And Choose availability "Occupied"
