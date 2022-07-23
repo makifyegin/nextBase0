@@ -24,19 +24,6 @@ public class Message_StepDefinitions {
     List<WebElement>userName;
 
 
-//    @Given("user is on homepage")
-//    public void user_is_on_homepage(DataTable dataTable) {
-//
-//        if (dataTable.asList().get(0).toString().toLowerCase().contains("hr")) {
-//            BasePage.loginAsHR();
-//        } else if (dataTable.asList().get(0).toString().toLowerCase().contains("helpdesk")) {
-//            BasePage.loginAsHelpdesk();
-//        } else if (dataTable.asList().get(0).toString().toLowerCase().contains("marketing")) {
-//            BasePage.loginAsMarketing();
-//        }
-//    }
-
-
     @When("user clicks {string} button")
     public void user_clicks_button(String string) {
         nextBasePage.messageButton.click();
