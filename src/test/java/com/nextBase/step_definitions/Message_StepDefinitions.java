@@ -24,19 +24,6 @@ public class Message_StepDefinitions {
     List<WebElement>userName;
 
 
-//    @Given("user is on homepage")
-//    public void user_is_on_homepage(DataTable dataTable) {
-//
-//        if (dataTable.asList().get(0).toString().toLowerCase().contains("hr")) {
-//            BasePage.loginAsHR();
-//        } else if (dataTable.asList().get(0).toString().toLowerCase().contains("helpdesk")) {
-//            BasePage.loginAsHelpdesk();
-//        } else if (dataTable.asList().get(0).toString().toLowerCase().contains("marketing")) {
-//            BasePage.loginAsMarketing();
-//        }
-//    }
-
-
     @When("user clicks {string} button")
     public void user_clicks_button(String string) {
         nextBasePage.messageButton.click();
@@ -187,19 +174,19 @@ public class Message_StepDefinitions {
     }
 
 
+    //normally it has a bug but the test is passed
     @Then("verify that user can add video")
     public void verify_that_user_can_add_video() {
 
-         System.out.println("nextBasePage.videoUploadedError.getAttribute(\"class\") = " + nextBasePage.videoUploadedError.getAttribute("class"));
+        System.out.println("nextBasePage.videoUploadedError.getAttribute(\"class\") = " + nextBasePage.videoUploadedError.getAttribute("class"));
 
         String expected = "bxhtmled-video-error";
 
 //      Assert.assertEquals(expected,nextBasePage.videoUploadedError.getAttribute("class"));
 
 
-        Boolean mainPage=Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']")).isDisplayed();
-
-        Assert.assertNotEquals(expected,mainPage);
+        // Boolean mainPage = Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']")).isDisplayed();
+        Assert.assertFalse(nextBasePage.videoUploadedError.isDisplayed());
 
 
 
@@ -282,24 +269,12 @@ public class Message_StepDefinitions {
     }
     @Then("verify that user can send message")
     public void verifyThatUserCanSendMessage() {
-        //1
-       // Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//*[@id=\"feed-add-post-form-notice-blockblogPostForm\"]/div")).isDisplayed());
-       // WebElement mainPage = Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']"));
-       // System.out.println("mainPage.getText() = " + mainPage.getText());
 
-        //2
-        //WebElement sendMessageToAllEmployees = Driver.getDriver().findElement(By.xpath("//span[text()=\"To all employees\"]"));
-        // String verifySendAllEmployeesGetText = sendMessageToAllEmployees.getText();
-        // System.out.println("verifySendAllEmployeesGetText = " + verifySendAllEmployeesGetText);
-        // String expected ="To all employees";
-        // Assert.assertEquals(expected,verifySendAllEmployeesGetText);
-
-         //3
-        WebElement verifySendingMessage = Driver.getDriver().findElement(By.xpath("//div[@class=\"feed-add-error\"]"));
-        Assert.assertTrue(verifySendingMessage.isDisplayed());
-        BrowserUtils.waitForVisibility(verifySendingMessage,2);
-
-
+      //  Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//div[@id=\"microoPostFormLHE_blogPostForm\"]/div/span[1]")).isDisplayed());
+        WebElement sendMessage =Driver.getDriver().findElement(By.xpath("//div[@id=\"microoPostFormLHE_blogPostForm\"]/div/span[1]"));
+        //WebElement mainPage = Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']"));
+        BrowserUtils.waitForVisibility(sendMessage,3);
+        Assert.assertTrue(sendMessage.isDisplayed());
 
 
     }
