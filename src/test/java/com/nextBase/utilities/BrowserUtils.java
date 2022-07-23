@@ -164,7 +164,7 @@ for given duration
      */
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(element).perform();
+        actions.moveToElement(element).build().perform();
     }
 
     /**
@@ -177,6 +177,15 @@ for given duration
         List<String> elemTexts = new ArrayList<>();
         for (WebElement el : list) {
             elemTexts.add(el.getText());
+        }
+        return elemTexts;
+    }
+
+
+    public static List<WebElement> getElement(List<WebElement> list) {
+        List<WebElement> elemTexts = new ArrayList<>();
+        for (WebElement el : list) {
+           elemTexts.add(el);
         }
         return elemTexts;
     }
