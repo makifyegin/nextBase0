@@ -17,10 +17,10 @@ public class CalendarPage {
 
 
     @FindBy(xpath = "(//*[@class='calendar-field calendar-field-datetime'])[1]")
-    public WebElement dateFromInput;
+    public WebElement eventDateAndTime;
 
     @FindBy(xpath = "(//*[@class='calendar-field calendar-field-datetime'])[2]")
-    public WebElement dateToInput;
+    public WebElement eventEndDateAndTime;
 
     // Pleaser add eventNameInput is akif.
     @FindBy(xpath = "//*[@name='name']")
@@ -33,7 +33,7 @@ public class CalendarPage {
     @FindBy(xpath = "//span[text()='akif']")
     public WebElement eventNameFind;
 
-    @FindBy(xpath = "//span[text()='My Calendar']")
+    @FindBy(xpath = "//span[text()='My Calendarf']")
     public WebElement myCalendar;
 
     @FindBy(xpath = "//span[text()='Company Calendar']")
@@ -54,12 +54,11 @@ public class CalendarPage {
     public WebElement calenderCompanyEvents;
 
 
-    @FindBy(xpath = "//input[@id ='calendar_slider_200334_important' ]")
+    @FindBy(xpath = "//input[@name='importance']")
     public WebElement thisEventIsImportant;
 
 
-
-    @FindBy(xpath = "    //select[@name='EVENT_RRULE[FREQ]' ]")
+    @FindBy(xpath = "//select[@name='EVENT_RRULE[FREQ]']")
     public WebElement repeatSelector;
 
     @FindBy(xpath = "//input[@name='lo_cation']")
@@ -89,8 +88,14 @@ public class CalendarPage {
     @FindBy(xpath = "//div[@class='calendar-timeline-stream-content-event-name']")
     public WebElement eventName;
 
+    @FindBy(xpath = "//span[@id='EC1737316002-slider-destination-link']\n")
+    public WebElement attendees;
 
+    @FindBy(xpath = "(//div[@class='bx-finder-box-item-t7-name'])[2]")
+    public WebElement attendeesHelpDesk;
 
+    @FindBy(xpath = "//span[@class='popup-window-close-icon']")
+    public WebElement attendeesClose;
 
 
 }
