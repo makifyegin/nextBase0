@@ -55,28 +55,6 @@ Feature: Sending Message feature
       | Marketing |
 
 
-  @NEXT-1072
-
-  Scenario Outline: Verify that user can not attach missing link
-
-    Given "<User>" is on homepage
-    When user clicks 'MESSAGE' button
-    And user clicks link icon
-    And user add link text "next"
-    And user add link URL "https://nextbasecrm"
-    And user click save button
-    Then verify that user can not add missing link
-
-    Examples:
-
-      |User     |
-      |HR       |
-      |Helpdesk |
-      |Marketing|
-
-
-
-
 
 
   @NEXT-1069
@@ -98,23 +76,6 @@ Feature: Sending Message feature
       |Helpdesk |
       |Marketing|
 
-#  @NEXT-1045Negative
-#
-#  Scenario Outline: User can not add non existing mention by clicking on the Add mention icon.
-#
-#
-#    Given "<User>" is on homepage
-#    When user clicks 'MESSAGE' button
-#    And user clicks mention icon
-#    And user select non existing mention
-#    Then verify that user can not add non existing mention
-#
-#    Examples:
-#
-#      |User     |
-#      |HR       |
-#      |Helpdesk |
-#      |Marketing|
 
 
 
@@ -147,6 +108,26 @@ Feature: Sending Message feature
     And user click send button without provide title
     Then verify that user can not send message without title
 
+
+    Examples:
+
+      |User     |
+      |HR       |
+      |Helpdesk |
+      |Marketing|
+
+
+  @NEXT-1072
+
+  Scenario Outline: Verify that user can not attach missing link
+
+    Given "<User>" is on homepage
+    When user clicks 'MESSAGE' button
+    And user clicks link icon
+    And user add link text "next"
+    And user add link URL "https://nextbasecrm"
+    And user click save button
+    Then verify that user can not add missing link
 
     Examples:
 

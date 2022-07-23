@@ -26,25 +26,28 @@ public class MessageNegative_StepDefinitions {
 
     @When("user uploaded anything except files and images")
     public void user_uploaded_folders() {
-        Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']")).sendKeys("C:\\Users\\SDVISTANBUL\\Desktop\\League of Legends (TM) Client 2021-11-24 19-40-10.mp4");
-//C:\Users\SDVISTANBUL\Desktop\SDETTTT
+        Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']")).sendKeys("C:\\Users\\SDVISTANBUL\\Desktop\\SDETTTT");
+        //C:\Users\SDVISTANBUL\Desktop\League of Legends (TM) Client 2021-11-24 19-40-10.mp4 -->video
+        //C:\Users\SDVISTANBUL\Desktop\SDETTTT -->folder
+        //C:\Users\SDVISTANBUL\apple-logo.webp -->images
         BrowserUtils.sleep(2);
     }
     @Then("verify that user can not upload anything except files and images from local disk")
     public void verify_that_user_can_not_upload_folders_from_local_disk() {
 
-        String expected = "League of Legends (TM) Client 2021-11-24 19-40-10.mp4";
+        //*[@id="file1658573464475Item"]/td[3]/span[2]
+        //span[text()='Incorrect server response.']
 
-        String actualFalse = nextBasePage.negativeUploaded.getText();
-        System.out.println("actualFalse = " + actualFalse);
+        //if we want to uploaded anything expect file or images we should get this error.
+         WebElement actual = Driver.getDriver().findElement(By.xpath("//span[text()='Incorrect server response.']"));
+         String actualError = Driver.getDriver().findElement(By.xpath("//span[text()='Incorrect server response.']")).getText();
+         System.out.println("actual.getText() = " + actual.getText());//Incorrect server response.
+         String uploadedNonExpected = "Incorrect server response.";
 
-        Assert.assertEquals(expected, actualFalse);
+        Assert.assertEquals(uploadedNonExpected,actualError);
 
-        //with AssertTrue
-        //String expected ="Upload files and images";
-        // String actual = nextBasePage.uploadedFileAndImages.getText();
-        //System.out.println("nextBasePage.uploadedFileAndImages.getText() = " + nextBasePage.uploadedFileAndImages.getText());
-        //Assert.assertTrue(expected,actual.contains("upload"));
+
+
 
 
     }
@@ -71,7 +74,7 @@ public class MessageNegative_StepDefinitions {
 
        Boolean mainPage=Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']")).isDisplayed();
 
-        Assert.assertNotEquals(attribute,mainPage);
+        Assert.assertNotSame(attribute,mainPage);//--> it should not uploaded so we can not see main page
     }
 
 
@@ -202,15 +205,4 @@ public class MessageNegative_StepDefinitions {
 
     }
 
-//    @And("user select non existing mention")
-//    public void userSelectNonExistingMention() {
-//
-//
-//    }
-//
-//    @Then("verify that user can not add non existing mention")
-//    public void verifyThatUserCanNotAddNonExistingMention() {
-//
-//
-//    }
 }

@@ -63,6 +63,11 @@ public class Message_StepDefinitions {
 
         BrowserUtils.sleep(2);
 
+        WebElement uploadedMessage = Driver.getDriver().findElement(By.xpath("//div[@class='files-storage-block']/a"));
+        System.out.println("uploadedMessage.getText() = " + uploadedMessage.getText());//My Drive / Uploaded files
+        String expected ="My Drive / Uploaded files";
+        Assert.assertEquals(expected,uploadedMessage.getText());
+
 
     }
 
