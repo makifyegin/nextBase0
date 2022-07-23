@@ -64,8 +64,8 @@ public class CalendarStepDefinitions {
 
         calendarPage.eventNameInput.clear();
         calendarPage.eventNameInput.sendKeys(name);
-        calendarPage.dateFromInput.sendKeys("07/11/2022");
-        calendarPage.dateToInput.sendKeys("07/11/2022");
+        calendarPage.eventDateAndTime.sendKeys("07/11/2022");
+        calendarPage.eventEndDateAndTime.sendKeys("07/11/2022");
         calendarPage.allDayCheckBox.click();
 
 
