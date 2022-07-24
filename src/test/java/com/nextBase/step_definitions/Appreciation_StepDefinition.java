@@ -119,12 +119,6 @@ public class Appreciation_StepDefinition {
         appreciationPage.sendButton.click();
     }
 
-//    @Then("verify that user can see link")
-//    public void verifyThatUserCanSeeLink() {
-//        WebElement link= Driver.getDriver().findElement(By.xpath("(//a[.='https://jira.cydeo.com/browse/NEXT-1016'])[1]"));
-//        System.out.println("link.isDisplayed() = " + link.isDisplayed());
-//    }
-
     //------4th Scenario--------DONE----//
 
     @When("user clicks Insert video icon")
@@ -201,14 +195,6 @@ public class Appreciation_StepDefinition {
         appreciationPage.sendButton.click();
     }
 
-    @Then("verify that user can see sent mention.")
-    public void verifyThatUserCanSeeSentMention() {
-//        WebElement helpdeskUser= Driver.getDriver().findElement(By.xpath("//a[@rel='U512']/div[@class='bx-finder-company-department-employee-info']"));
-//        System.out.println("helpdeskUser.isDisplayed() = " + helpdeskUser.isDisplayed());
-
-//        appreciationPage.more.click();
-//        appreciationPage.deleteButton.click();
-    }
 
 
 
