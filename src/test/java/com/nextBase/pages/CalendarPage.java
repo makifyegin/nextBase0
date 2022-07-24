@@ -88,7 +88,7 @@ public class CalendarPage {
     @FindBy(xpath = "//div[@class='calendar-timeline-stream-content-event-name']")
     public WebElement eventName;
 
-    @FindBy(xpath = "//span[@id='EC1737316002-slider-destination-link']\n")
+    @FindBy(xpath = "//span[@id='EC1725938622-slider-destination-link']")
     public WebElement attendees;
 
     @FindBy(xpath = "(//div[@class='bx-finder-box-item-t7-name'])[2]")
@@ -96,6 +96,16 @@ public class CalendarPage {
 
     @FindBy(xpath = "//span[@class='popup-window-close-icon']")
     public WebElement attendeesClose;
+
+    @FindBy(xpath = "//div[.='hr1@cybertekschool.com']")
+    public WebElement attendeeUser;
+
+
+    @FindBy(xpath = "//input[@class='feed-add-destination-inp']")
+    public WebElement attendInput;
+
+
+
 
 
 }
