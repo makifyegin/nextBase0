@@ -2,22 +2,18 @@ package com.nextBase.step_definitions;
 
 import com.nextBase.pages.BasePage;
 import com.nextBase.pages.DrivePage;
-import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.Driver;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-
-import java.util.Locale;
 
 public class Drive_StepDefinitions {
 
     DrivePage drivePage= new DrivePage();
 
     @Given("{string} is on Home page")
-    public void userIsOnDrivePage(String userType) throws InterruptedException {
+    public void userIsOnHomePage(String userType) throws InterruptedException {
         switch (userType.toLowerCase()){
             case "hr":
                 BasePage.loginAsHR();
