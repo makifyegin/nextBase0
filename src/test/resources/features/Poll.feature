@@ -3,17 +3,18 @@ Feature: Poll.feature
   As a user, I should be able to create a poll by clicking on Poll tab under Active Stream.
 
   Background: For the scenarios in the feature file, user is expected to be on login page
-    Given user is on the next base login page
+    # following scenarios are valid for all logged in user (Hr,Marketing, Helpdesk)
+    Given "Hr" is on homepage
       #user is logged in and on poll under activity stream
-    Given user is on Poll tab
+    Given user clicks on <Poll>
 
 
   #User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
   Scenario: Verify user can add multiple contacts to poll
-    When on <To:> bar and delete "All employees" selection
-    And click on <Add persons, groups or department> field
-    And click on <Employees and departments> selection
-    And click on three different users from that section
+    When on <To:> bar and deletes "All employees" selection
+    And clicks on <Add persons, groups or department> field
+    # And click on <Employees and departments> selection
+    And clicks different users from that section
     Then verify that more than one user is added to the list
 
     #User should be able to attach link by clicking on the link icon.
@@ -40,14 +41,12 @@ Feature: Poll.feature
   Scenario: Verify that user can delete multiple questions and answers
     When multiple questions with multiple answers are added
     And user can delete a question and an answer
-    Then that deleted question box and answer bos is gone on site
+    Then that deleted question box and answer box is gone on site
 
     #User should be able to provide multiple choice to attendees by selecting the Allow multiple choice checkbox.
   Scenario: Verify that user can check the "Multiple Choice" checkbox
     When user clicks checkbox <Allow multiple choice>
     Then checkbox will turn blue and get enabled
 
-    # User should be able to send a poll.
-  Scenario:
 
 
