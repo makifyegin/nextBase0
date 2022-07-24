@@ -1,3 +1,4 @@
+@poll
 Feature: Poll.feature
 
   As a user, I should be able to create a poll by clicking on Poll tab under Active Stream.
@@ -11,7 +12,7 @@ Feature: Poll.feature
 
   #User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
   Scenario: Verify user can add multiple contacts to poll
-    When on <To:> bar and deletes "All employees" selection
+    When on To bar and deletes <All employees> selection
     And clicks on <Add persons, groups or department> field
     # And click on <Employees and departments> selection
     And clicks different users from that section
