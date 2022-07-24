@@ -1,6 +1,7 @@
 package com.nextBase.step_definitions;
 
 import com.nextBase.pages.Poll_Page;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,14 +23,19 @@ public class Poll_StepDefs {
 
     @When("clicks on <Add persons, groups or department> field")
     public void clicks_on_add_persons_groups_or_department_field() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Poll_Page.addPersons.click();
     }
-    @When("clicks different users from that section")
-    public void clicks_different_users_from_that_section() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @And("click on <Employees and departments> selection")
+    public void clickOnEmployeesAndDepartmentsSelection() {
+        Poll_Page.employeesAndDepartmentsSection.click();
     }
+
+    @And("user adds {string}, {string}, {string};")
+    public void userAdds(String arg0, String arg1, String arg2) {
+
+    }
+
     @Then("verify that more than one user is added to the list")
     public void verify_that_more_than_one_user_is_added_to_the_list() {
         // Write code here that turns the phrase above into concrete actions
@@ -158,4 +164,8 @@ public class Poll_StepDefs {
         throw new io.cucumber.java.PendingException();
     }
 
+
+    @And("user adds {string}, {string}, {string};")
+    public void userAdds(String arg0, String arg1, String arg2) {
+    }
 }

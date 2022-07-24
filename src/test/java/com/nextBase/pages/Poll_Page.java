@@ -18,6 +18,9 @@ public class Poll_Page {
     @FindBy(xpath = "//a[.='Add persons, groups or department']")
     public WebElement addPersons;
 
+    @FindBy(className = "bx-finder-box-tab bx-lm-tab-department")
+    public WebElement employeesAndDepartmentsSection;
+
     @FindBy(className = "feed-add-post-destination feed-add-post-destination-users")
     public WebElement toBarAddedUsers;
 
