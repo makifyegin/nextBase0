@@ -14,8 +14,8 @@ Feature: Poll.feature
   Scenario: Verify user can add multiple contacts to poll
     When on To bar and deletes <All employees> selection
     And clicks on <Add persons, groups or department> field
-    # And click on <Employees and departments> selection
-    And clicks different users from that section
+    And click on <Employees and departments> selection
+    And user adds "helpdesk1@cybertekschool.com", "hr76@cybertekschool.com", "marketing1@cybertekschool.com";
     Then verify that more than one user is added to the list
 
     #User should be able to attach link by clicking on the link icon.
