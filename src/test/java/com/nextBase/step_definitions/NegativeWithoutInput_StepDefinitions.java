@@ -16,11 +16,13 @@ import org.openqa.selenium.Keys;
 //
 //
 //    @Given("{string} is on homepage")
+
 //    public void hr_is_on_homepage() {
 //
 //        //nextBasePage.loginHR();
 //        BasePage.loginAsHR();
 //    }
+
 //    @Given("clicks search button without providing input")
 //    public void clicks_search_button_without_providing_input() {
 //        // nextBasePage.searchBtn.click();
@@ -38,6 +40,9 @@ import org.openqa.selenium.Keys;
 //    }
 //
 //
+
+
+
 //    @Given("Helpdesk is on homepage")
 //    public void helpdesk_is_on_homepage() {
 //
@@ -53,5 +58,6 @@ import org.openqa.selenium.Keys;
 //        //nextBasePage.loginMarketing();
 //        BasePage.loginAsMarketing();
 //    }
+
 //
 //}
