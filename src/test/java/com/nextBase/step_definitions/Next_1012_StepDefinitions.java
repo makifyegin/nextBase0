@@ -3,15 +3,18 @@ package com.nextBase.step_definitions;
 import com.nextBase.pages.CalendarPage;
 import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.Driver;
+import io.cucumber.java.ca.Cal;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-
+import org.openqa.selenium.JavascriptExecutor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,9 +50,8 @@ public class Next_1012_StepDefinitions {
 
     @Given("Click the repeating event with description")
     public void click_the_repeating_event_with_description() {
-       Select select = new Select(calendarPage.repeatSelector);
-       select.selectByIndex(1);
-
+//        Select select = new Select(calendarPage.repeatSelector);
+//        select.selectByIndex(1);
 
 
     }
@@ -61,20 +63,26 @@ public class Next_1012_StepDefinitions {
 
 
 
+    Actions action = new Actions(Driver.getDriver());
+
     @Given("Add certain {string}")
     public void add_certain(String string) {
-        Select select = new Select(calendarPage.loCationInput);
-        select.selectByIndex(3);
+
 
     }
 
     @Given("Add {string}")
     public void add(String string) {
 
+        BrowserUtils.waitForVisibility(calendarPage.attendees,3);
+        calendarPage.attendInput.sendKeys("hr1@cybertekschool.com");
+
     }
 
     @Given("Click More")
     public void click_more() {
+        calendarPage.more.click();
+        action.moveToElement(calendarPage.privateEventInput).perform();
 
     }
 
@@ -88,10 +96,7 @@ public class Next_1012_StepDefinitions {
 
     }
 
-    @Given("user click save button")
-    public void user_click_save_button() {
 
-    }
 
     @Given("Click the Event")
     public void click_the_event() {
@@ -251,8 +256,10 @@ public class Next_1012_StepDefinitions {
 
     @And("Add [attendees]")
     public void addAttendees() {
-        calendarPage.attendees.click();
-        calendarPage.attendeesHelpDesk.click();
+
+
+
+
     }
 
 }
