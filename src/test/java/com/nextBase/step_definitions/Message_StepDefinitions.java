@@ -43,21 +43,21 @@ public class Message_StepDefinitions {
         nextBasePage.uploadedFileAndImages.click();
     }
 
-    @Then("verify that user can upload file and images from local disk")
-    public void verify_that_user_can_upload_file_and_images_from_local_disk() {
-
-
-        Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']")).sendKeys("C:\\Users\\SDVISTANBUL\\apple-logo.webp");
-
-        BrowserUtils.sleep(2);
-
-        WebElement uploadedMessage = Driver.getDriver().findElement(By.xpath("//div[@class='files-storage-block']/a"));
-        System.out.println("uploadedMessage.getText() = " + uploadedMessage.getText());//My Drive / Uploaded files
-        String expected ="My Drive / Uploaded files";
-        Assert.assertEquals(expected,uploadedMessage.getText());
-
-
-    }
+//    @Then("verify that user can upload file and images from local disk")
+//    public void verify_that_user_can_upload_file_and_images_from_local_disk() {
+//
+//
+//        Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']")).sendKeys("C:\\Users\\SDVISTANBUL\\apple-logo.webp");
+//
+//        BrowserUtils.sleep(2);
+//
+//        WebElement uploadedMessage = Driver.getDriver().findElement(By.xpath("//div[@class='files-storage-block']/a"));
+//        System.out.println("uploadedMessage.getText() = " + uploadedMessage.getText());//My Drive / Uploaded files
+//        String expected ="My Drive / Uploaded files";
+//        Assert.assertEquals(expected,uploadedMessage.getText());
+//
+//
+//    }
 
     //////////////////CONTACT FEATURE////////////////////////////////////////////
 
@@ -123,10 +123,10 @@ public class Message_StepDefinitions {
 
     //////////////////LINK FEATURE////////////////////////////////////////////
 
-    @When("user clicks link icon")
-    public void user_clicks_link_icon() {
-        nextBasePage.uploadedLink.click();
-    }
+//    @When("user clicks link icon")
+//    public void user_clicks_link_icon() {
+//        nextBasePage.uploadedLink.click();
+//    }
     @When("user add link text")
     public void user_add_link_text() {
         BrowserUtils.sleep(2);
