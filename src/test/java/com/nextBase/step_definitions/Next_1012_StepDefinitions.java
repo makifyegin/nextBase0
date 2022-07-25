@@ -9,12 +9,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.Color;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +47,7 @@ public class Next_1012_StepDefinitions {
 
 
     }
-
+    Actions actions = new Actions(Driver.getDriver());
     @Given("Click the repeating event with description")
     public void click_the_repeating_event_with_description() {
         Select select = new Select(calendarPage.repeatSelector);
@@ -68,26 +67,38 @@ public class Next_1012_StepDefinitions {
     @Given("Add certain {string}")
     public void add_certain(String string) {
 
+//        List<WebElement> locationElement = new ArrayList<>();
+//        locationElement.add(calendarPage.loCationInput);
+//        System.out.println(locationElement.size());
+//
+//        calendarPage.loCationInput.sendKeys(Keys.CLEAR + "Dark side" + Keys.ENTER);
 
     }
 
     @Given("Add {string}")
     public void add(String string) {
 
-        BrowserUtils.waitForVisibility(calendarPage.attendees, 3);
-        calendarPage.attendInput.sendKeys("hr1@cybertekschool.com");
+//        BrowserUtils.waitForVisibility(calendarPage.attendees, 3);
+//        calendarPage.attendInput.sendKeys("hr1@cybertekschool.com");
 
     }
-
+JavascriptExecutor js =(JavascriptExecutor) Driver.getDriver();
     @Given("Click More")
     public void click_more() {
+        BrowserUtils.waitForVisibility(calendarPage.more,3);
         calendarPage.more.click();
-        action.moveToElement(calendarPage.privateEventInput).perform();
+        BrowserUtils.waitForVisibility(calendarPage.privateEventInput,3);
+        actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+       // BrowserUtils.waitForVisibility(calendarPage.privateEventInput,3);
+
+//        action.moveToElement(calendarPage.privateEventInput).perform();
+
 
     }
 
     @Given("Add colour of {string}")
     public void add_colour_of(String string) {
+
 
     }
 
