@@ -23,8 +23,13 @@ Feature: Negative Appreciation feature
     When user paste missing link url to link bar
     Then user should not be able to add missing link under Appreciation page
 
+    @NEXT-1094
   Scenario: User should be able to insert videos by clicking on the video icon and entering the video URL.
-      #daily motion video
+    When user clicks Insert video icon
+    And user clicks video source bar
+    And user passes video from DailyMotion and click save
+    Then verify that user cannot upload video other than Youtube and Vimeo
+
   Scenario: User should be able to create a quote by clicking on the Comma icon.
   Scenario: User should be able to add mention by clicking on the Add mention icon.
   Scenario: User should be able to send appreciation.

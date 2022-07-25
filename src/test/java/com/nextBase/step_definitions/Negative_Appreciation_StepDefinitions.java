@@ -5,6 +5,7 @@ import com.github.javafaker.Faker;
 import com.nextBase.pages.AppreciationPage;
 import com.nextBase.pages.BasePage;
 import com.nextBase.utilities.BrowserUtils;
+import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -85,7 +86,18 @@ public class Negative_Appreciation_StepDefinitions {
 
     }
 
+    //-----------4th Scenario : VIDEO------------//
 
+    @And("user passes video from DailyMotion and click save")
+    public void userPassesVideoFromDailyMotionAndClickSave() {
+        appreciationPage.videoLinkBar.sendKeys(ConfigurationReader.getProperty("dailyMotionVideo"));
+    }
 
+    @Then("verify that user cannot upload video other than Youtube and Vimeo")
+    public void verifyThatUserCannotUploadVideoOtherThanYoutubeAndVimeo() {
+        WebElement videoErrorMessage=Driver.getDriver()
+                .findElement(By.xpath("//span[@class='bxhtmled-video-error']"));
+        System.out.println("videoErrorMessage.isDisplayed() = " + videoErrorMessage.isDisplayed());
 
+    }
 }
