@@ -5,6 +5,7 @@ import com.nextBase.pages.NextBasePage;
 import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
+import com.sun.source.tree.AssertTree;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -33,6 +34,7 @@ public class MessageNegative_StepDefinitions {
         //C:\Users\SDVISTANBUL\apple-logo.webp -->images
         BrowserUtils.sleep(2);
     }
+
     @Then("verify that user can not upload anything except files and images from local disk")
     public void verify_that_user_can_not_upload_folders_from_local_disk() {
 
@@ -40,15 +42,12 @@ public class MessageNegative_StepDefinitions {
         //span[text()='Incorrect server response.']
 
         //if we want to uploaded anything expect file or images we should get this error.
-         WebElement actual = Driver.getDriver().findElement(By.xpath("//span[text()='Incorrect server response.']"));
-         String actualError = Driver.getDriver().findElement(By.xpath("//span[text()='Incorrect server response.']")).getText();
-         System.out.println("actual.getText() = " + actual.getText());//Incorrect server response.
-         String uploadedNonExpected = "Incorrect server response.";
+        WebElement actual = Driver.getDriver().findElement(By.xpath("//span[text()='Incorrect server response.']"));
+        String actualError = Driver.getDriver().findElement(By.xpath("//span[text()='Incorrect server response.']")).getText();
+        System.out.println("actual.getText() = " + actual.getText());//Incorrect server response.
+        String uploadedNonExpected = "Incorrect server response.";
 
-        Assert.assertEquals(uploadedNonExpected,actualError);
-
-
-
+        Assert.assertEquals(uploadedNonExpected, actualError);
 
 
     }
@@ -57,42 +56,38 @@ public class MessageNegative_StepDefinitions {
     ///////////////////VIDEO FEATURE/////////////////////////////
 
 
-
     @When("user add {string}")
     public void user_add(String string) {
         nextBasePage.videoURL.sendKeys(ConfigurationReader.getProperty("daily.URL"));
         //  BrowserUtils.waitForVisibility(nextBasePage.videoURL,2);
         BrowserUtils.sleep(7);
     }
+
     @Then("verify that user can not add video which is not vimeo or youtube url")
     public void verify_that_user_can_not_add_video_which_is_not_vimeo_or_youtube_url() {
 
-       // System.out.println("nextBasePage.negativeVideoURL.getAttribute(\"class\") = " + nextBasePage.negativeVideoURL.getAttribute("class"));
+        // System.out.println("nextBasePage.negativeVideoURL.getAttribute(\"class\") = " + nextBasePage.negativeVideoURL.getAttribute("class"));
 
         String attribute = "bxhtmled-video-error";
 
-       // Assert.assertEquals(attribute,nextBasePage.negativeVideoURL.getAttribute("class"));
+        // Assert.assertEquals(attribute,nextBasePage.negativeVideoURL.getAttribute("class"));
 
-       Boolean mainPage=Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']")).isDisplayed();
+        Boolean mainPage = Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']")).isDisplayed();
 
-        Assert.assertNotSame(attribute,mainPage);//--> it should not uploaded so we can not see main page
+        Assert.assertNotSame(attribute, mainPage);//--> it should not uploaded so we can not see main page
     }
-
-
-
 
 
     /////////////////SEND FEATURE/////////////////////
 
     @When("user click send button without provide recipient")
     public void user_click_send_button_without_provide_recipient() {
-       nextBasePage.sendButton.click();
+        nextBasePage.sendButton.click();
     }
 
 
     Faker faker = new Faker();
     String message = "";
-
 
 
     @And("user writes {string} in the title space")
@@ -116,17 +111,14 @@ public class MessageNegative_StepDefinitions {
     @Then("verify that user can not send message without add recipient")
     public void verify_that_user_can_not_send_message_without_add_recipient() {
 
-    System.out.println("nextBasePage.sendMessagewithoutRecipient.getText() = " + nextBasePage.sendMessageWithoutRecipient.getText());
+        System.out.println("nextBasePage.sendMessagewithoutRecipient.getText() = " + nextBasePage.sendMessageWithoutRecipient.getText());
 
-     String expected = "Please specify at least one person.";
+        String expected = "Please specify at least one person.";
 
-     Assert.assertEquals(expected,nextBasePage.sendMessageWithoutRecipient.getText());
+        Assert.assertEquals(expected, nextBasePage.sendMessageWithoutRecipient.getText());
 
 
     }
-
-
-
 
 
     @When("user click send button without provide title")
@@ -137,6 +129,7 @@ public class MessageNegative_StepDefinitions {
 
 
     }
+
     @Then("verify that user can not send message without title")
     public void verify_that_user_can_not_send_message_title() {
 
@@ -144,7 +137,7 @@ public class MessageNegative_StepDefinitions {
 
         String expected = "The message title is not specified";
 
-         Assert.assertEquals(expected,nextBasePage.sendMessageWithoutRecipient.getText());
+        Assert.assertEquals(expected, nextBasePage.sendMessageWithoutRecipient.getText());
 
     }
 
@@ -174,11 +167,11 @@ public class MessageNegative_StepDefinitions {
 
             String expected = "cydeo@hotmail.com";
 
-            Assert.assertEquals(expected,nextBasePage.nonExistEmail.getText());
+//            Assert.assertEquals(expected,nextBasePage.nonExistEmail.getText());                !!!!!CHANGING
+            Assert.assertFalse(expected == nextBasePage.nonExistEmail.getText());
 
         }
         Driver.getDriver().switchTo().window(mainHandle);
-
 
 
     }
@@ -204,8 +197,10 @@ public class MessageNegative_StepDefinitions {
         Driver.getDriver().switchTo().frame(nextBasePage.iframe);
         System.out.println("nextBasePage.missingLink.getText() = " + nextBasePage.missingLink.getText());
 
-        String expected ="next";
-        Assert.assertEquals(expected,nextBasePage.missingLink.getText());
+        String expected = "next";
+
+//        Assert.assertEquals(expected,nextBasePage.missingLink.getText());             !!!!!CHANGING
+        Assert.assertFalse(expected == nextBasePage.missingLink.getText());
 
         Driver.getDriver().switchTo().parentFrame();
 

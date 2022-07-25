@@ -186,7 +186,8 @@ public class Message_StepDefinitions {
 
 
         // Boolean mainPage = Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']")).isDisplayed();
-        Assert.assertFalse(nextBasePage.videoUploadedError.isDisplayed());
+//        Assert.assertFalse(nextBasePage.videoUploadedError.isDisplayed());                    !!!!!CHANGING
+        Assert.assertTrue(nextBasePage.videoUploadedError.isDisplayed());
 
 
 
