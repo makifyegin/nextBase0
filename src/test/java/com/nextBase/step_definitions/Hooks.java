@@ -14,13 +14,6 @@ import org.openqa.selenium.TakesScreenshot;
 
 
 public class Hooks {
-//
-//    //import from io.cucumber.java not from junit
-//    @Ramazan (order = 1)
-////    public void setupScenario(){
-////        Driver.getDriver();
-////        //System.out.println("====Setting up browser using cucumber @Before");
-////    }
 
     @Before
     public void setupScenarioForLogins(){
@@ -28,10 +21,7 @@ public class Hooks {
         //System.out.println("====this will only apply to scenarios with @login tag");
     }
 
-//    //@Before (value = "@db", order = 0)
-//    public void setupForDatabaseScenarios(){
-//        System.out.println("====this will only apply to scenarios with @db tag");
-//    }
+
 
 
     @After
@@ -48,8 +38,11 @@ public class Hooks {
         }
 
 
-        BrowserUtils.sleep(5);
+
+        BrowserUtils.sleep(2);
         Driver.closeDriver();
+        BrowserUtils.sleep(2);
+
 
         //System.out.println("====Closing browser using cucumber @After");
         //System.out.println("====Scenario ended/ Take screenshot if failed!");
