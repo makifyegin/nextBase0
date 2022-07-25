@@ -301,6 +301,7 @@ public class NEXT_1014_StepDefinitions {
     public void userAddsAnotherDepartment() {
         BrowserUtils.waitFor(3);
         next_1014Page.addDepartmentButton.click();
+
     }
 
     @And("user adds {string} as department name again")
