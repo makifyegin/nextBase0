@@ -15,21 +15,21 @@ import java.util.Locale;
 public class NegativeNonCharacter_StepDefinitions {
 
 
-//    NextBasePage nextBasePage = new NextBasePage();
-//
-//    @Given("{string} is on homepage")
-//    public void is_on_homepage(String string) {
-//        switch (string.toLowerCase()){
-//            case "hr":
-//                BasePage.loginAsHR();
-//                break;
-//            case "helpdesk":
-//                BasePage.loginAsHelpdesk();
-//                break;
-//            case "marketing":
-//                BasePage.loginAsMarketing();
-//                break;
-//        }
-//    }
+    NextBasePage nextBasePage = new NextBasePage();
+
+    @Given("{string} is on homepage")
+    public void is_on_homepage(String string) {
+        switch (string.toLowerCase()){
+            case "hr":
+                BasePage.loginAsHR();
+                break;
+            case "helpdesk":
+                BasePage.loginAsHelpdesk();
+                break;
+            case "marketing":
+                BasePage.loginAsMarketing();
+                break;
+        }
+    }
 
 }
