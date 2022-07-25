@@ -15,6 +15,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.JavascriptExecutor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,17 +51,16 @@ public class Next_1012_StepDefinitions {
 
     @Given("Click the repeating event with description")
     public void click_the_repeating_event_with_description() {
-//        Select select = new Select(calendarPage.repeatSelector);
-//        select.selectByIndex(1);
+        Select select = new Select(calendarPage.repeatSelector);
+        select.selectByIndex(1);
 
 
     }
 
     @Given("Add {string} time zones")
     public void add_time_zones(String string) {
-
+        calendarPage.timeZone.click();
     }
-
 
 
     Actions action = new Actions(Driver.getDriver());
@@ -70,11 +70,11 @@ public class Next_1012_StepDefinitions {
 
 
     }
-// alskdfadslkfasd;lfjaldj
+
     @Given("Add {string}")
     public void add(String string) {
 
-        BrowserUtils.waitForVisibility(calendarPage.attendees,3);
+        BrowserUtils.waitForVisibility(calendarPage.attendees, 3);
         calendarPage.attendInput.sendKeys("hr1@cybertekschool.com");
 
     }
@@ -95,7 +95,6 @@ public class Next_1012_StepDefinitions {
     public void choose_availability(String string) {
 
     }
-
 
 
     @Given("Click the Event")
@@ -256,8 +255,6 @@ public class Next_1012_StepDefinitions {
 
     @And("Add [attendees]")
     public void addAttendees() {
-
-
 
 
     }
