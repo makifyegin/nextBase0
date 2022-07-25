@@ -30,13 +30,6 @@ Feature: Negative Appreciation feature
     And user passes video from DailyMotion and click save
     Then verify that user cannot upload video other than Youtube and Vimeo
 
-  Scenario: User should be able to create a quote by clicking on the Comma icon.
-    When user clicks quote text icon
-    And user passes random characters
-    Then user should not be able to send random characters
-
-  Scenario: User should be able to add mention by clicking on the Add mention icon.
-
   @NEXT-1095
   Scenario: User should be able to send appreciation.
     When user click send button
