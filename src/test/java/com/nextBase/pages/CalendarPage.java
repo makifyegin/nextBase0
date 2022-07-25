@@ -2,6 +2,7 @@ package com.nextBase.pages;
 
 import com.nextBase.utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -80,7 +81,11 @@ public class CalendarPage {
     public WebElement privateEventInput;
 
     @FindBy(xpath = "//span[@class='calendar-field-colorpicker-color-item-more-link']")
+    public WebElement otherColorSelectClickButton;
+
+    @FindBy(xpath = "//div[@class='main-color-picker-box']")
     public WebElement otherColorSelect;
+
 
     @FindBy(xpath = "//span[@class='calendar-field-colorpicker-color-item-more-link']")
     public WebElement NavyBlueColor;
@@ -106,5 +111,14 @@ public class CalendarPage {
 
     @FindBy(xpath = "//span[.='Time zone']")
     public WebElement timeZone;
+
+    @FindBy(xpath = "//*[@class='calendar-field-colorpicker-color-item']")
+    public WebElement colourWebElement;
+
+
+    private final Color RGB_COLOUR = Color.fromString("rgb(255, 255, 255)");
+//    public static String colorFinder(WebElement webElement) {
+//
+//    }
 
 }
