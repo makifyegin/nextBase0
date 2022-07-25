@@ -54,11 +54,11 @@ public class Appreciation_StepDefinition {
         //appreciationPage.uploadFilesAndImagesButton.click();
     }
 
-    @Then("verify that user can upload file and images from local disk")
-    public void verifyThatUserCanUploadFileAndImagesFromLocalDisk() {
+    @Then("verify that user can upload file and images from local computer")
+    public void verifyThatUserCanUploadFileAndImagesFromLocalComputer() {
 
         Driver.getDriver().findElement(By.xpath("//input[@name='bxu_files[]']"))
-                .sendKeys("C:\\Users\\44739\\OneDrive\\Desktop\\Project Check");
+                .sendKeys("C:\\Users\\44739\\OneDrive\\Desktop\\Zoom.lnk");
         BrowserUtils.sleep(2);
 
         appreciationPage.sendButton.click();
@@ -98,10 +98,10 @@ public class Appreciation_StepDefinition {
 
     //------3rd Scenario------DONE------//
 
-    @When("user clicks link icon")
-    public void userClicksLinkIcon() {
-        appreciationPage.linkIcon.click();
-    }
+//    @When("user clicks link icon")
+//    public void userClicksLinkIcon() {
+//        appreciationPage.linkIcon.click();
+//    }
 
     @When("user paste link url to link bar")
     public void userPasteLinkUrlToLinkBar() {

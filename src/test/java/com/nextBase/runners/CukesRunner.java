@@ -17,13 +17,12 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/nextBase/step_definitions",
         dryRun = false,
-        tags = "@video",
+        tags = "@NEXT-1092",
         publish = false
 
 
 )
 
-public class CukesRunner {
-}
+public class CukesRunner { }
 
 

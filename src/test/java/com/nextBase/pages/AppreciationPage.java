@@ -80,6 +80,20 @@ public class AppreciationPage {
     @FindBy(xpath = "//button[@id='blog-submit-button-save']")
     public WebElement sendButton;
 
+    //negative
+
+    @FindBy(xpath = "//input[@id='feed-add-post-destination-input']")
+    public WebElement addContactInputText;
+
+    @FindBy(xpath = "//input[@id='invite_email_user_name']")
+    public WebElement weirdPersonNameInputBox;
+
+    @FindBy(xpath = "//input[@id='invite_email_user_last_name']")
+    public WebElement weirdPersonLastNameInputBox;
+
+    @FindBy (xpath = "//span[@id='invite_email_user_button']")
+    public WebElement weirdPersonOKButton;
+
 
 
 
