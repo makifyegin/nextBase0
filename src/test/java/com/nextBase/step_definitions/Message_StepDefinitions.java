@@ -1,5 +1,6 @@
 package com.nextBase.step_definitions;
 
+import com.github.javafaker.Faker;
 import com.nextBase.pages.BasePage;
 import com.nextBase.pages.NextBasePage;
 import com.nextBase.utilities.BrowserUtils;
@@ -90,13 +91,19 @@ public class Message_StepDefinitions {
         Driver.getDriver().switchTo().window(mainHandle);
 
     }
+
+
     @When("verify that user can add multiple contact from contact list")
     public void user_select_multiple_contact_from_contact_list() {
+
+
+
    // nextBasePage.contactList.click();
 
     //NextBasePage.contactList(nextBasePage.contactList).get(1);
 
        // nextBasePage.oneContact.click();
+
 
         List<WebElement>userName = BrowserUtils.getElement(nextBasePage.oneContact);
 
@@ -105,7 +112,7 @@ public class Message_StepDefinitions {
             Boolean actualContact = userName.get(i).getText().contains("@");
             Assert.assertEquals(true,actualContact);
             System.out.println(userName.get(i));
-
+//asdofihsdaifhiusadhfuishfuih
 
         }
 
@@ -186,8 +193,7 @@ public class Message_StepDefinitions {
 
 
         // Boolean mainPage = Driver.getDriver().findElement(By.xpath("//div[@id='pagetitle']")).isDisplayed();
-//        Assert.assertFalse(nextBasePage.videoUploadedError.isDisplayed());                    !!!!!CHANGING
-        Assert.assertTrue(nextBasePage.videoUploadedError.isDisplayed());
+        Assert.assertFalse(nextBasePage.videoUploadedError.isDisplayed());
 
 
 
