@@ -17,7 +17,7 @@ Feature: NEXT-1014
   Scenario: Add a department
 
     When user adds department
-    And user adds Taskmaster as department name
+    And user adds "Taskmaster" as department name
     And user clicks add
     Then user can see the name of the newly created department
 
@@ -25,15 +25,15 @@ Feature: NEXT-1014
   Scenario: Find employees by search box
 
     When user clicks Find Employees
-    And user types dada in the search box
-    Then user can see dada employee info displayed
+    And user types "name of employee" in the search box
+    Then user can see "name of employee" employee info displayed
 
 
   Scenario: Find employees by search by Alphabet
 
     When user clicks Find Employees
     And user clicks Search By Alphabet button
-    And user clicks the letter D
+    And user clicks the letter "letter"
     Then user can see employee info
 
 
@@ -50,35 +50,20 @@ Feature: NEXT-1014
     When user clicks telephone directory
     Then user can see the telephone directory displayed
 
-  @NEXT1014
-  Scenario Outline: Display company structure
 
-    When user clicks telephone directory
-    And user clicks employee "<employeeReceiver>"
-    And user clicks send message button
-    And user types a random message
-    And user press enter key
-    And user clicks close
-    And user logout
-    And user enter employee "<employeeReceiver>" username
-    And user enter employee "<employeeReceiver>" password
-    And user clicks login button
-    And user clicks message avatar
-    Then user verify that employee "<employeeReceiver>" got the message from employee "<employeeSender>"
+  Scenario Outline: User send message to employee from the telephone directory
+
+    Given there are two users in application as "<sender>" and "<receiver>"
+    When "<sender>" send "date" to "<receiver>"
+    And  "<receiver>" login
+    Then verify that "<receiver>" gets "date"
 
     Examples:
-      | employeeSender    | employeeReceiver |
-      | dadasdasdasd dada | Mousa Adolai     |
+      | sender            | receiver     |
+      | dadasdasdasd dada | Mousa Adolai |
 
 
-  Scenario: Can not use number to find employees
 
-
-    When user clicks employees
-    And user clicks Find Employees
-    And user types nothing in the search box
-    And user click search button
-    Then user can not see any employee info displayed
 
 
 

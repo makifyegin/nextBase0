@@ -86,24 +86,19 @@ public class NEXT_1014Page {
     @FindBy(xpath = "//img[@class='bx-messenger-cl-avatar-img']")
     public WebElement messageAvatar;
 
-    @FindBy(xpath = "(//span[@class='bx-messenger-message'])[9]")
+    @FindBy(xpath = "(//span[@class='bx-messenger-message'])")
     public WebElement verifyMessage;
 
     @FindBy(css = "input[class='login-btn']")
     public WebElement logInButton;
 
+    @FindBy(xpath = "//div[@id='workarea-content']//p")
+    public WebElement workArea;
 
+    @FindBy(xpath = "//span[@class='bx-messenger-box-topline-text']")
+    public WebElement errorMessage;
 
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//a[@data-role='department_name']")
+    public WebElement departmentName;
 
 }
