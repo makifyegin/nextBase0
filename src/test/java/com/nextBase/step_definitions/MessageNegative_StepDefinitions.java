@@ -200,7 +200,7 @@ public class MessageNegative_StepDefinitions {
         String expected = "next";
 
 //        Assert.assertEquals(expected,nextBasePage.missingLink.getText());             !!!!!CHANGING
-        Assert.assertFalse(expected == nextBasePage.missingLink.getText());
+        Assert.assertTrue(expected == nextBasePage.missingLink.getText());
 
         Driver.getDriver().switchTo().parentFrame();
 
