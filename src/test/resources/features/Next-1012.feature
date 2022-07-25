@@ -55,7 +55,7 @@ Feature: Default
     And Click More
     And Add colour of "Pink"
     And Choose availability "Occupied"
-    And user click save button
+#    And user click save button
 
   @NEXT-1051
   Scenario: HR User can edit the 1st AC's task color as

@@ -67,7 +67,7 @@ public class CalendarPage {
     @FindBy(xpath = "//*[@id='EC51750443-slider-destination-link']")
     public WebElement AddMore;
 
-    @FindBy(xpath = "//div[text()='More']")
+    @FindBy(xpath = "//div[@class='calendar-additional-alt-more']")
     public WebElement more;
 
     @FindBy(xpath = "//li[contains(@style, '115,')]//span")
@@ -76,7 +76,7 @@ public class CalendarPage {
     @FindBy(xpath = "//*[@id='calendar_slider_820357_accessibility']")
     public WebElement accessibilitySelect;
 
-    @FindBy(xpath = "//*[@id='calendar_slider_820357_private']")
+    @FindBy(xpath = "//*[@name='private_event']")
     public WebElement privateEventInput;
 
     @FindBy(xpath = "//span[@class='calendar-field-colorpicker-color-item-more-link']")
