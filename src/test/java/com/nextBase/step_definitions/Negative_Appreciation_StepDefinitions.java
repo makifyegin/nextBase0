@@ -100,4 +100,17 @@ public class Negative_Appreciation_StepDefinitions {
         System.out.println("videoErrorMessage.isDisplayed() = " + videoErrorMessage.isDisplayed());
 
     }
+
+    //-----------5th Scenario : QUOTE------------//
+
+    @And("user passes random characters")
+    public void userPassesRandomCharacters() {
+        appreciationPage.quoteInputBar.sendKeys("skjdfhkh");
+        appreciationPage.sendButton.click();
+    }
+
+    @Then("user should not be able to send random characters")
+    public void userShouldNotBeAbleToSendRandomCharacters() {
+
+    }
 }
