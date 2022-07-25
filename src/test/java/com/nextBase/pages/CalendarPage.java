@@ -104,8 +104,7 @@ public class CalendarPage {
     @FindBy(xpath = "//input[@class='feed-add-destination-inp']")
     public WebElement attendInput;
 
-
-
-
+    @FindBy(xpath = "//span[.='Time zone']")
+    public WebElement timeZone;
 
 }
