@@ -39,9 +39,6 @@ public class NextBasePage {
     @FindBy(xpath = "//input[@name='q']")
     public WebElement searchBtn;
 
-    
-
-
 
 //  @FindBy(xpath = "//span[@class='header-search-icon header-search-icon-title']")
 //  public WebElement searchSymbol;
@@ -139,7 +136,7 @@ public class NextBasePage {
     public List<WebElement> oneContact;
 
 
-    @FindBy(id ="feed-add-post-destination-input")
+    @FindBy(id = "feed-add-post-destination-input")
     public WebElement contactInput;
 
 
@@ -174,7 +171,8 @@ public class NextBasePage {
     public WebElement contactList;
 
 
-
+    @FindBy(xpath = "/html/body")
+    public WebElement messageBody;
 
 
     /////////////NEGATIVE//////////////////////////
@@ -182,7 +180,6 @@ public class NextBasePage {
 
     @FindBy(xpath = "/html/body/div[7]/div[1]/div/div[1]/table/tr/td/div/span[1]/span[2]/a")
     public WebElement nonExistEmail;
-
 
 
     @FindBy(xpath = "//td[@class='bxhtmled-video-error-cell']/span")
@@ -196,9 +193,6 @@ public class NextBasePage {
     @FindBy(xpath = "//*[@id=\"feed-add-post-form-notice-blockblogPostForm\"]/div/span[2]")
     public WebElement sendMessageWithoutTitle;
 
-
-    @FindBy(xpath = "/html/body")
-    public WebElement messageBody;
 
 
     @FindBy(xpath = "//*[@id=\"feed-add-post-destination-item\"]/span/span[2]")
@@ -214,26 +208,3 @@ public class NextBasePage {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

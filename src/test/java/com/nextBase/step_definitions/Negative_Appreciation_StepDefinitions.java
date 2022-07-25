@@ -14,35 +14,35 @@ public class Negative_Appreciation_StepDefinitions {
 
     AppreciationPage appreciationPage= new AppreciationPage();
 
-//    @Given("{string} is on Home page and clicks Appreciation button from More  dropdown menu")
-//    public void isOnHomePageAndClicksAppreciationButtonFromMoreDropdownMenu(String userType) throws InterruptedException {
-//
-//        switch (userType.toLowerCase()){
-//            case "hr":
-//                BasePage.loginAsHR();
-//                break;
-//            case "helpdesk":
-//                BasePage.loginAsHelpdesk();
-//                break;
-//            case "marketing":
-//                BasePage.loginAsMarketing();
-//                break;
-//        }
-//
-//        appreciationPage.moreButton.click();
-//        appreciationPage.appreciationButton.click();
-//
-//
-//    }
+    @Given("{string} is on Home page and clicks Appreciation button from More  dropdown menu")
+    public void isOnHomePageAndClicksAppreciationButtonFromMoreDropdownMenu(String userType) throws InterruptedException {
 
-    //-----------1nd Scenario------------//
+        switch (userType.toLowerCase()){
+            case "hr":
+                BasePage.loginAsHR();
+                break;
+            case "helpdesk":
+                BasePage.loginAsHelpdesk();
+                break;
+            case "marketing":
+                BasePage.loginAsMarketing();
+                break;
+        }
+
+        appreciationPage.moreButton.click();
+        appreciationPage.appreciationButton.click();
+
+
+    }
+
+//    -----------1nd Scenario------------//
 
 //    @When("user clicks upload files icon")
 //    public void user_clicks_upload_files_icon() {
 //        appreciationPage.uploadFilesIcon.click();
 //
 //    }
-//
+
 //    @When("user clicks Upload files and images")
 //    public void user_clicks_upload_files_and_images() {
 //
@@ -59,9 +59,9 @@ public class Negative_Appreciation_StepDefinitions {
 
     }
 
-//    @Then("verify that user can upload application")
-//    public void verifyThatUserCanUploadApplication() {
-//    }
+    @Then("verify that user can upload application")
+    public void verifyThatUserCanUploadApplication() {
+    }
 
 
 

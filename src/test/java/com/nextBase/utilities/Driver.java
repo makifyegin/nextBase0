@@ -48,11 +48,6 @@ public class Driver {
                     break;
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-      /*              ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--no-sandbox");
-                    driver = new ChromeDriver(options);
-                    **** If you want to use Linux ****
-                    */
                     driver = new ChromeDriver();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     driver.manage().window().maximize();

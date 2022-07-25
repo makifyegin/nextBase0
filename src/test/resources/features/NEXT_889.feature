@@ -15,7 +15,6 @@ Feature: NEXT-889
     And User add link https://www.w3schools.com/ in Link Textbox
     Then User should see the saved link in the message bar
 
-
   Scenario: Add mention about only department employees
 
     Given "HR" is on Home page

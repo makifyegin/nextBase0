@@ -1,4 +1,4 @@
-@wip
+
 Feature:  User should be able to display Company Calendar
 
   User Story :
@@ -17,8 +17,11 @@ Feature:  User should be able to display Company Calendar
     And Click the Calendar
     And Click the Add event
     And Select the event date and fill out th event name
-    And Click SAVE(CTRL + ENTER)
+    And Click Save
     When Click the Calendar
     And Click the MyCalendar
     Then Verify that User can see your new event on the calendar.
+    And Click the Filter and Search
+    And Write on your event name
+    And Verify that User can see your new event on the calendar.
 

@@ -19,26 +19,26 @@ public class Appreciation_StepDefinition {
 
     AppreciationPage appreciationPage= new AppreciationPage();
 
-    @Given("{string} is on Home page and clicks Appreciation button from More  dropdown menu")
-    public void isOnHomePageAndClicksAppreciationButtonFromMoreDropdownMenu(String userType) throws InterruptedException {
-
-        switch (userType.toLowerCase()){
-            case "hr":
-                BasePage.loginAsHR();
-                break;
-            case "helpdesk":
-                BasePage.loginAsHelpdesk();
-                break;
-            case "marketing":
-                BasePage.loginAsMarketing();
-                break;
-        }
-
-        appreciationPage.moreButton.click();
-        appreciationPage.appreciationButton.click();
-
-
-    }
+//    @Given("{string} is on Home page and clicks Appreciation button from More  dropdown menu")
+//    public void isOnHomePageAndClicksAppreciationButtonFromMoreDropdownMenu(String userType) throws InterruptedException {
+//
+//        switch (userType.toLowerCase()){
+//            case "hr":
+//                BasePage.loginAsHR();
+//                break;
+//            case "helpdesk":
+//                BasePage.loginAsHelpdesk();
+//                break;
+//            case "marketing":
+//                BasePage.loginAsMarketing();
+//                break;
+//        }
+//
+//        appreciationPage.moreButton.click();
+//        appreciationPage.appreciationButton.click();
+//
+//
+//    }
 
     //-----------1nd Scenario-----DONE-------//
 
