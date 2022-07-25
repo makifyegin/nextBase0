@@ -168,7 +168,8 @@ public class MessageNegative_StepDefinitions {
             String expected = "cydeo@hotmail.com";
 
 //            Assert.assertEquals(expected,nextBasePage.nonExistEmail.getText());                !!!!!CHANGING
-            Assert.assertFalse(expected == nextBasePage.nonExistEmail.getText());
+           // Assert.assertFalse(expected == nextBasePage.nonExistEmail.getText());
+            Assert.assertFalse(nextBasePage.nonExistEmail.isDisplayed());
 
         }
         Driver.getDriver().switchTo().window(mainHandle);
@@ -200,7 +201,9 @@ public class MessageNegative_StepDefinitions {
         String expected = "next";
 
 //        Assert.assertEquals(expected,nextBasePage.missingLink.getText());             !!!!!CHANGING
-        Assert.assertTrue(expected == nextBasePage.missingLink.getText());
+     //   Assert.assertTrue(expected == nextBasePage.missingLink.getText());
+
+        Assert.assertFalse(nextBasePage.missingLink.isDisplayed());
 
         Driver.getDriver().switchTo().parentFrame();
 

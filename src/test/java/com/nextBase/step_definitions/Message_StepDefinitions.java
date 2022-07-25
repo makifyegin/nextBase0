@@ -162,7 +162,7 @@ public class Message_StepDefinitions {
     @When("user add video URL")
     public void user_add_video_url() {
        BrowserUtils.sleep(5);
-       nextBasePage.videoURL.sendKeys(ConfigurationReader.getProperty("video.URL"));
+       nextBasePage.videoURL.sendKeys(ConfigurationReader.getProperty("vimeo.url"));
         BrowserUtils.sleep(5);
 
     }
