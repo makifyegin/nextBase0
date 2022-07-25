@@ -48,7 +48,9 @@ public class Driver {
                     break;
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--no-sandbox");
+                    driver = new ChromeDriver(options);
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     driver.manage().window().maximize();
                     break;
