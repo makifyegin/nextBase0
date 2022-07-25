@@ -37,17 +37,17 @@ public class Negative_Appreciation_StepDefinitions {
 
 //    -----------1nd Scenario------------//
 
-    @When("user clicks upload files icon")
-    public void user_clicks_upload_files_icon() {
-        appreciationPage.uploadFilesIcon.click();
+//    @When("user clicks upload files icon")
+//    public void user_clicks_upload_files_icon() {
+//        appreciationPage.uploadFilesIcon.click();
+//
+//    }
 
-    }
-
-    @When("user clicks Upload files and images")
-    public void user_clicks_upload_files_and_images() {
-
-        //appreciationPage.uploadFilesAndImagesButton.click();
-    }
+//    @When("user clicks Upload files and images")
+//    public void user_clicks_upload_files_and_images() {
+//
+//        //appreciationPage.uploadFilesAndImagesButton.click();
+//    }
 
     @And("user upload application instead of file")
     public void userUploadApplicationInsteadOfFile() {
