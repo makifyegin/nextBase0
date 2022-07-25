@@ -47,7 +47,9 @@ public class Next_1012_StepDefinitions {
 
 
     }
+
     Actions actions = new Actions(Driver.getDriver());
+
     @Given("Click the repeating event with description")
     public void click_the_repeating_event_with_description() {
         Select select = new Select(calendarPage.repeatSelector);
@@ -82,14 +84,16 @@ public class Next_1012_StepDefinitions {
 //        calendarPage.attendInput.sendKeys("hr1@cybertekschool.com");
 
     }
-JavascriptExecutor js =(JavascriptExecutor) Driver.getDriver();
+
+    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
     @Given("Click More")
     public void click_more() {
-        BrowserUtils.waitForVisibility(calendarPage.more,3);
+        BrowserUtils.waitForVisibility(calendarPage.more, 3);
         calendarPage.more.click();
-        BrowserUtils.waitForVisibility(calendarPage.privateEventInput,3);
+        BrowserUtils.waitForVisibility(calendarPage.privateEventInput, 3);
         actions.sendKeys(Keys.PAGE_DOWN).build().perform();
-       // BrowserUtils.waitForVisibility(calendarPage.privateEventInput,3);
+        // BrowserUtils.waitForVisibility(calendarPage.privateEventInput,3);
 
 //        action.moveToElement(calendarPage.privateEventInput).perform();
 
@@ -99,8 +103,41 @@ JavascriptExecutor js =(JavascriptExecutor) Driver.getDriver();
     @Given("Add colour of {string}")
     public void add_colour_of(String string) {
 
+        List<WebElement> coloursWebElement = Driver.getDriver().findElements(By.xpath("//*[@class='calendar-field-colorpicker-color-item']"));
+        List<String> colors = new ArrayList<>();
+
+        for (WebElement colour : coloursWebElement) {
+            String color = colour.getCssValue("background-color");
+            color = Color.fromString(color).asHex();
+            colors.add(color);
+
+        }
+        calendarPage.otherColorSelectClickButton.click();
+
+        List<WebElement> otherColorsWebElements = Driver.getDriver().findElements(By.xpath("//div[@class='main-color-picker-box']"));
+        for (WebElement otherColorsWebElement : otherColorsWebElements) {
+            String otherColors = otherColorsWebElement.getCssValue("background-color");
+            otherColors = Color.fromString(otherColors).asHex();
+            colors.add(otherColors);
+        }
+
+        System.out.println(colors);
+
+//
+//        for (WebElement colour : colours) {
+//            System.out.println(colour);
+//
+//        }
+//            String colr = Driver.getDriver().findElement(By.xpath("//span[@class='calendar-field-colorpicker-color']"))
+//                    .getCssValue("color");
+//            //getting background color attribute with getCssValue()
+//            String bckgclr = Driver.getDriver().findElement(By.xpath("//span[@class='calendar-field-colorpicker-color']"))
+//                    .getCssValue("background-color");
+//            System.out.println(colr);
+//            System.out.println(bckgclr);
 
     }
+
 
     @Given("Choose availability {string}")
     public void choose_availability(String string) {
