@@ -111,31 +111,22 @@ public class Next_1012_StepDefinitions {
             color = Color.fromString(color).asHex();
             colors.add(color);
 
-        }
-        calendarPage.otherColorSelectClickButton.click();
+            if (colors.contains("#ffa900")) {
 
+                colour.click();
+            }
+
+        }
+        System.out.println(colors);
         List<WebElement> otherColorsWebElements = Driver.getDriver().findElements(By.xpath("//div[@class='main-color-picker-box']"));
         for (WebElement otherColorsWebElement : otherColorsWebElements) {
             String otherColors = otherColorsWebElement.getCssValue("background-color");
             otherColors = Color.fromString(otherColors).asHex();
             colors.add(otherColors);
+
         }
 
         System.out.println(colors);
-
-//
-//        for (WebElement colour : colours) {
-//            System.out.println(colour);
-//
-//        }
-//            String colr = Driver.getDriver().findElement(By.xpath("//span[@class='calendar-field-colorpicker-color']"))
-//                    .getCssValue("color");
-//            //getting background color attribute with getCssValue()
-//            String bckgclr = Driver.getDriver().findElement(By.xpath("//span[@class='calendar-field-colorpicker-color']"))
-//                    .getCssValue("background-color");
-//            System.out.println(colr);
-//            System.out.println(bckgclr);
-
     }
 
 
