@@ -3,7 +3,6 @@ package com.nextBase.step_definitions;
 import com.github.javafaker.Business;
 import com.github.javafaker.Faker;
 import com.nextBase.pages.AppreciationPage;
-import com.nextBase.pages.BasePage;
 import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
