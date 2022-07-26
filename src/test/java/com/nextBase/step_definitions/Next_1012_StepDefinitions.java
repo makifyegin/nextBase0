@@ -102,6 +102,9 @@ public class Next_1012_StepDefinitions {
 
     @Given("Add colour of {string}")
     public void add_colour_of(String string) {
+        String pink = "#F87396";
+        String navyBlue = "rgb(28, 13, 100);";
+        navyBlue = Color.fromString(navyBlue).asHex();
 
         List<WebElement> coloursWebElement = Driver.getDriver().findElements(By.xpath("//*[@class='calendar-field-colorpicker-color-item']"));
         List<String> colors = new ArrayList<>();
@@ -111,7 +114,7 @@ public class Next_1012_StepDefinitions {
             color = Color.fromString(color).asHex();
             colors.add(color);
 
-            if (colors.contains("#ffa900")) {
+            if (colors.contains("#F87396")) {
 
                 colour.click();
             }
