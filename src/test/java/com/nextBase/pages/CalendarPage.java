@@ -17,6 +17,14 @@ public class CalendarPage {
     public WebElement add;
 
 
+    @FindBy(xpath = "//span[@class='feed-add-destination-link']")
+    public WebElement addMore;
+
+
+    @FindBy(xpath = "(//div[@class='bx-finder-box-item-t7-name'])[2]")
+    public WebElement addMoreUser;
+
+
     @FindBy(xpath = "(//*[@class='calendar-field calendar-field-datetime'])[1]")
     public WebElement eventDateAndTime;
 
@@ -116,7 +124,11 @@ public class CalendarPage {
     public WebElement colourWebElement;
 
 
-    private final Color RGB_COLOUR = Color.fromString("rgb(255, 255, 255)");
+    @FindBy(xpath = "    (//span[@class = 'menu-popup-item-text'])[3]")
+    public WebElement locatorWhilePlace;
+
+
+//    private final Color RGB_COLOUR = Color.fromString("rgb(255, 255, 255)");
 //    public static String colorFinder(WebElement webElement) {
 //
 //    }

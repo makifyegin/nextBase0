@@ -69,19 +69,17 @@ public class Next_1012_StepDefinitions {
     @Given("Add certain {string}")
     public void add_certain(String string) {
 
-//        List<WebElement> locationElement = new ArrayList<>();
-//        locationElement.add(calendarPage.loCationInput);
-//        System.out.println(locationElement.size());
-//
-//        calendarPage.loCationInput.sendKeys(Keys.CLEAR + "Dark side" + Keys.ENTER);
+        calendarPage.loCationInput.click();
+        calendarPage.locatorWhilePlace.click();
+
 
     }
 
     @Given("Add {string}")
     public void add(String string) {
-
-//        BrowserUtils.waitForVisibility(calendarPage.attendees, 3);
-//        calendarPage.attendInput.sendKeys("hr1@cybertekschool.com");
+        calendarPage.addMore.click();
+        BrowserUtils.waitForVisibility(calendarPage.addMoreUser, 2);
+        calendarPage.addMoreUser.click();
 
     }
 
@@ -102,9 +100,12 @@ public class Next_1012_StepDefinitions {
 
     @Given("Add colour of {string}")
     public void add_colour_of(String string) {
-        String pink = "#F87396";
-        String navyBlue = "rgb(28, 13, 100);";
-        navyBlue = Color.fromString(navyBlue).asHex();
+//        String pink = "rgb(248, 115, 150)";
+//        pink = Color.fromString(pink).asHex();
+//        System.out.println(pink);
+//        String navyBlue = "rgb(28, 13, 100);";
+//        navyBlue = Color.fromString(navyBlue).asHex();
+        String pink = "#f87396";
 
         List<WebElement> coloursWebElement = Driver.getDriver().findElements(By.xpath("//*[@class='calendar-field-colorpicker-color-item']"));
         List<String> colors = new ArrayList<>();
@@ -114,21 +115,17 @@ public class Next_1012_StepDefinitions {
             color = Color.fromString(color).asHex();
             colors.add(color);
 
-            if (colors.contains("#F87396")) {
-
+            if (pink.equalsIgnoreCase(color)) {
                 colour.click();
             }
-
         }
-        System.out.println(colors);
+        calendarPage.otherColorSelectClickButton.click();
         List<WebElement> otherColorsWebElements = Driver.getDriver().findElements(By.xpath("//div[@class='main-color-picker-box']"));
         for (WebElement otherColorsWebElement : otherColorsWebElements) {
             String otherColors = otherColorsWebElement.getCssValue("background-color");
             otherColors = Color.fromString(otherColors).asHex();
             colors.add(otherColors);
-
         }
-
         System.out.println(colors);
     }
 
