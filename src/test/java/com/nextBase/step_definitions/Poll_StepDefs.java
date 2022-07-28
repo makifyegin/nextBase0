@@ -119,7 +119,7 @@ public class Poll_StepDefs {
         Poll_Page.addQuestionBox.isDisplayed();
     }
 
-
+//DELETE MULTIPLE ANSWERS AND QUESTION BOX
     @When("multiple questions with multiple answers are added")
     public void multiple_questions_with_multiple_answers_are_added() {
         Poll_Page.answerBoxTwo.click();
@@ -130,7 +130,9 @@ public class Poll_StepDefs {
 
     @When("user can delete a question and an answer")
     public void user_can_delete_a_question_and_an_answer() {
-
+        Poll_Page.deleteAnswerBoxThree.click();
+        Poll_Page.deleteAnswerBoxFour.click();
+        Poll_Page.deleteQuestionBox.click();
 
     }
 
