@@ -64,4 +64,13 @@ public class Poll_Page {
     @FindBy(id = "multi_0")
     public WebElement allowMultipleChoiceBox;
 
+    @FindBy(css = "label[for='answer_0__2_']")
+    public WebElement deleteAnswerBoxThree;
+
+    @FindBy(css = "label[for='answer_0__3_']")
+    public WebElement deleteAnswerBoxFour;
+
+    @FindBy(css = "label[for='question_1']")
+    public WebElement deleteQuestionBox;
+
 }
