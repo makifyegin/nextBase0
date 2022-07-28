@@ -124,8 +124,24 @@ public class CalendarPage {
     public WebElement colourWebElement;
 
 
-    @FindBy(xpath = "    (//span[@class = 'menu-popup-item-text'])[3]")
+    @FindBy(xpath = "(//span[@class = 'menu-popup-item-text'])[6]")
     public WebElement locatorWhilePlace;
+
+    @FindBy(xpath = "(//span[@class='calendar-text-link'])[2]")
+    public WebElement meetingRoomsAddLink;
+
+    @FindBy(xpath = "//span[@class='popup-window-button']")
+    public WebElement meetingRoomsSaveButton;
+
+    @FindBy(xpath = "//input[@class='calendar-field calendar-field-string']")
+    public WebElement inputMeetingRoomsSaveButton;
+
+
+
+    @FindBy(name = "accessibility")
+    public WebElement occupied;
+    @FindBy(xpath = "//button[@class='ui-btn ui-btn-success']")
+    public WebElement SaveCtrlEnter;
 
 
 //    private final Color RGB_COLOUR = Color.fromString("rgb(255, 255, 255)");

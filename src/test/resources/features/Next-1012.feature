@@ -46,7 +46,7 @@ Feature: Default
     And Click the Calendar
     And Click the Add event
     And Click the This event is important
-    And Fill out the "event name"
+    And Fill out the "MY_FIRST_DESCRIPTION_OF_BIRTHDAY"
     And Specifying "start" dates in the spesific "end"
     And Click the repeating event with description
     And Add "specific" time zones
@@ -55,7 +55,7 @@ Feature: Default
     And Click More
     And Add colour of "Pink"
     And Choose availability "Occupied"
-#    And user click save button
+    And user clickCtrlEnter save button
 
   @NEXT-1051
   Scenario: HR User can edit the 1st AC's task color as

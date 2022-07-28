@@ -1,6 +1,8 @@
 package com.nextBase.step_definitions;
 
+import com.github.javafaker.Faker;
 import com.nextBase.pages.CalendarPage;
+import com.nextBase.pages.NextBasePage;
 import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.ca.Cal;
@@ -31,7 +33,6 @@ public class Next_1012_StepDefinitions {
 
     @Given("Fill out the {string}")
     public void fill_out_the(String string) {
-        string = "MY_FIRST_DESCRIPTION_OF_BIRTHDAY";
         calendarPage.eventNameInput.clear();
         calendarPage.eventNameInput.sendKeys(string);
     }
@@ -69,9 +70,29 @@ public class Next_1012_StepDefinitions {
     @Given("Add certain {string}")
     public void add_certain(String string) {
 
+
         calendarPage.loCationInput.click();
         calendarPage.locatorWhilePlace.click();
+        Faker faker = new Faker();
+        String meetingRoom = faker.company().name();
+        BrowserUtils.waitForVisibility(calendarPage.inputMeetingRoomsSaveButton, 10);
+        calendarPage.inputMeetingRoomsSaveButton.click();
+        calendarPage.inputMeetingRoomsSaveButton.clear();
+        calendarPage.inputMeetingRoomsSaveButton.sendKeys(meetingRoom);
+        calendarPage.meetingRoomsSaveButton.click();
+//        List<WebElement> coloursWebElement = Driver.getDriver().findElements(By.xpath("//input[@name='lo_cation']"));
+//        for (WebElement webElement : coloursWebElement) {
+//            System.out.println(webElement.getText());
+//        }
 
+
+        //   Driver.getDriver().findElements(By.xpath("//*[@class='calendar-field-colorpicker-color-item']"));
+
+
+//        BrowserUtils.waitForVisibility(calendarPage.loCationInput,5);
+//        Driver.getDriver().findElement(By.xpath("//input[@name='lo_cation']")).click();
+//        Driver.getDriver().findElement(By.xpath("(//span[@class='menu-popup-item-text'])[4]")).click();
+//        calendarPage.locatorWhilePlace.click();
 
     }
 
@@ -119,25 +140,28 @@ public class Next_1012_StepDefinitions {
                 colour.click();
             }
         }
-        calendarPage.otherColorSelectClickButton.click();
-        List<WebElement> otherColorsWebElements = Driver.getDriver().findElements(By.xpath("//div[@class='main-color-picker-box']"));
-        for (WebElement otherColorsWebElement : otherColorsWebElements) {
-            String otherColors = otherColorsWebElement.getCssValue("background-color");
-            otherColors = Color.fromString(otherColors).asHex();
-            colors.add(otherColors);
-        }
-        System.out.println(colors);
+//        calendarPage.otherColorSelectClickButton.click();
+//        List<WebElement> otherColorsWebElements = Driver.getDriver().findElements(By.xpath("//div[@class='main-color-picker-box']"));
+//        for (WebElement otherColorsWebElement : otherColorsWebElements) {
+//            String otherColors = otherColorsWebElement.getCssValue("background-color");
+//            otherColors = Color.fromString(otherColors).asHex();
+//            colors.add(otherColors);
+//        }
+//        System.out.println(colors);
     }
 
 
     @Given("Choose availability {string}")
     public void choose_availability(String string) {
 
+        Select select = new Select(Driver.getDriver().findElement(By.name("accessibility")));
+        select.selectByIndex(2);
     }
 
 
     @Given("Click the Event")
     public void click_the_event() {
+
 
     }
 
@@ -148,6 +172,7 @@ public class Next_1012_StepDefinitions {
 
     @Then("Verify that Event name is {string}")
     public void verify_that_event_name_is(String string) {
+
 
     }
 
@@ -298,4 +323,12 @@ public class Next_1012_StepDefinitions {
 
     }
 
+    NextBasePage nextBasePage = new NextBasePage();
+
+    @And("user clickCtrlEnter save button")
+    public void userClickCtrlEnterSaveButton() {
+        calendarPage.SaveCtrlEnter.click();
+        BrowserUtils.waitForVisibility(nextBasePage.calendar, 4);
+    }
 }
+
