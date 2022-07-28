@@ -3,6 +3,7 @@ package com.nextBase.step_definitions;
 import com.nextBase.pages.NextBasePage;
 import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -12,7 +13,7 @@ public class SearchRelatedItem_StepDefinitions {
 
     NextBasePage nextBasePage = new NextBasePage();
 
-    @When("user click search button")
+    @And("user click search button")
     public void user_click_search_button() {
         nextBasePage.searchBtn.click();
     }

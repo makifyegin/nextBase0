@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 
         plugin = {
                 //"pretty",
+                "json:target/cucumber.json",
                 "html:target/cucumber-reports.html",
                 "rerun:target/rerun.txt",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
@@ -16,7 +17,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/nextBase/step_definitions",
         dryRun = false,
-        tags = "@NEXT1014",
+        tags = "@NEXT-1099",
         publish = false
 
 

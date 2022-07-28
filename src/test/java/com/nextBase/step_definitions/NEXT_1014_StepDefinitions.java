@@ -8,7 +8,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.LocalDate; // import the LocalDate class
@@ -17,9 +20,11 @@ import java.time.LocalDate; // import the LocalDate class
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class NEXT_1014_StepDefinitions {
 
@@ -54,7 +59,7 @@ public class NEXT_1014_StepDefinitions {
         next_1014Page.inputDepartmentName.sendKeys("Taskmaster");
     }
 
-    @When("user clicks add")
+    @And("user clicks add")
     public void user_clicks_add() {
         next_1014Page.addDepartmentNameButton.click();
 
@@ -88,7 +93,7 @@ public class NEXT_1014_StepDefinitions {
     //Search employees by search by Alphabet
 
 
-    @When("user clicks Search By Alphabet button")
+    @And("user clicks Search By Alphabet button")
     public void user_clicks_search_by_alphabet_button() {
         next_1014Page.searchByAlphabetButton.click();
     }
@@ -114,12 +119,12 @@ public class NEXT_1014_StepDefinitions {
 
     }
 
-    @Given("user clicks the more button")
+    @And("user clicks the more button")
     public void user_clicks_the_more_button() {
         next_1014Page.moreButton.click();
     }
 
-    @Given("user clicks Export to Excel")
+    @And("user clicks Export to Excel")
     public void user_clicks_export_to_excel() {
         next_1014Page.exportToExcel.click();
     }
@@ -214,9 +219,7 @@ public class NEXT_1014_StepDefinitions {
     }
 
     @When("{string} send {string} to {string}")
-    public void sendBonjourTo(String arg0, String arg1, String arg2) {
-
-
+    public void sendDateTo(String arg0, String arg1, String arg2) {
 
         String str = (String.valueOf(date));
 
@@ -292,10 +295,20 @@ public class NEXT_1014_StepDefinitions {
 
     @Then("the user gets an error message")
     public void the_user_gets_an_error_message() {
-        List<String> listOfAllWebElements = new ArrayList<>();
-        listOfAllWebElements.add(next_1014Page.departmentTitle.getText());
-        System.out.println(listOfAllWebElements);
+        /*
+        List<WebElement> webElems = Driver.getDriver().findElements(By.xpath("//a[@data-role='department_name']"));
+        List<String> deptNames = new ArrayList<>();
+        for (int i = 0; i <webElems.size() ; i++) {
+            String deptName = webElems.get(i).getText();
+            if(deptName.contains("Taskmaster"))
+
+            System.out.println(deptName);
+
+        }
+         */
+        assertTrue(next_1014Page.errorMessage.isDisplayed());
     }
+
 
     @And("user adds another department")
     public void userAddsAnotherDepartment() {

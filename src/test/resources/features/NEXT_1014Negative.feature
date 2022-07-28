@@ -6,7 +6,7 @@ Background:
 
 Given "HR" is on Home page
 And user clicks employees
-
+@NEXT-1076
 Scenario: Can not type nothing to find employees
 
 
@@ -15,7 +15,7 @@ And user types nothing in the search box
 And user click search button
 Then user can not see any employee info displayed
 
-
+  @NEXT-1083
 Scenario: Can not type a special character to find employees
 
 When user clicks Find Employees
@@ -24,7 +24,7 @@ And user click search button
 Then user can not see any employee info displayed
 
 
-
+  @NEXT-1100
   Scenario Outline: Can not type the same message more than 5 times
 
     Given there are two users in application as "<sender>" and "<receiver>"
@@ -36,7 +36,7 @@ Then user can not see any employee info displayed
       | sender            | receiver     |
       | dadasdasdasd dada | Mousa Adolai |
 
-  @NEXT1014
+    @NEXT-1099
     Scenario: Add 2 departments with the same name
 
     When user adds department
