@@ -7,39 +7,53 @@ Feature: Poll.feature
     # following scenarios are valid for all logged in user (Hr,Marketing, Helpdesk)
     Given "Hr" is on homepage
       #user is logged in and on poll under activity stream
-    Given user clicks on <Poll>
+    Given user clicks on Poll
 
 
   #User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
   Scenario: Verify user can add multiple contacts to poll
-    When on To bar and deletes <All employees> selection
-    And clicks on <Add persons, groups or department> field
-    And click on <Employees and departments> selection
-    And user adds "helpdesk1@cybertekschool.com", "hr76@cybertekschool.com", "marketing1@cybertekschool.com";
-    Then verify that more than one user is added to the list
+
+    When user on To bar and deletes All employees selection
+    And user clicks on Add persons, groups or department field
+    And clicks on Employees and departments button
+    And user selects multiple contacts from contact list
+    Then verify that multiple contacts is added to the list
+
 
     #User should be able to attach link by clicking on the link icon.
   Scenario: Verify that user can attach a link under the link icon
-    When user clicks on link icon
-    Then user is able to see a pop up window with title Link
-    When filling out link text and link url and clicking on save
-    Then user can see the hyperlink added to the field
+
+
+    When user clicks link icon
+    And user add link text
+    And user add link URL
+    And user click save button
+    Then verify that user can add link
+
+    #When user clicks on link icon
+    #Then user is able to see a pop up window with title Link
+    #When filling out link text and link url and clicking on save
+    #Then user can see the hyperlink added to the field
+
 
 
     #User should be able to add mention by clicking on the add mention icon.
   Scenario: verify user can add a mention
+
     When clicking on mention icon user is able to choose a person
     Then verify that a mention has been added in the field
 
     #User should be able to add questions and multiple answers.
   Scenario: Verify user can add multiple questions with multiple answers
-    When clicking on "Answer 2" input box to create a next answer input box
-    And clicking on "Answer 3" input box to create a next answer input box
-    And clicking on "Add question" link text
-    Then verify that <Answer 3, Answer 4> input box and another question input box will appear
+
+    When clicking on Answer Two input box to create a next answer input box
+    And clicking on Answer Three input box to create a next answer input box
+    And clicking on Add question link text
+    Then verify that Answer Three, Answer Four input box and another question input box will appear
 
   #User should be able to delete questions and multiple answers.
   Scenario: Verify that user can delete multiple questions and answers
+
     When multiple questions with multiple answers are added
     And user can delete a question and an answer
     Then that deleted question box and answer box is gone on site
