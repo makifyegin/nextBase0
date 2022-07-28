@@ -15,6 +15,10 @@ import java.util.List;
 public class Poll_StepDefs {
 
     com.nextBase.pages.Poll_Page Poll_Page = new Poll_Page();
+    NextBasePage nextBasePage = new NextBasePage();
+
+    List<WebElement>userName;
+
 
     // Add multiple Employees
     @Given("user clicks on Poll")
@@ -39,7 +43,7 @@ public class Poll_StepDefs {
 
     @And("user selects multiple contacts from contact list")
     public void userSelectsMultipleContactsFromContactList() {
-        List<WebElement> userName = BrowserUtils.getElement(NextBasePage.oneContact);
+        List<WebElement> userName = BrowserUtils.getElement(nextBasePage.oneContact);
 
         for (int i = 0; i < 3; i++) {
             userName.get(i).click();
