@@ -140,6 +140,7 @@ public class NextBasePage {
     public WebElement contactInput;
 
 
+
     @FindBy(xpath = "//input[@id='linkidPostFormLHE_blogPostForm-text']")
     public WebElement linkText;
 
@@ -194,13 +195,12 @@ public class NextBasePage {
     public WebElement sendMessageWithoutTitle;
 
 
+    @FindBy(xpath = "/html/body/a[1]")
+    public WebElement missingLink;
 
     @FindBy(xpath = "//*[@id=\"feed-add-post-destination-item\"]/span/span[2]")
     public WebElement allEmployee;
 
-
-    @FindBy(xpath = "/html/body/a[1]")
-    public WebElement missingLink;
 
     @FindBy(xpath = "//span[text()='League of Legends (TM) Client 2021-11-24 19-40-10.mp4']")
     public WebElement negativeUploaded;
