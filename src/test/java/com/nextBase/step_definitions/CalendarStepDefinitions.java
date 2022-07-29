@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import com.github.javafaker.University;
 import com.nextBase.pages.CalendarPage;
 import com.nextBase.pages.NextBasePage;
+import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -85,6 +86,7 @@ public class CalendarStepDefinitions {
     @And("Click Save")
     public void clickSave() {
         calendarPage.calendarSliderSaveButton.click();
+
 
     }
 

@@ -2,6 +2,7 @@ package com.nextBase.step_definitions;
 
 import com.nextBase.pages.BasePage;
 import com.nextBase.pages.NextBasePage;
+import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.Driver;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
@@ -19,7 +20,7 @@ public class NegativeNonCharacter_StepDefinitions {
 
     @Given("{string} is on homepage")
     public void is_on_homepage(String string) {
-        switch (string.toLowerCase()){
+        switch (string.toLowerCase()) {
             case "hr":
                 BasePage.loginAsHR();
                 break;

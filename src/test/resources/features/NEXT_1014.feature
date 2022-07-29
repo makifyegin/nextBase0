@@ -51,7 +51,7 @@ Feature: NEXT-1014
     And user clicks the more button
     And user clicks Export to Excel
     Then user can see the file in download
-  @wip
+
   Scenario: Display the telephone directory
 
     Given "HR" is on Home page
