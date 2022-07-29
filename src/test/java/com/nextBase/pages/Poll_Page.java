@@ -78,4 +78,27 @@ public class Poll_Page {
     @FindBy(css = "label[for='question_1']")
     public WebElement deleteQuestionBox;
 
+    @FindBy(id="blog-submit-button-save")
+    public WebElement sendButton;
+
+    @FindBy(className = "feed-add-info-text")
+    public WebElement titleErrorMessage;
+
+    @FindBy(className = "bx-editor-iframe")
+    public WebElement iframeTitleField;
+    @FindBy()
+    public WebElement ;
+    @FindBy()
+    public WebElement ;
+    @FindBy()
+    public WebElement ;
+    @FindBy()
+    public WebElement ;
+    @FindBy()
+    public WebElement ;
+    @FindBy()
+    public WebElement ;
+    @FindBy()
+    public WebElement ;
+
 }
