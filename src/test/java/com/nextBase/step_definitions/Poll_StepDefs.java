@@ -3,6 +3,7 @@ package com.nextBase.step_definitions;
 import com.nextBase.pages.NextBasePage;
 import com.nextBase.pages.Poll_Page;
 import com.nextBase.utilities.BrowserUtils;
+import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
@@ -36,11 +38,13 @@ public class Poll_StepDefs {
     @When("user on To bar and deletes All employees selection")
     public void userOnToBarAndDeletesAllEmployeesSelection() {
         Poll_Page.allEmployeesDelete.click();
+        BrowserUtils.waitForVisibility(Poll_Page.addPersons,2);
     }
 
     @And("user clicks on Add persons, groups or department field")
     public void userClicksOnAddPersonsGroupsOrDepartmentField() {
         Poll_Page.addPersons.click();
+        BrowserUtils.waitForVisibility(Poll_Page.employeesAndDepartmentsSection,2);
     }
 
     @And("clicks on Employees and departments button")
@@ -142,18 +146,26 @@ public class Poll_StepDefs {
     @When("user can delete a question and an answer")
     public void user_can_delete_a_question_and_an_answer() {
 
-        WebElement tmpElement = driver.findElement(By.xpath("//input[@name='UF_BLOG_POST_VOTE_n0_DATA[QUESTIONS][0][ANSWERS][2][MESSAGE_TYPE]']"));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", tmpElement);
+      //  WebElement tmpElement = driver.findElement(By.xpath("//input[@name='UF_BLOG_POST_VOTE_n0_DATA[QUESTIONS][0][ANSWERS][2][MESSAGE_TYPE]']"));
+      //  JavascriptExecutor executor = (JavascriptExecutor)driver;
+      //  executor.executeScript("arguments[0].click();", tmpElement);
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(Poll_Page.deleteAnswerBoxThree);
         Poll_Page.deleteAnswerBoxThree.click();
+        actions.moveToElement(Poll_Page.deleteAnswerBoxFour);
         Poll_Page.deleteAnswerBoxFour.click();
+        actions.moveToElement(Poll_Page.deleteQuestionBox);
         Poll_Page.deleteQuestionBox.click();
 
     }
 
     @Then("that deleted question box and answer box is gone on site")
     public void that_deleted_question_box_and_answer_box_is_gone_on_site() {
-        List<WebElement> listOfElements = driver.findElements(By.cssSelector("for"));
+        List<WebElement> listOfAnswers = driver.findElements(By.xpath("//li[@class='vote-block-inp-wrap']"));
+
+        System.out.println("listOfAnswers.size() = " + listOfAnswers.size());
+
     }
 
 //MULTIPLE CHOICE BOX
@@ -168,10 +180,12 @@ public class Poll_StepDefs {
     }
 
 
-    @When("user clicks link icon")
-    public void userClicksLinkIcon() {
-        Poll_Page.linkIcon.click();
-    }
+ //   @When("user clicks link icon")
+ //   public void userClicksLinkIcon() {
+  //      Poll_Page.linkIcon.click();
+  //  }
+
+
 }
 
 

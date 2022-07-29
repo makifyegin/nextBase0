@@ -10,7 +10,7 @@ Feature: Poll.feature
     Given user clicks on Poll
 
 
- #User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
+@cont #User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
   Scenario: Verify user can add multiple contacts to poll
 
     When user on To bar and deletes All employees selection
@@ -45,7 +45,7 @@ Feature: Poll.feature
     And clicking on Add question link text
     Then verify that Answer Three, Answer Four input box and another question input box will appear
 
-  #User should be able to delete questions and multiple answers.
+ @ans #User should be able to delete questions and multiple answers.
   Scenario: Verify that user can delete multiple questions and answers
 
     When multiple questions with multiple answers are added

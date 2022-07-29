@@ -12,14 +12,14 @@ public class Poll_Page {
     @FindBy(id= "feed-add-post-form-tab-vote")
     public WebElement pollButton;
 
-    @FindBy(css = "span[class='feed-add-post-destination feed-add-post-destination-all-users']")
+    @FindBy(xpath = "//span[@class='feed-add-post-del-but']")
     public WebElement allEmployeesDelete;
 
 
     @FindBy(id="bx-destination-tag")
     public WebElement addPersons;
 
-    @FindBy(id="destDepartmentTab_destination2586987")
+    @FindBy(xpath = "//a[text()='Employees and departments']")
     public WebElement employeesAndDepartmentsSection;
 
     @FindBy(id="feed-add-post-destination-container")
