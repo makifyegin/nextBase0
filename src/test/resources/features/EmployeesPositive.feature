@@ -10,9 +10,9 @@ Feature: Employees Interaction Functionality (Positive scenarios)
   Scenario: User should be able to make a comment, like, or unfollow on other employees' posts
     Given there is a post under Activity Stream
     When  User interacts as "<interaction>"
-    And  User hovers over the "like" button
-   And  User should see the "emoji" selection box
-    And  User clicks on the "emoji" button
+   # And  User hovers over the "like" button
+   # And  User should see the "emoji" selection box
+    #And  User clicks on the "emoji" button
     And  User leaves comment as "Test Comment" on post
     #Then verify that all steps passed
 

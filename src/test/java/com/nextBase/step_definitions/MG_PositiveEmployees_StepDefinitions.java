@@ -98,8 +98,6 @@ public class MG_PositiveEmployees_StepDefinitions {
     }
 
 
-
-
     //=================== TEST DOIS ABAIXO LIKE OR MAKE COMMENTS ALL OTHER REVIEWERS COMMENT ===================//
 
 
@@ -160,8 +158,6 @@ public class MG_PositiveEmployees_StepDefinitions {
 
     //======================= TEST TRES ABAIXO REVIEWERS NAME & VISIT THEIR PROFILE===============================//
 
-/*
-
     @When("User clicks reviews name button with the name {string}")
     public void userClicksReviewsNameButtonWithTheName(String reviewsName1) throws InterruptedException {
         for (WebElement element : MG_Positive.reviewerName()) {
@@ -187,12 +183,11 @@ public class MG_PositiveEmployees_StepDefinitions {
         Assert.assertEquals(MG_Positive.contactInformation.getText(), "Contact information");
     }
 
-*/
 
 
     //======================= TEST QUATRO ABAIXO ADD POST TO FAVOURITE==================================//
 
-
+/*
     @When("User click star on the top right corner of message box")
     public void userClickStarOnTheTopRightCornerOfMessageBox() throws InterruptedException {
         //get reference to first post
@@ -216,7 +211,7 @@ public class MG_PositiveEmployees_StepDefinitions {
 
     }
 
-
+*/
     @Then("Verify that User can add to starIcon favourite")
     public void verifyThatUserCanAddToStarIconFavourite() throws InterruptedException {
         Assert.assertTrue((MG_Positive.firstPost.findElement(By.xpath("//div[@class=\"feed-post-important-switch feed-post-important-switch-active\"]")).isDisplayed()));
@@ -227,19 +222,19 @@ public class MG_PositiveEmployees_StepDefinitions {
         //Assert.assertTrue(positiveOutComeIcon.isDisplayed());
     }
 
-}
 
 //NOT USE BELOW FEATURES
-    /*
-        @And("User click on the Add to favourites frame appeared")
-        public void userClickOnTheAddToFavouritesFrameAppeared () throws InterruptedException {
-            if (MG_Positive.favoriteIcon.getAttribute("title").equalsIgnoreCase("Add to favorites")) {
-                MG_Positive.favoriteIcon.click();
-            } else if (MG_Positive.favoriteIcon.getAttribute("title").equalsIgnoreCase("Remove from favorites")) {
-                MG_Positive.favoriteIcon.click();
-            }
-            Thread.sleep(3000);
-*/
+
+    @And("User click on the Add to favourites frame appeared")
+    public void userClickOnTheAddToFavouritesFrameAppeared() throws InterruptedException {
+        if (MG_Positive.favoriteIcon.getAttribute("title").equalsIgnoreCase("Add to favorites")) {
+            MG_Positive.favoriteIcon.click();
+        } else if (MG_Positive.favoriteIcon.getAttribute("title").equalsIgnoreCase("Remove from favorites")) {
+            MG_Positive.favoriteIcon.click();
+        }
+        Thread.sleep(3000);
 
 
+    }
 
+}
