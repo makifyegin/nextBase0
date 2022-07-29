@@ -86,7 +86,7 @@ public class Poll_Page {
 
     @FindBy(className = "bx-editor-iframe")
     public WebElement iframeTitleField;
-    @FindBy()
+   /* @FindBy()
     public WebElement ;
     @FindBy()
     public WebElement ;
@@ -100,5 +100,5 @@ public class Poll_Page {
     public WebElement ;
     @FindBy()
     public WebElement ;
-
+*/
 }

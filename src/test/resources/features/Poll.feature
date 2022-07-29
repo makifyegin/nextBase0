@@ -10,7 +10,7 @@ Feature: Poll.feature
     Given user clicks on Poll
 
 
- @emp #User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
+ #User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
   Scenario: Verify user can add multiple contacts to poll
 
     When user on To bar and deletes All employees selection
