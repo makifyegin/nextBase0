@@ -8,17 +8,24 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Poll_StepDefs {
 
     com.nextBase.pages.Poll_Page Poll_Page = new Poll_Page();
     NextBasePage nextBasePage = new NextBasePage();
 
+
     List<WebElement>userName;
 
+    private static WebDriver driver;
 
     // Add multiple Employees
     @Given("user clicks on Poll")
@@ -129,11 +136,15 @@ public class Poll_StepDefs {
         Poll_Page.answerBoxTwo.click();
         Poll_Page.answerBoxThree.click();
         Poll_Page.addQuestionBox.click();
-        Poll_Page.addQuestionBox.click();
+      //  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @When("user can delete a question and an answer")
     public void user_can_delete_a_question_and_an_answer() {
+
+        WebElement tmpElement = driver.findElement(By.xpath("//input[@name='UF_BLOG_POST_VOTE_n0_DATA[QUESTIONS][0][ANSWERS][2][MESSAGE_TYPE]']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", tmpElement);
         Poll_Page.deleteAnswerBoxThree.click();
         Poll_Page.deleteAnswerBoxFour.click();
         Poll_Page.deleteQuestionBox.click();
@@ -142,9 +153,10 @@ public class Poll_StepDefs {
 
     @Then("that deleted question box and answer box is gone on site")
     public void that_deleted_question_box_and_answer_box_is_gone_on_site() {
-
+        List<WebElement> listOfElements = driver.findElements(By.cssSelector("for"));
     }
 
+//MULTIPLE CHOICE BOX
     @When("user clicks checkbox <Allow multiple choice>")
     public void user_clicks_checkbox_allow_multiple_choice() {
         Poll_Page.allowMultipleChoiceBox.click();
@@ -156,7 +168,10 @@ public class Poll_StepDefs {
     }
 
 
-
+    @When("user clicks link icon")
+    public void userClicksLinkIcon() {
+        Poll_Page.linkIcon.click();
+    }
 }
 
 

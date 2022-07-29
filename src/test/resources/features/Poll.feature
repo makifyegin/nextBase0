@@ -10,7 +10,7 @@ Feature: Poll.feature
     Given user clicks on Poll
 
 
-  #User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
+ @emp #User should be able to add users from selecting multiple contacts from Employees and Departments contact lists.
   Scenario: Verify user can add multiple contacts to poll
 
     When user on To bar and deletes All employees selection
@@ -20,7 +20,7 @@ Feature: Poll.feature
     Then verify that multiple contacts is added to the list
 
 
-    #User should be able to attach link by clicking on the link icon.
+#DONE #User should be able to attach link by clicking on the link icon.
   Scenario: Verify that user can attach a link under the link icon
 
 
@@ -30,20 +30,14 @@ Feature: Poll.feature
     And user click save button
     Then verify that user can add link
 
-    #When user clicks on link icon
-    #Then user is able to see a pop up window with title Link
-    #When filling out link text and link url and clicking on save
-    #Then user can see the hyperlink added to the field
 
-
-
-    #User should be able to add mention by clicking on the add mention icon.
+#PASSED BUT NOT SURE IF RIGHT   #User should be able to add mention by clicking on the add mention icon.
   Scenario: verify user can add a mention
 
     When clicking on mention icon user is able to choose a person
     Then verify that a mention has been added in the field
 
-    #User should be able to add questions and multiple answers.
+ #DONE   #User should be able to add questions and multiple answers.
   Scenario: Verify user can add multiple questions with multiple answers
 
     When clicking on Answer Two input box to create a next answer input box
@@ -58,7 +52,7 @@ Feature: Poll.feature
     And user can delete a question and an answer
     Then that deleted question box and answer box is gone on site
 
-    #User should be able to provide multiple choice to attendees by selecting the Allow multiple choice checkbox.
+ #DONE   #User should be able to provide multiple choice to attendees by selecting the Allow multiple choice checkbox.
   Scenario: Verify that user can check the "Multiple Choice" checkbox
     When user clicks checkbox <Allow multiple choice>
     Then checkbox will turn blue and get enabled

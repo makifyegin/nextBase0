@@ -12,19 +12,21 @@ public class Poll_Page {
     @FindBy(id= "feed-add-post-form-tab-vote")
     public WebElement pollButton;
 
-    @FindBy(className = "feed-add-post-del-but")
+    @FindBy(css = "span[class='feed-add-post-destination feed-add-post-destination-all-users']")
     public WebElement allEmployeesDelete;
 
-    @FindBy(xpath = "//a[.='Add persons, groups or department']")
+
+    @FindBy(id="bx-destination-tag")
     public WebElement addPersons;
 
-    @FindBy(className = "bx-finder-box-tab bx-lm-tab-department")
+    @FindBy(id="destDepartmentTab_destination2586987")
     public WebElement employeesAndDepartmentsSection;
 
-    @FindBy(className = "feed-add-post-destination feed-add-post-destination-users")
+    @FindBy(id="feed-add-post-destination-container")
     public WebElement toBarAddedUsers;
 
-    @FindBy(className = "bxhtmled-top-bar-btn bxhtmled-button-link")
+
+    @FindBy(xpath = "//span[@title='Link']")
     public WebElement linkIcon;
 
     @FindBy(id= "bx-admin-prefix")
@@ -55,7 +57,7 @@ public class Poll_Page {
     @FindBy(id= "answer_0__2_")
     public WebElement answerBoxThree;
 
-    @FindBy(className = "vote-new-question-link addq")
+    @FindBy(xpath = "//a[.='Add question']")
     public WebElement addQuestionBox;
 
     @FindBy(id = "answer_0__3_")
@@ -64,7 +66,10 @@ public class Poll_Page {
     @FindBy(id = "multi_0")
     public WebElement allowMultipleChoiceBox;
 
-    @FindBy(css = "label[for='answer_0__2_']")
+   // @FindBy(css = "label[for='answer_0__2_']")
+  //  public WebElement deleteAnswerBoxThree;
+
+     @FindBy(xpath = "//input[@name='UF_BLOG_POST_VOTE_n0_DATA[QUESTIONS][0][ANSWERS][2][MESSAGE_TYPE]']")
     public WebElement deleteAnswerBoxThree;
 
     @FindBy(css = "label[for='answer_0__3_']")
