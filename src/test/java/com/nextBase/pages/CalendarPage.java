@@ -17,6 +17,14 @@ public class CalendarPage {
     public WebElement add;
 
 
+    @FindBy(xpath = "//span[@class='feed-add-destination-link']")
+    public WebElement addMore;
+
+
+    @FindBy(xpath = "(//div[@class='bx-finder-box-item-t7-name'])[2]")
+    public WebElement addMoreUser;
+
+
     @FindBy(xpath = "(//*[@class='calendar-field calendar-field-datetime'])[1]")
     public WebElement eventDateAndTime;
 
@@ -26,6 +34,13 @@ public class CalendarPage {
     // Pleaser add eventNameInput is akif.
     @FindBy(xpath = "//*[@name='name']")
     public WebElement eventNameInput;
+
+    @FindBy(xpath = "//span[@class='calendar-head-area-title-name']")
+    public WebElement editHead;
+
+
+    @FindBy(xpath = "//input[@name='name']")
+    public WebElement editInput;
 
 
     @FindBy(xpath = "//*[@class='ui-btn ui-btn-success']")
@@ -44,6 +59,9 @@ public class CalendarPage {
     @FindBy(xpath = "(//input[@tabindex='1'])[1]")
     public WebElement filterAndSearch;
 
+    @FindBy(xpath = "(//span[@class='calendar-timeline-stream-content-event-name-link'])[1]")
+    public WebElement firstElement;
+
 
     @FindBy(xpath = "//div[@class = 'calendar-timeline-stream-content-event-name']")
     public WebElement calendarTimeLine;
@@ -61,6 +79,16 @@ public class CalendarPage {
 
     @FindBy(xpath = "//select[@name='EVENT_RRULE[FREQ]']")
     public WebElement repeatSelector;
+    @FindBy(xpath = "(//span[@class='main-ui-filter-sidebar-item-text'])[4]")
+    public WebElement iamAnOrganiser;
+
+    @FindBy(xpath = "(//span[@class='main-ui-filter-sidebar-item-text'])[3]")
+    public WebElement iamAParticipant;
+
+
+    @FindBy(xpath = "(//span[@class='main-ui-filter-sidebar-item-text'])[1]")
+    public WebElement invitation;
+
 
     @FindBy(xpath = "//input[@name='lo_cation']")
     public WebElement loCationInput;
@@ -79,6 +107,14 @@ public class CalendarPage {
 
     @FindBy(xpath = "//*[@name='private_event']")
     public WebElement privateEventInput;
+
+
+    @FindBy(xpath = "//span[@class='user-name']")
+    public WebElement user;
+
+
+    @FindBy(xpath = "(//span[@class='menu-popup-item-text'])[5]")
+    public WebElement logOut;
 
     @FindBy(xpath = "//span[@class='calendar-field-colorpicker-color-item-more-link']")
     public WebElement otherColorSelectClickButton;
@@ -112,11 +148,54 @@ public class CalendarPage {
     @FindBy(xpath = "//span[.='Time zone']")
     public WebElement timeZone;
 
+
     @FindBy(xpath = "//*[@class='calendar-field-colorpicker-color-item']")
     public WebElement colourWebElement;
 
 
-    private final Color RGB_COLOUR = Color.fromString("rgb(255, 255, 255)");
+    @FindBy(xpath = "(//span[@class = 'menu-popup-item-text'])[6]")
+    public WebElement locatorWhilePlace;
+
+    @FindBy(xpath = "(//span[@class='calendar-text-link'])[2]")
+    public WebElement meetingRoomsAddLink;
+
+    @FindBy(xpath = "//span[@class='popup-window-button']")
+    public WebElement meetingRoomsSaveButton;
+
+    @FindBy(xpath = "//input[@class='calendar-field calendar-field-string']")
+    public WebElement inputMeetingRoomsSaveButton;
+
+
+    @FindBy(name = "accessibility")
+    public WebElement occupied;
+    @FindBy(xpath = "//button[@class='ui-btn ui-btn-success']")
+    public WebElement SaveCtrlEnter;
+
+    @FindBy(xpath = "//div[@class='calendar-timeline-stream-label']")
+    public WebElement date;
+
+    @FindBy(xpath = "//span[@class='calendar-timeline-stream-content-event-name-link']")
+    public WebElement messagesAll;
+
+
+    @FindBy(xpath = "//span[@class='calendar-head-area-title-name']")
+    public WebElement calendarHead;
+
+    @FindBy(xpath = "//button[@class='ui-btn ui-btn-light-border']")
+    public WebElement editButton;
+
+    @FindBy(xpath = "(//span[@class='popup-window-button'])[4]")
+    public WebElement allEventInstance;
+
+    @FindBy(xpath = "//*[@id=\"EC398199812-main-container\"]/div[2]/div[4]/div[2]/div[1]/div[2]/div/div[3]/div[25]/div/div[2]/div/div[1]/div[2]/span[2]")
+    public WebElement lastEvent;
+
+
+    @FindBy(xpath = "//span[@class='calendar-timeline-stream-content-event-location']")
+    public WebElement location;
+
+
+//    private final Color RGB_COLOUR = Color.fromString("rgb(255, 255, 255)");
 //    public static String colorFinder(WebElement webElement) {
 //
 //    }

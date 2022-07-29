@@ -6,8 +6,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import com.nextBase.pages.NextBasePage;
+
+import java.util.Locale;
 
 public class BasePage {
+
+
 
     public BasePage(){
         PageFactory.initElements(Driver.getDriver(), this);
@@ -20,7 +25,8 @@ public class BasePage {
         String password= ConfigurationReader.getProperty("password");
         System.out.println(password);
         Driver.getDriver().get(ConfigurationReader.getProperty("nextBase.url"));
-
+        Driver.getDriver().findElement(By.name("USER_LOGIN")).clear();
+        Driver.getDriver().findElement(By.name("USER_PASSWORD")).clear();
         Driver.getDriver().findElement(By.name("USER_LOGIN")).sendKeys(username);
         Driver.getDriver().findElement(By.name("USER_PASSWORD")).sendKeys(password);
         Driver.getDriver().findElement(By.className("login-btn")).click();
@@ -32,7 +38,8 @@ public class BasePage {
         String password= ConfigurationReader.getProperty("password");
         System.out.println(password);
         Driver.getDriver().get(ConfigurationReader.getProperty("nextBase.url"));
-
+        Driver.getDriver().findElement(By.name("USER_LOGIN")).clear();
+        Driver.getDriver().findElement(By.name("USER_PASSWORD")).clear();
         Driver.getDriver().findElement(By.name("USER_LOGIN")).sendKeys(username);
         Driver.getDriver().findElement(By.name("USER_PASSWORD")).sendKeys(password);
         Driver.getDriver().findElement(By.className("login-btn")).click();
@@ -44,7 +51,8 @@ public class BasePage {
         String password= ConfigurationReader.getProperty("password");
         System.out.println(password);
         Driver.getDriver().get(ConfigurationReader.getProperty("nextBase.url"));
-
+        Driver.getDriver().findElement(By.name("USER_LOGIN")).clear();
+        Driver.getDriver().findElement(By.name("USER_PASSWORD")).clear();
         Driver.getDriver().findElement(By.name("USER_LOGIN")).sendKeys(username);
         Driver.getDriver().findElement(By.name("USER_PASSWORD")).sendKeys(password);
         Driver.getDriver().findElement(By.className("login-btn")).click();
