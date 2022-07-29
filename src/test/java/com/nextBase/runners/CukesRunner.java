@@ -17,12 +17,14 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/nextBase/step_definitions",
         dryRun = false,
-        tags = "",
+        tags = "@NEXT-1026",
         publish = false
 
 
 )
 
-public class CukesRunner { }
+public class CukesRunner {
+
+}
 
 
