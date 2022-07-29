@@ -1,4 +1,3 @@
-@wip
 Feature:Add an event for the AC criteria
   User Story :As a user, I should be able to navigate "Calendar" page so that user can filter and search, display, add and track the tasks or events either on "Calendar" page.
   Background:
