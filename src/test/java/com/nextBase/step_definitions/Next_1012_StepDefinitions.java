@@ -70,6 +70,11 @@ public class Next_1012_StepDefinitions {
     @Given("Add certain {string}")
     public void add_certain(String string) {
 
+//        List<WebElement> locationElement = new ArrayList<>();
+//        locationElement.add(calendarPage.loCationInput);
+//        System.out.println(locationElement.size());
+//
+//        calendarPage.loCationInput.sendKeys(Keys.CLEAR + "Dark side" + Keys.ENTER);
 
         calendarPage.loCationInput.click();
         calendarPage.locatorWhilePlace.click();
@@ -97,6 +102,7 @@ public class Next_1012_StepDefinitions {
 
     @Given("Add {string}")
     public void add(String string) {
+
         calendarPage.addMore.click();
         BrowserUtils.waitForVisibility(calendarPage.addMoreUser, 2);
         calendarPage.addMoreUser.click();
@@ -130,24 +136,39 @@ public class Next_1012_StepDefinitions {
         List<WebElement> coloursWebElement = Driver.getDriver().findElements(By.xpath("//*[@class='calendar-field-colorpicker-color-item']"));
         List<String> colors = new ArrayList<>();
 
+
+        List<WebElement> coloursWebElement = Driver.getDriver().findElements(By.xpath("//*[@class='calendar-field-colorpicker-color-item']"));
+        List<String> colors = new ArrayList<>();
+
+
         for (WebElement colour : coloursWebElement) {
             String color = colour.getCssValue("background-color");
             color = Color.fromString(color).asHex();
             colors.add(color);
 
+
+            if (colors.contains("#ffa900")) {
+
+                colour.click();
+            }
+
+        }
+        System.out.println(colors);
+        List<WebElement> otherColorsWebElements = Driver.getDriver().findElements(By.xpath("//div[@class='main-color-picker-box']"));
+        for (WebElement otherColorsWebElement : otherColorsWebElements) {
+            String otherColors = otherColorsWebElement.getCssValue("background-color");
+            otherColors = Color.fromString(otherColors).asHex();
+            colors.add(otherColors);
+
+        }
+
+        System.out.println(colors);
+
             if (pink.equalsIgnoreCase(color)) {
                 colour.click();
             }
         }
-//        calendarPage.otherColorSelectClickButton.click();
-//        List<WebElement> otherColorsWebElements = Driver.getDriver().findElements(By.xpath("//div[@class='main-color-picker-box']"));
 
-//        for (WebElement otherColorsWebElement : otherColorsWebElements) {
-//            String otherColors = otherColorsWebElement.getCssValue("background-color");
-//            otherColors = Color.fromString(otherColors).asHex();
-//            colors.add(otherColors);
-//        }
-//        System.out.println(colors);
     }
 
 
@@ -159,7 +180,6 @@ public class Next_1012_StepDefinitions {
     }
 
     List<WebElement> allLocations = Driver.getDriver().findElements(By.xpath("//span[@class='calendar-timeline-stream-content-event-location']"));
-
     @Given("Click the Event")
     public void click_the_event() {
 
@@ -371,6 +391,7 @@ public class Next_1012_StepDefinitions {
 
     @And("Add [attendees]")
     public void addAttendees() {
+
 
 
     }

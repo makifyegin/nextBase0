@@ -17,6 +17,7 @@ Feature:Add an event for the AC criteria
     And Choose availability "Occupied"
     And user clickCtrlEnter save button
 
+
   @NEXT-1051
   Scenario: HR User can edit the 1st AC's task color as
 

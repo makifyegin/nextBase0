@@ -148,6 +148,7 @@ public class CalendarPage {
     @FindBy(xpath = "//span[.='Time zone']")
     public WebElement timeZone;
 
+
     @FindBy(xpath = "//*[@class='calendar-field-colorpicker-color-item']")
     public WebElement colourWebElement;
 
