@@ -61,10 +61,10 @@ public class MG_Positive extends LoginPage {
     @FindBy(xpath = "//div[@class=\"feed-add-post-buttons\"]//button")
     public WebElement sendButton;
 
-    @FindBy(xpath = "(//a[@class='bx-ilike-text'][normalize-space()='Like'])[2]")
+    @FindBy(xpath = "//div[@class='feed-comments-block']//span[@class=\"bx-ilike-left-wrap\"]//a")
     public WebElement commentLike;
 
-    @FindBy(xpath = "//a[@id='record-BLOG_1884-378-actions-reply']")
+    @FindBy(xpath = "//div[@class='feed-comments-block']//a[@class=\"feed-com-reply feed-com-reply-Y\"]")
     public WebElement commentReply;
 
     @FindBy(xpath = "(//span[@class=\"feed-post-emoji-icon-container\"])[2]//span")
@@ -73,7 +73,7 @@ public class MG_Positive extends LoginPage {
     @FindBy(xpath = "//div[contains(text(), 'Test Comment Qa')]")
     public WebElement commentVisible;
 
-//    @FindBy(xpath = "//a[@class=\"feed-post-user-name\"]")
+//    @FindBy(xpath = "//a[@class=\"feed-post-user-name\"]") //div[@class='feed-comments-block']//div[@class="feed-com-informers-bottom"]//span[@class="bx-ilike-left-wrap"]//a
 //    public WebElement reviewerName;
 
     public By reviewerName = By.xpath("//div[@class=\"feed-com-user-box\"]//a");
@@ -85,13 +85,16 @@ public class MG_Positive extends LoginPage {
     @FindBy(xpath = "//td[contains(text(),'Contact information')]")
     public WebElement contactInformation;
 
-    @FindBy(xpath = "")
+
+    @FindBy(xpath = "//div[@class=\"feed-post-important-switch\"]")
     public WebElement favoriteIcon;
+
 
     @FindBy(xpath = "//div[@class=\"feed-post-block feed-post-block-short feed-post-block-separator\"][1]")
     public WebElement firstPost;
 
-
+    @FindBy(xpath = "//div[@class=\"feed-post-block feed-post-block-short feed-post-block-separator\"][1]//div[@class=\"feed-post-important-switch feed-post-important-switch-active\"]")
+    public WebElement favIconSelected;
 
     @FindBy(xpath = "//a[@href='#like'][1]")   // NEED  TO CHECK
     public WebElement likeButton;

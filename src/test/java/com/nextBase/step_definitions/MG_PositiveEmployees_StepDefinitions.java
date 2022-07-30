@@ -1,7 +1,9 @@
 package com.nextBase.step_definitions;
+import com.nextBase.pages.BasePage;
 import com.nextBase.pages.MG_Positive;
 import com.nextBase.utilities.Driver;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -13,6 +15,7 @@ public class MG_PositiveEmployees_StepDefinitions {
 
 
     MG_Positive MG_Positive = new MG_Positive();
+    BasePage basePage = new BasePage();
 
 
     public String Emoji;
@@ -103,17 +106,34 @@ public class MG_PositiveEmployees_StepDefinitions {
 
     @When("User click {string}")
     public void userClick(String arg0) throws InterruptedException {
+
+        MG_Positive.commentLike.click();
+        Thread.sleep(3000);
+
+        /*
         if (MG_Positive.commentLike.isDisplayed()) {
             MG_Positive.commentLike.click();
         } else {
             System.exit(1);
-        }
-        Thread.sleep(2000);
+        }*/
     }
 
 
     @And("User leaves comment as {string} on reviewer's comment")
     public void userLeavesCommentAsOnReviewerSComment(String send) throws InterruptedException {
+
+        MG_Positive.commentReply.click();
+        Thread.sleep(2000);
+        Driver.getDriver().switchTo().frame(0);
+        Thread.sleep(2000);
+        MG_Positive.commentBody.sendKeys("Test Comment");
+        Driver.getDriver().switchTo().defaultContent();
+        Thread.sleep(2000);
+        MG_Positive.sendButton.click();
+        Thread.sleep(5000);
+
+
+
         try {
             MG_Positive.commentVisible.isDisplayed();
         } catch (Exception e) {
@@ -126,7 +146,6 @@ public class MG_PositiveEmployees_StepDefinitions {
             MG_Positive.sendButton.click();
             Thread.sleep(5000);
         }
-
 
     }
 
@@ -187,54 +206,26 @@ public class MG_PositiveEmployees_StepDefinitions {
 
     //======================= TEST QUATRO ABAIXO ADD POST TO FAVOURITE==================================//
 
-/*
+
     @When("User click star on the top right corner of message box")
     public void userClickStarOnTheTopRightCornerOfMessageBox() throws InterruptedException {
-        //get reference to first post
-        //  WebElement addToFavourite = Driver.getDriver().findElement(By.cssSelector(".log_entry_favorites_3425"));  //NEEDTO PLACE SELECTOR
-        //  Assert.assertTrue(addToFavourite.isDisplayed());
 
 
-        if (MG_Positive.firstPost.findElement(By.xpath("//div[@class=\"feed-post-important-switch feed-post-important-switch-active\"]")).isDisplayed())  //if favourite exit
-        {
-            System.exit(1);
-            //JavascriptExecutor click = (JavascriptExecutor) Driver.getDriver();
-            //click.executeScript("arguments[0].click();", MG_Positive.favoriteIcon);
-        } else {
-            //JavascriptExecutor click = (JavascriptExecutor) Driver.getDriver();
-            //click.executeScript("arguments[0].click();", MG_Positive.favoriteIcon);
-            //"MG_Positive.favoriteIcon.click();
-            MG_Positive.firstPost.findElement(By.xpath("//div[@class=\"feed-post-important-switch feed-post-important-switch-active\"]")).click();   //not favourite click
-        }
+        MG_Positive.favoriteIcon.click();
         Thread.sleep(3000);
 
 
     }
 
-*/
+
     @Then("Verify that User can add to starIcon favourite")
     public void verifyThatUserCanAddToStarIconFavourite() throws InterruptedException {
-        Assert.assertTrue((MG_Positive.firstPost.findElement(By.xpath("//div[@class=\"feed-post-important-switch feed-post-important-switch-active\"]")).isDisplayed()));
-        // Thread.sleep(500);
-        //get reference to star
-        ////  WebElement addToFavourite = Driver.getDriver().findElement(By.cssSelector(".log_entry_favorites_3426"));  //NEEDTO PLACE SELECTOR
-        // WebElement positiveOutComeIcon = addToFavourite.findElement(By.cssSelector(".log_entry_favorites_3426"));    //NEEDTO PLACE SELECTOR
-        //Assert.assertTrue(positiveOutComeIcon.isDisplayed());
-    }
-
-
-//NOT USE BELOW FEATURES
-
-    @And("User click on the Add to favourites frame appeared")
-    public void userClickOnTheAddToFavouritesFrameAppeared() throws InterruptedException {
-        if (MG_Positive.favoriteIcon.getAttribute("title").equalsIgnoreCase("Add to favorites")) {
-            MG_Positive.favoriteIcon.click();
-        } else if (MG_Positive.favoriteIcon.getAttribute("title").equalsIgnoreCase("Remove from favorites")) {
-            MG_Positive.favoriteIcon.click();
-        }
-        Thread.sleep(3000);
-
+        System.out.println("(MG_Positive.firstPost.findElement(By.xpath(\"//div[@class=\\\"feed-post-important-switch feed-post-important-switch-active\\\"]\")).isDisplayed()) = " +
+                (MG_Positive.firstPost.findElement(By.xpath("//div[@class=\"feed-post-important-switch feed-post-important-switch-active\"]")).isDisplayed()));
+        Assert.assertTrue(MG_Positive.favIconSelected.isDisplayed());
 
     }
-
 }
+
+
+
