@@ -69,14 +69,26 @@ public class Poll_Page {
    // @FindBy(css = "label[for='answer_0__2_']")
   //  public WebElement deleteAnswerBoxThree;
 
-     @FindBy(xpath = "//input[@name='UF_BLOG_POST_VOTE_n0_DATA[QUESTIONS][0][ANSWERS][2][MESSAGE_TYPE]']")
+    @FindBy(id="answer_0__2_")
+    public WebElement AnswerBoxThreeWholeBox;
+
+    @FindBy(xpath = "//label[@for='answer_0__2_']")
     public WebElement deleteAnswerBoxThree;
+   //  @FindBy(xpath = "//input[@name='UF_BLOG_POST_VOTE_n0_DATA[QUESTIONS][0][ANSWERS][2][MESSAGE_TYPE]']")
+  //  public WebElement deleteAnswerBoxThree;
+
+    @FindBy(id="answer_0__3_")
+    public WebElement AnswerBoxFourWholeBox;
 
     @FindBy(css = "label[for='answer_0__3_']")
     public WebElement deleteAnswerBoxFour;
 
+    @FindBy(id="question_1")
+    public WebElement questionBoxWhole;
+
     @FindBy(css = "label[for='question_1']")
     public WebElement deleteQuestionBox;
+
 
     @FindBy(id="blog-submit-button-save")
     public WebElement sendButton;
@@ -86,19 +98,17 @@ public class Poll_Page {
 
     @FindBy(className = "bx-editor-iframe")
     public WebElement iframeTitleField;
-   /* @FindBy()
-    public WebElement ;
-    @FindBy()
-    public WebElement ;
-    @FindBy()
-    public WebElement ;
-    @FindBy()
-    public WebElement ;
-    @FindBy()
-    public WebElement ;
-    @FindBy()
-    public WebElement ;
-    @FindBy()
-    public WebElement ;
-*/
+
+    @FindBy(id="answer_0__0_")
+    public WebElement answerBoxOne;
+
+    @FindBy(id = "question_0")
+    public WebElement questionBoxOne;
+
+    @FindBy(xpath = "//label[@for=\"question_0\"]")
+    public WebElement deleteQuestionsBoxOne ;
+
+    @FindBy(id = "blg-post-img-1574")
+    public WebElement iframeOne;
+
 }

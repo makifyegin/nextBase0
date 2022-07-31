@@ -151,18 +151,18 @@ public class Poll_StepDefs {
       //  executor.executeScript("arguments[0].click();", tmpElement);
 
         Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(Poll_Page.deleteAnswerBoxThree);
+        actions.moveToElement(Poll_Page.AnswerBoxThreeWholeBox);
         Poll_Page.deleteAnswerBoxThree.click();
-        actions.moveToElement(Poll_Page.deleteAnswerBoxFour);
+        actions.moveToElement(Poll_Page.AnswerBoxFourWholeBox);
         Poll_Page.deleteAnswerBoxFour.click();
-        actions.moveToElement(Poll_Page.deleteQuestionBox);
+        actions.moveToElement(Poll_Page.questionBoxWhole);
         Poll_Page.deleteQuestionBox.click();
 
     }
 
     @Then("that deleted question box and answer box is gone on site")
     public void that_deleted_question_box_and_answer_box_is_gone_on_site() {
-        List<WebElement> listOfAnswers = driver.findElements(By.xpath("//li[@class='vote-block-inp-wrap']"));
+        List<WebElement> listOfAnswers = Driver.getDriver().findElements(By.xpath("//li[@class='vote-block-inp-wrap']"));
 
         System.out.println("listOfAnswers.size() = " + listOfAnswers.size());
 
@@ -184,6 +184,7 @@ public class Poll_StepDefs {
  //   public void userClicksLinkIcon() {
   //      Poll_Page.linkIcon.click();
   //  }
+
 
 
 }
