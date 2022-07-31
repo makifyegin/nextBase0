@@ -39,13 +39,14 @@ Feature: Poll_Negative.feature
     And user clicks on SEND button
     Then verify that poll is not send and error message Please specify at least one question is displayed
 
-    @tub
+    @tub #LAST STEP NEEDS TO BE CORRECTED
     Scenario: Verify that two answers are provided for poll Alternative 1
       Given user has provided title
       When user just fills out question box and only one answer
       And user clicks on SEND button
       Then verify that poll is not send and error message Please specify at least two answers is displayed
 
+      @bla
   Scenario: Verify that two answers are provided for poll Alternative 2
     Given user has provided title
     When user just fills out question box

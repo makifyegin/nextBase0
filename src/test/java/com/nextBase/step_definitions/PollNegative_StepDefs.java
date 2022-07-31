@@ -71,5 +71,6 @@ public class PollNegative_StepDefs {
 
     @When("user just fills out question box")
     public void userJustFillsOutQuestionBox() {
+        Poll_Page.questionBoxOne.sendKeys("Is this right?");
     }
 }
