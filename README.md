@@ -1,4 +1,4 @@
-# Cucumber
+
 Basic cucumber framework used for running automation tests in https://nextbasecrm.com/.
 
 
@@ -38,7 +38,7 @@ Basic cucumber framework used for running automation tests in https://nextbasecr
     <img src="images/servas.jpg" alt="Logo" width="250" height="250">
   </a>
 
-  <h3 align="center">Servas V2 e2e Testing</h3>
+  <h3 align="center">CYDEO PROJECT</h3>
 
   <p align="center">
     An awesome README template to jumpstart your projects!
