@@ -35,7 +35,7 @@ Basic cucumber framework used for running automation tests in https://nextbasecr
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/nextbasecrm0.jpeg" alt="Logo" width="250" height="250">
+    <img src="images/nextbasecrm0.jpeg" alt="Logo" width="1000" height="500">
   </a>
 
   <h3 align="center">CYDEO PROJECT</h3>
