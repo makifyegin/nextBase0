@@ -104,31 +104,31 @@ Use this space to list resources you find helpful and would like to give credit 
 
 
 [Next.js]: https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white
-[Next-url]: https://nextjs.org/makifyegin
+[Next-url]: https://www.selenium.dev
 [React.js]: https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white
-[React-url]: https://reactjs.org/
+[React-url]: https://git-scm.com/
 [Vue.js]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
-[Vue-url]: https://vuejs.org/
+[Vue-url]: https://github.com/
 
 
 
 [Angular.io]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white
 
-[Angular-url]: https://angular.io/
+[Angular-url]: https://docs.oracle.com/en/
 
 
 [Svelte.dev]: https://img.shields.io/badge/jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white
-[Svelte-url]: https://svelte.dev/
+[Svelte-url]: https://www.jenkins.io/
 
 
 [Laravel.com]: https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white
-[Laravel-url]: https://laravel.com
+[Laravel-url]: https://www.postman.com/
 [Bootstrap.com]: https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black
-[Bootstrap-url]: https://getbootstrap.com
+[Bootstrap-url]: https://ubuntu.com/
 
 
 [JQuery.com]: https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white
-[JQuery-url]: https://jquery.com
+[JQuery-url]: https://www.google.com/intl/en_uk/chrome/
 
 
 
